@@ -42,12 +42,6 @@
             android:translationX="130dp"
             android:translationY="10dp" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="27dp"
-            android:layout_height="25dp"
-            app:srcCompat="@mipmap/candado" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
