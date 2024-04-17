@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center">
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/perfilFondo"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="86dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:text="N"
+            android:textColor="#1D409A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:translationX="30dp"
+            android:translationY="20dp" />
+
+        <TextView
+            android:id="@+id/nom2"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:text="ET"
+            android:textColor="#1D409A"
+            android:textStyle="bold"
+            android:translationX="-17dp"
+            android:translationY="20dp" />
+
+        <TextView
+            android:id="@+id/nom3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="P"
+            android:textColor="#1D409A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:translationX="-32dp"
+            android:translationY="20dp" />
+
+        <TextView
+            android:id="@+id/num4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ULSE"
+            android:textColor="#1D409A"
+            android:textStyle="bold"
+            android:translationX="-121dp"
+            android:translationY="20dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="1dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:translationX="-20dp"
+            android:translationY="15dp"
+            app:srcCompat="@mipmap/ic_foto1_foreground" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="414dp"
+        android:layout_height="126dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="84dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip2"
+            android:layout_width="222dp"
+            android:layout_height="wrap_content"
+            android:hint="Ajustes"
+            android:textAlignment="center"
+            android:textColorHint="#000000"
+            android:translationX="100dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estadísticas del usuario"
+            android:textAlignment="center"
+            android:textColor="#5C9CB2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:translationY="45dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="414dp"
+        android:layout_height="521dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="210dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="355dp"
+            android:layout_height="108dp"
+            android:translationX="30dp"
+            android:translationY="10dp"
+            app:cardBackgroundColor="#5EA0A9">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="289dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    android:translationY="-25dp"
+                    app:srcCompat="@mipmap/ic_foto_foreground" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="RODRIGUEZ, Rodrigo"
+                        android:textColor="#171616"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:translationY="20dp" />
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Administrador"
+                        android:textColor="#050505"
+                        android:textSize="16sp"
+                        android:translationY="20dp" />
+
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="20202152"
+                        android:textColor="#090909"
+                        android:textSize="16sp"
+                        android:translationY="25dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="149dp"
+            android:orientation="horizontal"
+            android:translationY="40dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="162dp"
+                android:layout_height="131dp"
+                android:translationX="30dp"
+                app:cardBackgroundColor="#C8E6EA">
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Usuarios Creados"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:translationY="15dp" />
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="72dp"
+                    android:orientation="horizontal"
+                    android:translationY="40dp">
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="88dp"
+                        android:layout_height="86dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@mipmap/ic_user_foreground" />
+
+                    <LinearLayout
+                        android:layout_width="86dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView28"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="10"
+                            android:textSize="34sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView29"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Supervisores"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="162dp"
+                android:layout_height="131dp"
+                android:translationX="60dp"
+                app:cardBackgroundColor="#E1D69A">
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Usuarios AC/DS"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:translationY="15dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="102dp"
+                    android:orientation="vertical"
+                    android:translationY="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:translationY="13dp">
+
+                        <ImageView
+                            android:id="@+id/imageView16"
+                            android:layout_width="127dp"
+                            android:layout_height="88dp"
+                            android:layout_weight="1"
+                            android:translationY="-20dp"
+                            app:srcCompat="@mipmap/ic_persojaverde_foreground" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:translationX="-10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView30"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="10"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView31"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Activados(AC)"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:translationY="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView17"
+                            android:layout_width="127dp"
+                            android:layout_height="88dp"
+                            android:layout_weight="1"
+                            android:translationY="-20dp"
+                            app:srcCompat="@mipmap/ic_persojaroja_foreground" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:translationX="-10dp">
+
+                            <TextView
+                                android:id="@+id/textView32"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="08"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/textView33"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-light"
+                                android:text="Desactivasdos(DS)"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="208dp"
+            android:orientation="vertical"
+            android:translationY="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="356dp"
+                android:layout_height="165dp"
+                android:translationX="30dp"
+                android:translationY="30dp"
+                app:cardBackgroundColor="#E2E4EF">
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sitios"
+                    android:textStyle="bold"
+                    android:translationX="20dp"
+                    android:translationY="15dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView18"
+                        android:layout_width="603dp"
+                        android:layout_height="186dp"
+                        android:layout_weight="1"
+                        android:translationX="-20dp"
+                        app:srcCompat="@mipmap/ic_resort_foreground" />
+
+                    <LinearLayout
+                        android:layout_width="528dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:translationX="-40dp"
+                        android:translationY="20dp">
+
+                        <TextView
+                            android:id="@+id/textView35"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:textSize="34sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView36"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Sitios Cerrados"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/textView37"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:textSize="34sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView38"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Sitios Eliminados"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="519dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:translationX="-20dp"
+                        android:translationY="40dp">
+
+                        <TextView
+                            android:id="@+id/textView39"
+                            android:layout_width="49dp"
+                            android:layout_height="wrap_content"
+                            android:text="30"
+                            android:textAlignment="center"
+                            android:textSize="34sp"
+                            android:textStyle="bold"
+                            android:translationX="20dp" />
+
+                        <TextView
+                            android:id="@+id/textView40"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Total de sitios"
+                            android:textAlignment="center"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
