@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">NetPulseIoT</string>
+    <string name="card2">
+        El administrador puede activar y desactivar
+        a los usuarios por debajo de su nivel
+        (Supervisor).</string>
+    <string name="card1">
+        Crea Usuarios de todos los tipos.
+        Salvo usuarios de los tipos administradores
+        y Super Administradores.
+    </string>
 </resources>
