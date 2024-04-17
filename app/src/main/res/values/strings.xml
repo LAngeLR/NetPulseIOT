@@ -9,4 +9,17 @@
         Salvo usuarios de los tipos administradores
         y Super Administradores.
     </string>
+    <string name="mensaje1">
+        Hola que tal,
+        soy luis, otro admin de la zona X
+        queria preguntarte algo
+    </string>
+    <string name="mensaje2">
+        Hola que tal Luis,
+        Dime qué pasó?
+        Es con respecto al cliente Y?
+    </string>
+    <string name="mensaje3">
+       Escribiendo •••
+    </string>
 </resources>
