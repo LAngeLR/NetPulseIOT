@@ -44,4 +44,9 @@ public class AdminListaMensajeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AdminPerfilActivity.class);
         startActivity(intent);
     }
+
+    public void mensaje(View view){
+        Intent intent = new Intent(this, AdminMensajeActivity.class);
+        startActivity(intent);
+    }
 }

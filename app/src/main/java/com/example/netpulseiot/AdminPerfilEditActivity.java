@@ -10,17 +10,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class AdminPerfilActivity extends AppCompatActivity {
+public class AdminPerfilEditActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_perfil);
+
+        setContentView(R.layout.activity_admin_perfil_edit2);
 
     }
 
-    public void perfil2(View view){
-        Intent intent = new Intent(this, AdminPerfilEditActivity.class);
+    public void perfil1(View view){
+        Intent intent = new Intent(this, AdminPerfilActivity.class);
         startActivity(intent);
     }
 }
