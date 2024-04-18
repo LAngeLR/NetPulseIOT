@@ -108,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="#66F3F8EE"
+                android:onClick="perfil2"
                 android:text="Ajustes"
                 android:textColor="#938888"
                 android:translationX="-20dp" />

@@ -107,6 +107,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="82dp"
+                    android:onClick="mensaje"
                     app:cardBackgroundColor="#CEDEDC">
 
                     <LinearLayout
@@ -205,6 +206,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="82dp"
+                    android:onClick="mensaje"
                     app:cardBackgroundColor="#CEDEDC">
 
                     <LinearLayout
@@ -259,6 +261,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="82dp"
+                    android:onClick="mensaje"
                     app:cardBackgroundColor="#CEDEDC">
 
                     <LinearLayout
@@ -400,7 +403,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="82dp">
+                    android:layout_height="82dp"
+                    android:onClick="mensaje">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -445,7 +449,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="82dp"
-                    app:cardBackgroundColor="#CEDEDC">
+                    app:cardBackgroundColor="#CEDEDC"
+                    android:onClick="mensaje">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -498,7 +503,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="82dp">
+                    android:layout_height="82dp"
+                    android:onClick="mensaje">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -552,6 +558,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="82dp"
+                    android:onClick="mensaje"
                     app:cardBackgroundColor="#CEDEDC">
 
                     <LinearLayout
@@ -654,8 +661,8 @@
             android:layout_marginHorizontal="7dp"
             android:layout_marginTop="8dp"
             android:layout_weight="1"
-            android:onClick="listaSitio"
-            android:background="@drawable/ic_building"/>
+            android:background="@drawable/ic_building"
+            android:onClick="listaSitio" />
 
         <Button
             android:id="@+id/button11"
