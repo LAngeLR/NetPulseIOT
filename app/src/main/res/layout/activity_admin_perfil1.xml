@@ -80,14 +80,32 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteY="88dp">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip"
-            android:layout_width="245dp"
-            android:layout_height="wrap_content"
-            android:text="Perfil"
-            android:textAlignment="center"
-            android:translationX="100dp"
-            app:closeIconVisible="false" />
+        <LinearLayout
+            android:layout_width="303dp"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:translationX="60dp">
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="3dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#F2F7ED"
+                android:text="Perfil"
+                android:textColor="#938888"
+                android:translationX="20dp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#66F3F8EE"
+                android:text="Ajustes"
+                android:textColor="#938888"
+                android:translationX="-20dp" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView10"
