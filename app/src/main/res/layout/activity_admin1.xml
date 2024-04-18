@@ -233,7 +233,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -261,7 +261,7 @@
             android:layout_width="347dp"
             android:layout_height="67dp"
             android:translationX="30dp"
-            android:translationY="60dp"
+            android:translationY="50dp"
             app:cardBackgroundColor="#CCFFFFFF">
 
             <LinearLayout
@@ -296,55 +296,63 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:background="@color/cardview_light_background"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:id="@+id/button12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:onClick="admin"
-            android:text="Inicio" />
+            android:background="@drawable/ic_home"/>
 
         <Button
             android:id="@+id/button9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
+            android:layout_width="20dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:onClick="listaMensaje"
-            android:text="Mensajes" />
+            android:background="@drawable/ic_message"/>
 
         <Button
             android:id="@+id/button13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
+            android:layout_width="20dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="1"
+            android:background="@drawable/ic_user"
             android:onClick="listaUsuarios"
-            android:text="Usuarios" />
+            android:textColorLink="#000000" />
 
         <Button
             android:id="@+id/button10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
+            android:layout_width="20dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:onClick="listaSitio"
-            android:text="Sitios" />
+            android:background="@drawable/ic_building"/>
 
         <Button
             android:id="@+id/button11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
+            android:layout_width="20dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
+            android:background="@drawable/ic_router"
             android:onClick="listaEquipo"
-            android:text="Equipos" />
+            android:textColorLink="#000000" />
+        
 
 
 
