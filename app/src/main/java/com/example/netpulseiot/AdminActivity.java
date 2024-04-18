@@ -20,4 +20,9 @@ public class AdminActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void listaEquipo(View view){
+        Intent intent = new Intent(this, AdminListaSitiosActivity.class);
+        startActivity(intent);
+    }
+
 }

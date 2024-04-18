@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="MENSAJES"
+            android:text="SITIOS"
             android:textAlignment="center"
             android:textColor="#076067"
             android:textSize="24sp"
