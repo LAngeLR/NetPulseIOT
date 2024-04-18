@@ -90,9 +90,9 @@
                 android:id="@+id/textView42"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Verificación"
+                android:text="Reestablecer contraseña"
                 android:textAlignment="center"
-                android:textColor="#79A9BB"
+                android:textColor="#AE98F2"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:translationY="20dp" />
@@ -102,72 +102,49 @@
                 android:layout_width="match_parent"
                 android:layout_height="231dp"
                 android:translationY="30dp"
-                app:srcCompat="@mipmap/verificandoo" />
+                app:srcCompat="@mipmap/reestablcer" />
 
             <TextView
-                android:id="@+id/textView43"
-                android:layout_width="227dp"
+                android:id="@+id/textView53"
+                android:layout_width="132dp"
                 android:layout_height="wrap_content"
-                android:text="@string/verificando"
-                android:textAlignment="center"
-                android:textSize="14sp"
-                android:translationX="70dp"
+                android:fontFamily="sans-serif"
+                android:text="Nueva contraseña"
+                android:translationX="35dp"
+                android:translationY="40dp" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="278dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:translationX="50dp"
+                android:translationY="35dp" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="207dp"
+                android:layout_height="wrap_content"
+                android:text="Escribe de nuevo la contraseña"
+                android:translationX="40dp"
                 android:translationY="50dp" />
 
-            <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="57dp"
-                android:orientation="horizontal"
-                android:translationX="35dp"
-                android:translationY="60dp">
-
-                <EditText
-                    android:id="@+id/editTextNumber5"
-                    android:layout_width="198dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" />
-
-                <EditText
-                    android:id="@+id/editTextNumber4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" />
-
-                <EditText
-                    android:id="@+id/editTextNumber2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" />
-
-                <EditText
-                    android:id="@+id/editTextNumber3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" />
-
-                <EditText
-                    android:id="@+id/editTextNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" />
-            </LinearLayout>
+            <EditText
+                android:id="@+id/editTextTextPassword3"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:translationX="50dp"
+                android:translationY="50dp" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="195dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#5A8CB4"
-                android:text="Continuar"
+                android:text="Reestablecer"
                 android:translationX="93dp"
                 android:translationY="70dp" />
         </LinearLayout>
