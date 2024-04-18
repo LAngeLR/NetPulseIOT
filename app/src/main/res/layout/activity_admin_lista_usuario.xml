@@ -74,6 +74,7 @@
           android:layout_height="52dp"
           android:layout_weight="1"
           android:backgroundTint="#00FFFFFF"
+          android:onClick="perfil1"
           android:translationX="-20dp"
           android:translationY="15dp"
           app:srcCompat="@mipmap/ic_foto1_foreground" />
