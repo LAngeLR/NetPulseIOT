@@ -1,6 +1,8 @@
 package com.example.netpulseiot;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,4 +23,17 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+
+
+    public void admin(View view){
+        Intent intent = new Intent(this, AdminActivity.class);
+        startActivity(intent);
+    }
+
+    public void superadmin(View view){
+        Intent intent = new Intent(this, SuperadminActivity.class);
+        startActivity(intent);
+    }
+
 }
