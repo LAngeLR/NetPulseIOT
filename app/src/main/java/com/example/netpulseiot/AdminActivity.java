@@ -21,7 +21,22 @@ public class AdminActivity extends AppCompatActivity {
     }
 
     public void listaEquipo(View view){
-        Intent intent = new Intent(this, AdminListaSitiosActivity.class);
+        Intent intent = new Intent(this, AdminListaEquiposActivity.class);
+        startActivity(intent);
+    }
+
+    public void listaMensaje(View view){
+        Intent intent = new Intent(this, AdminListaMensajeActivity.class);
+        startActivity(intent);
+    }
+
+    public void admin(View view){
+        Intent intent = new Intent(this, AdminActivity.class);
+        startActivity(intent);
+    }
+
+    public void listaUsuarios(View view){
+        Intent intent = new Intent(this, AdminListaUsuarioActivity.class);
         startActivity(intent);
     }
 
