@@ -292,7 +292,7 @@
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-
+<!--    luego borrar y hacerlo con fragmentos -->
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
@@ -352,9 +352,6 @@
             android:background="@drawable/ic_router"
             android:onClick="listaEquipo"
             android:textColorLink="#000000" />
-        
-
-
 
     </LinearLayout>
 

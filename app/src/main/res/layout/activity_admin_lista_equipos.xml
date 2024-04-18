@@ -572,5 +572,68 @@
 
     </LinearLayout>
 
+    <!--    luego borrar y hacerlo con fragmentos -->
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/cardview_light_background"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:onClick="admin"
+            android:background="@drawable/ic_home"/>
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="20dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:onClick="listaMensaje"
+            android:background="@drawable/ic_message"/>
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="20dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_user"
+            android:onClick="listaUsuarios"
+            android:textColorLink="#000000" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="20dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:onClick="listaSitio"
+            android:background="@drawable/ic_building"/>
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="20dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_router"
+            android:onClick="listaEquipo"
+            android:textColorLink="#000000" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
