@@ -22,4 +22,7 @@
     <string name="mensaje3">
        Escribiendo •••
     </string>
+    <string name="verificando">
+       Te hemos enviado un código de confirmación a "correo". Escribelo aquí para continuar.
+    </string>
 </resources>
