@@ -41,4 +41,9 @@ public class AdminListaSitiosActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void perfil1(View view){
+        Intent intent = new Intent(this, AdminPerfilActivity.class);
+        startActivity(intent);
+    }
+
 }
