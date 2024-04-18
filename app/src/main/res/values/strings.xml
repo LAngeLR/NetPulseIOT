@@ -25,4 +25,7 @@
     <string name="verificando">
        Te hemos enviado un código de confirmación a "correo". Escribelo aquí para continuar.
     </string>
+    <string name="reestablecido">
+       Muchas gracias por confiar en la familia NetPulse, ya puede acceder a su cuenta con la nueva contraseña registrada.
+    </string>
 </resources>
