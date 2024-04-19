@@ -52,4 +52,9 @@ public class AdminListaSitiosActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void infoUsuario(View view){
+        Intent intent = new Intent(this, AdminInfoUsuarioActivity.class);
+        startActivity(intent);
+    }
+
 }

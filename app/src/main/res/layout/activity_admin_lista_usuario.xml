@@ -134,17 +134,21 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="82dp"
+            android:onClick="infoUsuario"
             app:cardBackgroundColor="#CEDEDC">
+
           <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/imageView10"
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@mipmap/ic_foto2_foreground" />
+
             <LinearLayout
                 android:layout_width="239dp"
                 android:layout_height="57dp"
@@ -152,6 +156,7 @@
                 android:orientation="vertical"
                 android:translationX="-10dp"
                 android:translationY="15dp">
+
               <TextView
                   android:id="@+id/textView10"
                   android:layout_width="match_parent"
@@ -159,6 +164,7 @@
                   android:text="Luis Lizano"
                   android:textSize="16sp"
                   android:textStyle="bold" />
+
               <TextView
                   android:id="@+id/textViewCargo10"
                   android:layout_width="match_parent"
@@ -166,6 +172,7 @@
                   android:text="Supervisor"
                   android:translationY="5dp" />
             </LinearLayout>
+
             <Switch
                 android:id="@+id/switch10"
                 android:layout_width="55dp"
@@ -179,17 +186,21 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="82dp">
+            android:layout_height="82dp"
+            android:onClick="infoUsuario">
+
           <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/imageView11"
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@mipmap/ic_foto2_foreground" />
+
             <LinearLayout
                 android:layout_width="239dp"
                 android:layout_height="57dp"
@@ -197,6 +208,7 @@
                 android:orientation="vertical"
                 android:translationX="-10dp"
                 android:translationY="15dp">
+
               <TextView
                   android:id="@+id/textView11"
                   android:layout_width="match_parent"
@@ -204,6 +216,7 @@
                   android:text="Luis Lizano"
                   android:textSize="16sp"
                   android:textStyle="bold" />
+
               <TextView
                   android:id="@+id/textViewCargo11"
                   android:layout_width="match_parent"
@@ -211,6 +224,7 @@
                   android:text="Supervisor"
                   android:translationY="5dp" />
             </LinearLayout>
+
             <Switch
                 android:id="@+id/switch11"
                 android:layout_width="55dp"
@@ -270,17 +284,21 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="82dp">
+            android:layout_height="82dp"
+            android:onClick="infoUsuario">
+
           <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/imageView13"
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@mipmap/ic_foto2_foreground" />
+
             <LinearLayout
                 android:layout_width="239dp"
                 android:layout_height="57dp"
@@ -288,6 +306,7 @@
                 android:orientation="vertical"
                 android:translationX="-10dp"
                 android:translationY="15dp">
+
               <TextView
                   android:id="@+id/textView13"
                   android:layout_width="match_parent"
@@ -295,6 +314,7 @@
                   android:text="Luis Lizano"
                   android:textSize="16sp"
                   android:textStyle="bold" />
+
               <TextView
                   android:id="@+id/textViewCargo13"
                   android:layout_width="match_parent"
@@ -302,6 +322,7 @@
                   android:text="Supervisor"
                   android:translationY="5dp" />
             </LinearLayout>
+
             <Switch
                 android:id="@+id/switch13"
                 android:layout_width="55dp"
@@ -316,17 +337,21 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="82dp"
+            android:onClick="infoUsuario"
             app:cardBackgroundColor="#CEDEDC">
+
           <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/imageView14"
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@mipmap/ic_foto2_foreground" />
+
             <LinearLayout
                 android:layout_width="239dp"
                 android:layout_height="57dp"
@@ -334,6 +359,7 @@
                 android:orientation="vertical"
                 android:translationX="-10dp"
                 android:translationY="15dp">
+
               <TextView
                   android:id="@+id/textView14"
                   android:layout_width="match_parent"
@@ -341,6 +367,7 @@
                   android:text="Luis Lizano"
                   android:textSize="16sp"
                   android:textStyle="bold" />
+
               <TextView
                   android:id="@+id/textViewCargo14"
                   android:layout_width="match_parent"
@@ -348,6 +375,7 @@
                   android:text="Supervisor"
                   android:translationY="5dp" />
             </LinearLayout>
+
             <Switch
                 android:id="@+id/switch14"
                 android:layout_width="55dp"
@@ -361,17 +389,21 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="82dp">
+            android:layout_height="82dp"
+            android:onClick="infoUsuario">
+
           <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="horizontal">
+
             <ImageView
                 android:id="@+id/imageView15"
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@mipmap/ic_foto2_foreground" />
+
             <LinearLayout
                 android:layout_width="239dp"
                 android:layout_height="57dp"
@@ -379,6 +411,7 @@
                 android:orientation="vertical"
                 android:translationX="-10dp"
                 android:translationY="15dp">
+
               <TextView
                   android:id="@+id/textView15"
                   android:layout_width="match_parent"
@@ -386,6 +419,7 @@
                   android:text="Luis Lizano"
                   android:textSize="16sp"
                   android:textStyle="bold" />
+
               <TextView
                   android:id="@+id/textViewCargo15"
                   android:layout_width="match_parent"
@@ -393,6 +427,7 @@
                   android:text="Supervisor"
                   android:translationY="5dp" />
             </LinearLayout>
+
             <Switch
                 android:id="@+id/switch15"
                 android:layout_width="55dp"
