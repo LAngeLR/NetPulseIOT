@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void supervisor(View view){
-        Intent intent = new Intent(this, SuperadminActivity.class);
+        Intent intent = new Intent(this, SupervisorActivity.class);
         startActivity(intent);
     }
 

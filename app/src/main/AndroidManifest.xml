@@ -34,6 +34,9 @@
             android:name=".AdminListaUsuarios"
             android:exported="false" />
         <activity
+            android:name=".SupervisorListaEquiposActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminListaMensajeActivity"
             android:exported="false" />
         <activity
@@ -44,6 +47,9 @@
             android:exported="false" />
         <activity
             android:name=".SupervisorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SupervisorListaSitiosActivity"
             android:exported="false" />
         <activity
             android:name=".SuperadminActivity"
