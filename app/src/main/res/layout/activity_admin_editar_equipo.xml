@@ -78,9 +78,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="412dp"
         android:layout_height="630dp"
-        android:translationY="70dp"
+        android:translationY="30dp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="30dp">
+        tools:layout_editor_absoluteY="70dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,7 +97,7 @@
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text=" Sitio 1 - Editar"
+                    android:text="Editar Equipo"
                     android:textAlignment="textEnd"
                     android:textColor="#3F51B5"
                     android:textSize="24sp"
@@ -112,14 +112,14 @@
                     android:layout_weight="1"
                     android:translationX="-30dp"
                     android:translationY="20dp"
-                    app:srcCompat="@mipmap/siiito" />
+                    app:srcCompat="@mipmap/telecoequi" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/textView49"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Personal asignado:"
+                android:text="Marca:"
                 android:textSize="16sp"
                 android:translationX="30dp" />
 
@@ -136,7 +136,7 @@
                 android:id="@+id/textView49"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Departamento:"
+                android:text="Modelo:"
                 android:textSize="16sp"
                 android:translationX="30dp" />
 
@@ -153,113 +153,31 @@
                 android:id="@+id/textView49"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Provincia:"
+                android:text="Descripción"
                 android:textSize="16sp"
                 android:translationX="30dp" />
 
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="314dp"
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="336dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Escribir..."
-                android:inputType="text"
+                android:text="@string/descripción"
                 android:translationX="50dp" />
 
             <TextView
                 android:id="@+id/textView49"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Distrito:"
-                android:textSize="16sp"
-                android:translationX="30dp"
-                android:translationY="15dp" />
-
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="310dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Escribir..."
-                android:inputType="text"
-                android:translationX="50dp"
-                android:translationY="10dp" />
-
-            <TextView
-                android:id="@+id/textView49"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Dirección:"
+                android:text="Foto"
                 android:textSize="16sp"
                 android:translationX="30dp"
                 android:translationY="20dp" />
 
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="308dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Escribir..."
-                android:inputType="text"
-                android:translationX="50dp"
-                android:translationY="20dp" />
-
-            <LinearLayout
+            <ImageView
+                android:id="@+id/imageView39"
                 android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="204dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView49"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Latitud:"
-                        android:textSize="16sp"
-                        android:translationX="30dp"
-                        android:translationY="30dp" />
-
-                    <EditText
-                        android:id="@+id/editTextText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Escribir..."
-                        android:inputType="text"
-                        android:translationX="50dp"
-                        android:translationY="30dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="115dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView49"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Longitud:"
-                        android:textSize="16sp"
-                        android:translationX="10dp"
-                        android:translationY="30dp" />
-
-                    <EditText
-                        android:id="@+id/editTextText"
-                        android:layout_width="136dp"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Escribir..."
-                        android:inputType="text"
-                        android:translationX="20dp"
-                        android:translationY="30dp" />
-                </LinearLayout>
-            </LinearLayout>
+                android:layout_height="164dp"
+                app:srcCompat="@mipmap/equipo" />
 
             <Button
                 android:id="@+id/button14"
@@ -272,12 +190,21 @@
 
             <Button
                 android:id="@+id/button13"
-                android:layout_width="128dp"
-                android:layout_height="wrap_content"
+                android:layout_width="132dp"
+                android:layout_height="48dp"
                 android:backgroundTint="#F3827B"
                 android:text="Aceptar"
                 android:translationX="230dp"
                 android:translationY="-30dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:backgroundTint="#69BBA6"
+                android:translationX="270dp"
+                android:translationY="-260dp"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

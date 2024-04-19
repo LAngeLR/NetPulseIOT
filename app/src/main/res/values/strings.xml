@@ -28,4 +28,7 @@
     <string name="reestablecido">
        Muchas gracias por confiar en la familia NetPulse, ya puede acceder a su cuenta con la nueva contraseña registrada.
     </string>
+    <string name="descripción">
+       Los equipos de comunicaciones o telecomunicaciones, son aquellos con los que se pueden realizar la transmisión y recepción de voz, datos y video; definiéndose como el hardware utilizado para la comunicación de estos elementos y son complementados en su mayoría por un software para su uso óptimo.
+    </string>
 </resources>
