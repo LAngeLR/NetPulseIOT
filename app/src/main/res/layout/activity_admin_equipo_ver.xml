@@ -6,8 +6,6 @@
 
     <ImageView
         android:id="@+id/imageView28"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +78,6 @@
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
-        tools:layout_editor_absoluteY="70dp"
         android:layout_width="412dp"
         android:layout_height="630dp"
         android:translationY="30dp"
