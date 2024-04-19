@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/imageView28"
+        tools:layout_editor_absoluteX="0dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/fondoito"
-        tools:layout_editor_absoluteX="0dp"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
@@ -105,7 +105,7 @@
                     android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Editar Equipo"
+                    android:text="Nuevo Equipo"
                     android:textAlignment="textEnd"
                     android:textColor="#3F51B5"
                     android:textSize="24sp"
@@ -124,7 +124,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView419"
+                android:id="@+id/textVieww"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Marca:"
@@ -132,7 +132,7 @@
                 android:translationX="30dp" />
 
             <EditText
-                android:id="@+id/editTextTe1xt"
+                android:id="@+id/editTextTextt"
                 android:layout_width="318dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -141,7 +141,7 @@
                 android:translationX="50dp" />
 
             <TextView
-                android:id="@+id/textViewModelo"
+                android:id="@+id/textView492"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Modelo:"
@@ -158,22 +158,24 @@
                 android:translationX="50dp" />
 
             <TextView
-                android:id="@+id/textViedescripcion"
+                android:id="@+id/textView493"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Descripción"
                 android:textSize="16sp"
                 android:translationX="30dp" />
 
-            <TextView
-                android:id="@+id/textView55"
-                android:layout_width="336dp"
+            <EditText
+                android:id="@+id/editTextText5"
+                android:layout_width="318dp"
                 android:layout_height="wrap_content"
-                android:text="@string/descripción"
+                android:ems="10"
+                android:hint="Escribir..."
+                android:inputType="text"
                 android:translationX="50dp" />
 
             <TextView
-                android:id="@+id/textViewfoto"
+                android:id="@+id/textView49"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Foto"
@@ -185,7 +187,7 @@
                 android:id="@+id/imageView39"
                 android:layout_width="match_parent"
                 android:layout_height="164dp"
-                app:srcCompat="@mipmap/equipo" />
+                app:srcCompat="@mipmap/subirimagen" />
 
             <Button
                 android:id="@+id/button14"
@@ -204,15 +206,6 @@
                 android:text="Aceptar"
                 android:translationX="230dp"
                 android:translationY="-30dp" />
-
-            <ImageButton
-                android:id="@+id/imageButton6"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:backgroundTint="#69BBA6"
-                android:translationX="270dp"
-                android:translationY="-260dp"
-                app:srcCompat="@android:drawable/ic_menu_edit" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
