@@ -11,12 +11,18 @@
         tools:layout_editor_absoluteY="0dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/fondoito" />
 
     <LinearLayout
-        android:layout_width="411dp"
+        android:id="@+id/linearLayout11"
+        android:layout_width="match_parent"
         android:layout_height="86dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/nombre"
@@ -78,8 +84,9 @@
         android:layout_width="412dp"
         android:layout_height="630dp"
         android:translationY="20dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="80dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -87,7 +94,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView52"
+                android:id="@+id/textView50"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Editar usuario"
@@ -122,7 +129,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView51"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Nombre(s)"
@@ -131,7 +138,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textView52"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Rodrigo Luis"
@@ -151,7 +158,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView53"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Apellidos"
@@ -160,7 +167,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textView54"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Rodriguez Torres"
@@ -181,7 +188,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView55"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Rol"
@@ -190,7 +197,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textView56"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Administrador"
@@ -211,7 +218,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView57"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Correo"
@@ -242,7 +249,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView58"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Teléfono"
@@ -273,7 +280,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView59"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Domicilio"
