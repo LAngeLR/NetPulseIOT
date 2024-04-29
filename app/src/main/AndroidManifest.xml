@@ -58,7 +58,7 @@
             android:name=".SupervisorListaSitiosActivity"
             android:exported="false" />
         <activity
-            android:name=".SuperadminActivity"
+            android:name=".fragmentos.superadmin.SuperadminActivity"
             android:exported="false" />
         <activity
             android:name=".AdminActivity"

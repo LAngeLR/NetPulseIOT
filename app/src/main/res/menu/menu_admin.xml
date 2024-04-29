@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Inicio"
+        android:icon="@drawable/ic_home"
+        android:id="@+id/inicioAdmin"
+        />
+    <item android:title="Mensajes"
+        android:icon="@drawable/ic_message"
+        android:id="@+id/mensajesAdmin"
+        />
+    <item android:title="Usuarios"
+        android:icon="@drawable/ic_user"
+        android:id="@+id/usuariosAdmin"
+        />
+    <item android:title="Sitios"
+        android:icon="@drawable/ic_user"
+        android:id="@+id/sitiosAdmin"
+        />
+    <item android:title="Equipos"
+        android:icon="@drawable/ic_user"
+        android:id="@+id/equiposAdmin"
+        />
+</menu>

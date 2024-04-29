@@ -61,7 +61,7 @@
                         android:translationY="15dp">
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/textView1"
                             android:layout_width="167dp"
                             android:layout_height="59dp"
                             android:fontFamily="sans-serif-light"
@@ -85,7 +85,7 @@
                         android:translationY="25dp">
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/textView2"
                             android:layout_width="231dp"
                             android:layout_height="59dp"
                             android:fontFamily="sans-serif-light"
@@ -95,7 +95,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageView"
                         android:layout_width="1dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -110,7 +110,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView7"
+                        android:id="@+id/imageView2"
                         android:layout_width="1dp"
                         android:layout_height="88dp"
                         android:layout_weight="1"
@@ -125,7 +125,7 @@
                         android:translationY="15dp">
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/textView4"
                             android:layout_width="167dp"
                             android:layout_height="59dp"
                             android:fontFamily="sans-serif-light"
@@ -149,7 +149,7 @@
                         android:translationY="25dp">
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/textView10"
                             android:layout_width="231dp"
                             android:layout_height="59dp"
                             android:fontFamily="sans-serif-light"
@@ -174,7 +174,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/imageView7"
+                        android:id="@+id/imageView15"
                         android:layout_width="1dp"
                         android:layout_height="88dp"
                         android:layout_weight="1"
@@ -189,7 +189,7 @@
                         android:translationY="15dp">
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/textView6"
                             android:layout_width="167dp"
                             android:layout_height="59dp"
                             android:fontFamily="sans-serif-light"
@@ -224,7 +224,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/imageView9"
                         android:layout_width="1dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

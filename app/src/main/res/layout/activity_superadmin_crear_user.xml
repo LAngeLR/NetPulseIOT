@@ -113,7 +113,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView49"
+                android:id="@+id/textView100"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nombres:"
@@ -121,7 +121,7 @@
                 android:translationX="30dp" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/editTextText100"
                 android:layout_width="318dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -130,7 +130,7 @@
                 android:translationX="50dp" />
 
             <TextView
-                android:id="@+id/textView49"
+                android:id="@+id/textView101"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Apellidos:"
@@ -138,7 +138,7 @@
                 android:translationX="30dp" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/editTextText101"
                 android:layout_width="318dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -147,7 +147,7 @@
                 android:translationX="50dp" />
 
             <TextView
-                android:id="@+id/textView49"
+                android:id="@+id/textView102"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="DNI:"
@@ -155,7 +155,7 @@
                 android:translationX="30dp" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/editTextText102"
                 android:layout_width="314dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -164,7 +164,7 @@
                 android:translationX="50dp" />
 
             <TextView
-                android:id="@+id/textView49"
+                android:id="@+id/textView103"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Correo electronico:"
@@ -173,7 +173,7 @@
                 android:translationY="15dp" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/editTextText103"
                 android:layout_width="310dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -183,7 +183,7 @@
                 android:translationY="10dp" />
 
             <TextView
-                android:id="@+id/textView49"
+                android:id="@+id/textView104"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Celular:"
@@ -192,7 +192,7 @@
                 android:translationY="20dp" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/editTextText104"
                 android:layout_width="308dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -202,7 +202,7 @@
                 android:translationY="20dp" />
 
             <TextView
-                android:id="@+id/textView49"
+                android:id="@+id/textView105"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Domicilio:"
