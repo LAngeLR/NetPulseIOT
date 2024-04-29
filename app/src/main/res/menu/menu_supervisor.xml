@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:title="Inicio"
+        android:icon="@drawable/ic_home"
+        android:id="@+id/inicioSupervisor"
+        />
+    <item android:title="Mensajes"
+        android:icon="@drawable/ic_message"
+        android:id="@+id/mensajesSupervisor"
+        />
+    <item android:title="Sitios"
+        android:icon="@drawable/ic_user"
+        android:id="@+id/sitiosSupervisor"
+        />
+    <item android:title="Equipos"
+        android:icon="@drawable/ic_user"
+        android:id="@+id/equiposSupervisor"
+        />
 </menu>
