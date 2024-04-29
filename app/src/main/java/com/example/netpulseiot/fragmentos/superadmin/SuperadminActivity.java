@@ -53,7 +53,7 @@ public class SuperadminActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.mensajesSuperadmin) {
                 replaceFragment(new MensajesSuperadminFragment());
             } else if (item.getItemId() == R.id.usuariosSuperadmin) {
-                replaceFragment(new InicioSuperadminFragment());
+                replaceFragment(new UsuariosSuperadminFragment());
             }
 
             return true;

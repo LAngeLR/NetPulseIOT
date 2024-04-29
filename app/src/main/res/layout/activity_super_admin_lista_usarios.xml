@@ -10,6 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/fondo2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
@@ -321,7 +323,7 @@
                         </LinearLayout>
 
                         <Switch
-                            android:id="@+id/switch10"
+                            android:id="@+id/switch2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -417,7 +419,7 @@
                         </LinearLayout>
 
                         <Switch
-                            android:id="@+id/switch2"
+                            android:id="@+id/switch100"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
