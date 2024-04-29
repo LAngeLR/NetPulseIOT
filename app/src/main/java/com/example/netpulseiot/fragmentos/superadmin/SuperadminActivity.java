@@ -32,21 +32,7 @@ public class SuperadminActivity extends AppCompatActivity {
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
-//            switch (item.getItemId()){
-//
-//                case R.id.inicioSuperadmin:
-//                    replaceFragment(new InicioSuperadminFragment());
-//                    break;
-//
-//                case R.id.mensajesSuperadmin:
-//                    replaceFragment(new MensajesSuperadminFragment());
-//                    break;
-//
-//                case R.id.usuariosSuperadmin:
-//                    replaceFragment(new UsuariosSuperadminFragment());
-//                    break;
-//
-//            }
+
 
             if (item.getItemId() == R.id.inicioSuperadmin) {
                 replaceFragment(new InicioSuperadminFragment());
