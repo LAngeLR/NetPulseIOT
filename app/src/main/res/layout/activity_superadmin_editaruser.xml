@@ -122,7 +122,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView1"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Nombre(s)"
@@ -131,7 +131,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textView2"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Rodrigo Luis"
@@ -151,7 +151,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView3"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Apellidos"
@@ -160,7 +160,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textView4"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Rodriguez Torres"
@@ -181,7 +181,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView5"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Rol"
@@ -190,7 +190,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textView6"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Administrador"
@@ -211,7 +211,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView7"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Correo"
@@ -242,7 +242,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView8"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Teléfono"
@@ -273,7 +273,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView9"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Domicilio"
