@@ -87,7 +87,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView52"
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Editar Equipo"
@@ -122,7 +122,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView1"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Marca"
@@ -131,7 +131,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textView2"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Cisco"
@@ -151,7 +151,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView3"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Modelo"
@@ -160,7 +160,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textView4"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="IR8300"
@@ -181,7 +181,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/textView5"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="Descripcion"
@@ -190,7 +190,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textView6"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Dedicada a la fabricación, venta, mantenimiento y consultoría de equipos de telecomunicaciones."
