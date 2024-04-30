@@ -13,6 +13,9 @@
         android:theme="@style/Theme.NetPulseIoT"
         tools:targetApi="31">
         <activity
+            android:name=".fragmentos.superadmin.NuevoUsuarioSuperadminActivity"
+            android:exported="false" />
+        <activity
             android:name=".SuperAdminListaUsarios"
             android:exported="false" />
         <activity

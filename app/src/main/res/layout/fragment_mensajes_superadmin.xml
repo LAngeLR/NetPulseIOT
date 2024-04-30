@@ -4,19 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
     tools:context=".fragmentos.superadmin.MensajesSuperadminFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/imageView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/fondo2"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
+        android:layout_height="911dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,8 +17,8 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="411dp"
-                android:layout_height="86dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -87,7 +80,7 @@
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="42dp"
                 android:fontFamily="sans-serif"
                 android:text="MENSAJES"
                 android:textAlignment="center"
@@ -96,15 +89,15 @@
                 android:textStyle="bold" />
 
             <SearchView
-                android:layout_width="323dp"
-                android:layout_height="38dp"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
                 android:background="#FDFCFC"
                 android:translationX="45dp"
                 android:translationY="20dp" />
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="552dp"
+                android:layout_height="673dp"
                 android:translationY="50dp">
 
                 <LinearLayout
