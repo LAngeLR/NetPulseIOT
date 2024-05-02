@@ -5,12 +5,33 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.netpulseiot.Adapter.AdminUsuarioAdapter;
+import com.example.netpulseiot.Adapter.SupervisorSitioAdapter;
+import com.example.netpulseiot.entity.AdminUserItem;
+import com.example.netpulseiot.entity.SupervisorSitioItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SupervisorListaSitiosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_supervisor_sitio1);
+
+        setContentView(R.layout.fragment_supervisor_equipos);
+
+        //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
+        List<SupervisorSitioItem> list = new ArrayList<SupervisorSitioItem>();
+        for (int i=0; i<=12;i++){
+            list.add(new SupervisorSitioItem("Lima","Lima","Surco", "Tipo1", R.drawable.fotoperfil_u));
+        }
+        //implementación del RecyclerViewer
+        RecyclerView recyler = findViewById(R.id.supervisorSitiosRecyclerView);
+        recyler.setLayoutManager(new LinearLayoutManager(this));
+        recyler.setAdapter(new SupervisorSitioAdapter(getApplicationContext(),list));
 
     }
 

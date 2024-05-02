@@ -3,64 +3,40 @@ package com.example.netpulseiot.fragmentos.admin;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.netpulseiot.Adapter.SupervisorSitioAdapter;
 import com.example.netpulseiot.R;
+import com.example.netpulseiot.databinding.FragmentAdminSitiosBinding;
+import com.example.netpulseiot.databinding.FragmentSupervisorSitiosBinding;
+import com.example.netpulseiot.entity.SupervisorSitioItem;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AdminSitiosFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class AdminSitiosFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public AdminSitiosFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AdminSitiosFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AdminSitiosFragment newInstance(String param1, String param2) {
-        AdminSitiosFragment fragment = new AdminSitiosFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
+    FragmentAdminSitiosBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_sitios, container, false);
+        binding = FragmentAdminSitiosBinding.inflate(inflater,container,false);
+
+        //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
+        List<SupervisorSitioItem> list = new ArrayList<SupervisorSitioItem>();
+        for (int i=0; i<=12;i++){
+            list.add(new SupervisorSitioItem("Lima","Lima","Surco", "Tipo1", R.drawable.fotoperfil_u));
+        }
+
+        binding.adminSitiosRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.adminSitiosRecyclerView.setAdapter(new SupervisorSitioAdapter(getContext(),list));
+
+        return binding.getRoot();
     }
 }
