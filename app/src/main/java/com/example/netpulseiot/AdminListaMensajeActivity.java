@@ -18,35 +18,42 @@ public class AdminListaMensajeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_lista_mensaje);
 
     }
+
     //luego borrar y hacerlo con fragmento
-    public void listaSitio(View view){
+    public void listaSitio(View view) {
         Intent intent = new Intent(this, AdminListaSitiosActivity.class);
         startActivity(intent);
     }
-    public void listaEquipo(View view){
+
+    public void listaEquipo(View view) {
         Intent intent = new Intent(this, AdminListaEquiposActivity.class);
         startActivity(intent);
     }
-    public void listaMensaje(View view){
+
+    public void listaMensaje(View view) {
         Intent intent = new Intent(this, AdminListaMensajeActivity.class);
         startActivity(intent);
     }
-    public void admin(View view){
+
+    public void admin(View view) {
         Intent intent = new Intent(this, AdminActivity.class);
         startActivity(intent);
     }
-    public void listaUsuarios(View view){
+
+    public void listaUsuarios(View view) {
         Intent intent = new Intent(this, AdminListaUsuarioActivity.class);
         startActivity(intent);
     }
 
-    public void perfil1(View view){
+    public void perfil1(View view) {
         Intent intent = new Intent(this, AdminPerfilActivity.class);
         startActivity(intent);
     }
 
-    public void mensaje(View view){
+    public void mensaje(View view) {
         Intent intent = new Intent(this, AdminMensajeActivity.class);
         startActivity(intent);
     }
+
+
 }

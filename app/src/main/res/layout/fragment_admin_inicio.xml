@@ -18,11 +18,14 @@
             android:id="@+id/linearLayout13"
             android:layout_width="413dp"
             android:layout_height="174dp"
+            android:layout_marginTop="16dp"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="98dp">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.12">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,13 +102,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout13"
-            app:layout_constraintVertical_bias="0.253">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.72">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="347dp"
                 android:layout_height="105dp"
-                android:translationX="30dp"
                 app:cardBackgroundColor="#CCFFFFFF">
 
                 <LinearLayout
@@ -137,7 +139,6 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="347dp"
                 android:layout_height="80dp"
-                android:translationX="30dp"
                 android:translationY="20dp"
                 app:cardBackgroundColor="#CDFFFFFF">
 
@@ -170,7 +171,6 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="347dp"
                 android:layout_height="65dp"
-                android:translationX="30dp"
                 android:translationY="40dp"
                 app:cardBackgroundColor="#CCFFFFFF">
 
@@ -203,7 +203,6 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="347dp"
                 android:layout_height="67dp"
-                android:translationX="30dp"
                 android:translationY="50dp"
                 app:cardBackgroundColor="#CCFFFFFF">
 
