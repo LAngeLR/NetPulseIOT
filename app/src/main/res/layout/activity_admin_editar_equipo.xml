@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@mipmap/fondoito">
 
     <ImageView
         android:id="@+id/imageView28"
@@ -14,71 +15,6 @@
         app:srcCompat="@mipmap/fondoito"
         tools:layout_editor_absoluteX="0dp"
         tools:ignore="MissingConstraints" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="411dp"
-        android:layout_height="86dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/nombre"
-            android:layout_width="62dp"
-            android:layout_height="wrap_content"
-            android:text="N"
-            android:textColor="#1D409A"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:translationX="30dp"
-            android:translationY="20dp" />
-
-        <TextView
-            android:id="@+id/nom2"
-            android:layout_width="34dp"
-            android:layout_height="wrap_content"
-            android:text="ET"
-            android:textColor="#1D409A"
-            android:textStyle="bold"
-            android:translationX="-17dp"
-            android:translationY="20dp" />
-
-        <TextView
-            android:id="@+id/nom3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="P"
-            android:textColor="#1D409A"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:translationX="-32dp"
-            android:translationY="20dp" />
-
-        <TextView
-            android:id="@+id/num4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="ULSE"
-            android:textColor="#1D409A"
-            android:textStyle="bold"
-            android:translationX="-121dp"
-            android:translationY="20dp" />
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="1dp"
-            android:layout_height="52dp"
-            android:layout_weight="1"
-            android:backgroundTint="#00FFFFFF"
-            android:translationX="-20dp"
-            android:translationY="15dp"
-            app:srcCompat="@mipmap/ic_foto1_foreground" />
-
-    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="412dp"

@@ -4,100 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/fondo"
     tools:context=".fragmentos.supervisor.SupervisorInicioFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout10"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout10"
-            app:srcCompat="@mipmap/fondo" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout10"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/info"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/nombre"
-                android:layout_width="62dp"
-                android:layout_height="wrap_content"
-                android:text="N"
-                android:textColor="#1D409A"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:translationX="30dp"
-                android:translationY="20dp" />
-
-            <TextView
-                android:id="@+id/nom2"
-                android:layout_width="34dp"
-                android:layout_height="wrap_content"
-                android:text="ET"
-                android:textColor="#1D409A"
-                android:textStyle="bold"
-                android:translationX="-17dp"
-                android:translationY="20dp" />
-
-            <TextView
-                android:id="@+id/nom3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="P"
-                android:textColor="#1D409A"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:translationX="-32dp"
-                android:translationY="20dp" />
-
-            <TextView
-                android:id="@+id/num4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="ULSE"
-                android:textColor="#1D409A"
-                android:textStyle="bold"
-                android:translationX="-121dp"
-                android:translationY="20dp" />
-
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="1dp"
-                android:layout_height="52dp"
-                android:layout_weight="1"
-                android:backgroundTint="#00FFFFFF"
-                android:translationX="-20dp"
-                android:translationY="15dp"
-                app:srcCompat="@mipmap/ic_foto1_foreground" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/info"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="463dp"
+            android:layout_width="418dp"
+            android:layout_height="159dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.134">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -169,16 +95,15 @@
             </LinearLayout>
         </LinearLayout>
 
-
         <LinearLayout
             android:id="@+id/linearLayout12"
             android:layout_width="410dp"
             android:layout_height="357dp"
-            android:layout_marginTop="1dp"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/info">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.748"
+            tools:layout_editor_absoluteX="-6dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="347dp"

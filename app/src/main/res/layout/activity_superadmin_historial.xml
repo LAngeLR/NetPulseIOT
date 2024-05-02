@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/perfil_fondo">
+
+    <TextView
+        android:id="@+id/textView64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="HISTORIAL"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="345dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13">
+
+        <!-- NestedScrollingChild goes here (NestedScrollView, RecyclerView, etc.). -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            app:layout_behavior="@string/searchbar_scrolling_view_behavior">
+            <!-- Screen content goes here. -->
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.search.SearchBar
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:hint="@string/searchbar_hint" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.search.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/searchbar_hint"
+            app:layout_anchor="@+id/nestedScrollView"
+            app:layout_anchorGravity="bottom|center">
+            <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
+        </com.google.android.material.search.SearchView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="367dp"
+        android:layout_height="497dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71000004">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre12"
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:text="Rommel Garay Torres"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/fecha14"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="14/11/23"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/hora54"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="15:44 pm"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVieww22"
+                        android:layout_width="285dp"
+                        android:layout_height="58dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/userDoes"
+                        android:textStyle="bold"
+                        android:translationX="40dp"
+                        android:translationY="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre444"
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:text="Oscar Agreda Agreda"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/fecha344"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="20/12/23"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/hora444"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="14:24 pm"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVieww6"
+                        android:layout_width="285dp"
+                        android:layout_height="58dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/userDoes"
+                        android:textStyle="bold"
+                        android:translationX="40dp"
+                        android:translationY="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre3222"
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:text="Luis Angel Gaviria"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/date123"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="25/10/23 "
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/hora313"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="04:24 am"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textViewer1"
+                        android:layout_width="285dp"
+                        android:layout_height="58dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/userDoes1"
+                        android:textStyle="bold"
+                        android:translationX="40dp"
+                        android:translationY="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombres1"
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:text="Maria Martha Marquina"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/fecha3232"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12/10/23 "
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/hora0224"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="04:24 am"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textViewer2"
+                        android:layout_width="285dp"
+                        android:layout_height="58dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/userDoes1"
+                        android:textStyle="bold"
+                        android:translationX="40dp"
+                        android:translationY="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre56"
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:text="Luis Lucho Luchon"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/fecha98"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="20/12/23 "
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/hora345"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="14:24 pm"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVieww55"
+                        android:layout_width="285dp"
+                        android:layout_height="58dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/userDoes"
+                        android:textStyle="bold"
+                        android:translationX="40dp"
+                        android:translationY="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre32"
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:text="Maria Martha Marquina"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/fecha32"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12/10/23 "
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/hora33"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="04:24 am"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView271"
+                        android:layout_width="285dp"
+                        android:layout_height="58dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/userDoes1"
+                        android:textStyle="bold"
+                        android:translationX="40dp"
+                        android:translationY="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre44"
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:text="Luis Lucho Luchon"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/fecha44"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="20/12/23 "
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/hora44"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="14:24 pm"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textVieww444"
+                        android:layout_width="285dp"
+                        android:layout_height="58dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/userDoes"
+                        android:textStyle="bold"
+                        android:translationX="40dp"
+                        android:translationY="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="79dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/nombre1"
+                            android:layout_width="185dp"
+                            android:layout_height="wrap_content"
+                            android:text="Luis Lucho Lumbreras"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/fecha"
+                            android:layout_width="74dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="29/02/22 "
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/hora"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="14:24 pm"
+                            android:textAlignment="textEnd"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView68"
+                        android:layout_width="285dp"
+                        android:layout_height="58dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/userDoes"
+                        android:textStyle="bold"
+                        android:translationX="40dp"
+                        android:translationY="-50dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EA7B7B"
+        android:text="Regresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
