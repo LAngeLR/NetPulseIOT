@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.netpulseiot.databinding.ActivityAdmin1Binding;
 import com.example.netpulseiot.fragmentos.admin.AdminEquiposFragment;
 import com.example.netpulseiot.fragmentos.admin.AdminInicioFragment;
+import com.example.netpulseiot.fragmentos.admin.AdminListaMensajesFragmenmt;
 import com.example.netpulseiot.fragmentos.admin.AdminMensajesFragment;
 import com.example.netpulseiot.fragmentos.admin.AdminSitiosFragment;
 import com.example.netpulseiot.fragmentos.admin.AdminUsuariosFragment;
@@ -35,7 +36,7 @@ public class AdminActivity extends AppCompatActivity {
             if (item.getItemId() == R.id.inicioAdmin) {
                 replaceFragment(new AdminInicioFragment());
             } else if (item.getItemId() == R.id.mensajesAdmin) {
-                replaceFragment(new AdminMensajesFragment());
+                replaceFragment(new AdminListaMensajesFragmenmt());
             } else if (item.getItemId() == R.id.usuariosAdmin) {
                 replaceFragment(new AdminUsuariosFragment());
             } else if (item.getItemId() == R.id.sitiosAdmin) {

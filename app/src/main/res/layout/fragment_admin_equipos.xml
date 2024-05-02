@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/fondo2"
     tools:context=".fragmentos.admin.AdminEquiposFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,12 +13,6 @@
         android:layout_height="match_parent"
         android:background="@mipmap/fondo"
         tools:context=".AdminListaSitiosActivity">
-
-        <ImageView
-            android:id="@+id/fondoImageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/fondo2" />
 
         <LinearLayout
             android:layout_width="match_parent"
