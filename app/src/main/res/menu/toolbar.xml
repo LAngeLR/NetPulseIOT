@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_item"
+        android:icon="@drawable/ic_profile"
+        android:title="Menú"
+        android:theme="@style/iconoWhite"
+        app:showAsAction="always">
+        <menu>
+            <item android:title="Cuenta"
+                android:id="@+id/primero"
+                />
+            <item android:title="Ayuda"
+                android:id="@+id/segundo"
+                />
+            <item android:title="Cerrar sesión"
+                android:id="@+id/tercero"
+                />
+        </menu>
+    </item>
+</menu>
