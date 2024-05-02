@@ -30,7 +30,7 @@ public class MensajesSuperadminFragment extends Fragment {
         binding = FragmentMensajesSuperadminBinding.inflate(inflater,container,false);
         List<SuperadminMensajeItem> list = new ArrayList<SuperadminMensajeItem>();
         for (int i=0; i<=12;i++){
-            list.add(new SuperadminMensajeItem("Alex Valera","La reunión será a las 11:00 am",R.drawable.fotoperfil_u2,"1"));
+            list.add(new SuperadminMensajeItem("Alex Valera","La reunión será a las 11:00 am", R.drawable.fotoperfil_u2,"1"));
         }
 
         binding.superadminMensajesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

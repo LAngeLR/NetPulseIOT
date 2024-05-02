@@ -28,12 +28,24 @@
                 android:id="@+id/textViewU"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
                 android:text="MENSAJES"
                 android:textAlignment="center"
                 android:textColor="#076067"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/siuuu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF">
+
+                <com.google.android.material.search.SearchBar
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Busqueda" />
+            </com.google.android.material.appbar.AppBarLayout>
 
 
 
