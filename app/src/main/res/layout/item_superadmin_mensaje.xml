@@ -12,23 +12,29 @@
         android:layout_marginHorizontal="20dp"
         android:layout_centerVertical="true"
         />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/nombreItem"
-        android:layout_toEndOf="@+id/fotoItem"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        android:text="Nombre"/>
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mensajeItem"
         android:layout_toEndOf="@+id/fotoItem"
-        android:layout_below="@+id/nombreItem"
-        android:textSize="17sp"
+        android:fontFamily="serif"
+        android:text="Nombre"
         android:textColor="@color/black"
-        android:text="Mensaje"/>
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mensajeItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombreItem"
+        android:layout_toEndOf="@+id/fotoItem"
+        android:fontFamily="serif"
+        android:text="Mensaje"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
     <Button
         android:id="@+id/contadorItem"
         android:layout_width="wrap_content"
@@ -37,6 +43,7 @@
         android:layout_centerVertical="true"
         android:layout_marginHorizontal="20dp"
         android:layout_marginEnd="0dp"
-        android:text="1" />
+        android:text="1"
+        android:translationX="-20dp" />
 
 </RelativeLayout>
