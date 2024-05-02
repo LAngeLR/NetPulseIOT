@@ -8,11 +8,14 @@
     tools:context=".fragmentos.admin.AdminEquiposFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@mipmap/fondo"
-        tools:context=".AdminListaSitiosActivity">
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fondoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/fondo2" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,499 +23,69 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/titulo"
+                android:id="@+id/textView45"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
                 android:text="EQUIPOS"
                 android:textAlignment="center"
-                android:textColor="#076067"
-                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="Sitio 1"
+                android:textAlignment="center"
+                android:textColor="#FAF6F6"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
             <LinearLayout
-                android:layout_width="411dp"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
-
-
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="20dp"
-                    android:text="Filtar" />
+                android:layout_width="324dp"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:translationX="60dp"
+                android:translationY="10dp">
 
                 <Button
                     android:id="@+id/button6"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="15dp"
-                    android:text="Agregar"
-                    android:translationX="0dp" />
-
-                <SearchView
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_width="3dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#7CB7EA"
+                    android:text="Todos"
                     android:translationX="20dp" />
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F3F8EE"
+                    android:text="Agregar"
+                    android:textColor="#0B0A0A"
+                    android:translationX="-20dp" />
+
             </LinearLayout>
 
-            <ScrollView
+            <SearchView
+                android:layout_width="327dp"
+                android:layout_height="33dp"
+                android:background="#F1EBEB"
+                android:backgroundTint="#F6F4F4"
+                android:translationX="40dp"
+                android:translationY="20dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="469dp"
-                android:translationY="40dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="176dp"
-                            android:layout_height="match_parent"
-                            android:translationX="20dp"
-                            app:cardBackgroundColor="#E6FFFFFF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView10"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="EQUIPO 1"
-                                    android:textAlignment="center"
-                                    android:textColor="#0C0C0C"
-                                    android:textStyle="bold"
-                                    android:translationY="5dp" />
-
-                                <ImageView
-                                    android:id="@+id/imageView10"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="103dp"
-                                    android:translationY="10dp"
-                                    app:srcCompat="@mipmap/equipo" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton10"
-                                    android:layout_width="30dp"
-                                    android:layout_height="28dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="110dp"
-                                    android:translationY="11dp"
-                                    app:srcCompat="@android:drawable/ic_menu_delete"
-                                    app:tint="#AE1B1B" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton11"
-                                    android:layout_width="31dp"
-                                    android:layout_height="25dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="30dp"
-                                    android:translationY="-15dp"
-                                    app:srcCompat="@android:drawable/ic_menu_add"
-                                    app:tint="#03034C" />
-
-                            </LinearLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="176dp"
-                            android:layout_height="match_parent"
-                            android:translationX="40dp"
-                            app:cardBackgroundColor="#E6FFFFFF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView11"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="EQUIPO 2"
-                                    android:textAlignment="center"
-                                    android:textColor="#0C0C0C"
-                                    android:textStyle="bold"
-                                    android:translationY="5dp" />
-
-                                <ImageView
-                                    android:id="@+id/imageView11"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="103dp"
-                                    android:translationY="10dp"
-                                    app:srcCompat="@mipmap/equipooo" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton12"
-                                    android:layout_width="30dp"
-                                    android:layout_height="28dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="110dp"
-                                    android:translationY="11dp"
-                                    app:srcCompat="@android:drawable/ic_menu_delete"
-                                    app:tint="#AE1B1B" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton13"
-                                    android:layout_width="31dp"
-                                    android:layout_height="25dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="30dp"
-                                    android:translationY="-15dp"
-                                    app:srcCompat="@android:drawable/ic_menu_add"
-                                    app:tint="#03034C" />
-
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:translationY="10dp">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="176dp"
-                            android:layout_height="match_parent"
-                            android:translationX="20dp"
-                            app:cardBackgroundColor="#E6FFFFFF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView12"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="EQUIPO 1"
-                                    android:textAlignment="center"
-                                    android:textColor="#0C0C0C"
-                                    android:textStyle="bold"
-                                    android:translationY="5dp" />
-
-                                <ImageView
-                                    android:id="@+id/imageView12"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="103dp"
-                                    android:translationY="10dp"
-                                    app:srcCompat="@mipmap/equipo" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton14"
-                                    android:layout_width="30dp"
-                                    android:layout_height="28dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="110dp"
-                                    android:translationY="11dp"
-                                    app:srcCompat="@android:drawable/ic_menu_delete"
-                                    app:tint="#AE1B1B" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton15"
-                                    android:layout_width="31dp"
-                                    android:layout_height="25dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="30dp"
-                                    android:translationY="-15dp"
-                                    app:srcCompat="@android:drawable/ic_menu_add"
-                                    app:tint="#03034C" />
-
-                            </LinearLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="176dp"
-                            android:layout_height="match_parent"
-                            android:translationX="40dp"
-                            app:cardBackgroundColor="#E6FFFFFF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView13"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="EQUIPO 2"
-                                    android:textAlignment="center"
-                                    android:textColor="#0C0C0C"
-                                    android:textStyle="bold"
-                                    android:translationY="5dp" />
-
-                                <ImageView
-                                    android:id="@+id/imageView13"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="103dp"
-                                    android:translationY="10dp"
-                                    app:srcCompat="@mipmap/equipooo" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton16"
-                                    android:layout_width="30dp"
-                                    android:layout_height="28dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="110dp"
-                                    android:translationY="11dp"
-                                    app:srcCompat="@android:drawable/ic_menu_delete"
-                                    app:tint="#AE1B1B" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton17"
-                                    android:layout_width="31dp"
-                                    android:layout_height="25dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="30dp"
-                                    android:translationY="-15dp"
-                                    app:srcCompat="@android:drawable/ic_menu_add"
-                                    app:tint="#03034C" />
-
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:translationY="20dp">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="176dp"
-                            android:layout_height="match_parent"
-                            android:translationX="20dp"
-                            app:cardBackgroundColor="#E6FFFFFF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView14"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="EQUIPO 1"
-                                    android:textAlignment="center"
-                                    android:textColor="#0C0C0C"
-                                    android:textStyle="bold"
-                                    android:translationY="5dp" />
-
-                                <ImageView
-                                    android:id="@+id/imageView14"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="103dp"
-                                    android:translationY="10dp"
-                                    app:srcCompat="@mipmap/equipo" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton18"
-                                    android:layout_width="30dp"
-                                    android:layout_height="28dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="110dp"
-                                    android:translationY="11dp"
-                                    app:srcCompat="@android:drawable/ic_menu_delete"
-                                    app:tint="#AE1B1B" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton19"
-                                    android:layout_width="31dp"
-                                    android:layout_height="25dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="30dp"
-                                    android:translationY="-15dp"
-                                    app:srcCompat="@android:drawable/ic_menu_add"
-                                    app:tint="#03034C" />
-
-                            </LinearLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="176dp"
-                            android:layout_height="match_parent"
-                            android:translationX="40dp"
-                            app:cardBackgroundColor="#E6FFFFFF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView15"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="EQUIPO 2"
-                                    android:textAlignment="center"
-                                    android:textColor="#0C0C0C"
-                                    android:textStyle="bold"
-                                    android:translationY="5dp" />
-
-                                <ImageView
-                                    android:id="@+id/imageView15"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="103dp"
-                                    android:translationY="10dp"
-                                    app:srcCompat="@mipmap/equipooo" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton20"
-                                    android:layout_width="30dp"
-                                    android:layout_height="28dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="110dp"
-                                    android:translationY="11dp"
-                                    app:srcCompat="@android:drawable/ic_menu_delete"
-                                    app:tint="#AE1B1B" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton21"
-                                    android:layout_width="31dp"
-                                    android:layout_height="25dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="30dp"
-                                    android:translationY="-15dp"
-                                    app:srcCompat="@android:drawable/ic_menu_add"
-                                    app:tint="#03034C" />
-
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="170dp"
-                        android:orientation="horizontal"
-                        android:translationY="30dp">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="176dp"
-                            android:layout_height="match_parent"
-                            android:translationX="20dp"
-                            app:cardBackgroundColor="#E6FFFFFF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView16"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="EQUIPO 1"
-                                    android:textAlignment="center"
-                                    android:textColor="#0C0C0C"
-                                    android:textStyle="bold"
-                                    android:translationY="5dp" />
-
-                                <ImageView
-                                    android:id="@+id/imageView16"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="103dp"
-                                    android:translationY="10dp"
-                                    app:srcCompat="@mipmap/equipo" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton22"
-                                    android:layout_width="30dp"
-                                    android:layout_height="28dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="110dp"
-                                    android:translationY="11dp"
-                                    app:srcCompat="@android:drawable/ic_menu_delete"
-                                    app:tint="#AE1B1B" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton23"
-                                    android:layout_width="31dp"
-                                    android:layout_height="25dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="30dp"
-                                    android:translationY="-15dp"
-                                    app:srcCompat="@android:drawable/ic_menu_add"
-                                    app:tint="#03034C" />
-
-                            </LinearLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="176dp"
-                            android:layout_height="match_parent"
-                            android:translationX="40dp"
-                            app:cardBackgroundColor="#E6FFFFFF">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/textView17"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="EQUIPO 2"
-                                    android:textAlignment="center"
-                                    android:textColor="#0C0C0C"
-                                    android:textStyle="bold"
-                                    android:translationY="5dp" />
-
-                                <ImageView
-                                    android:id="@+id/imageView17"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="103dp"
-                                    android:translationY="10dp"
-                                    app:srcCompat="@mipmap/equipooo" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton24"
-                                    android:layout_width="30dp"
-                                    android:layout_height="28dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="110dp"
-                                    android:translationY="11dp"
-                                    app:srcCompat="@android:drawable/ic_menu_delete"
-                                    app:tint="#AE1B1B" />
-
-                                <ImageButton
-                                    android:id="@+id/imageButton25"
-                                    android:layout_width="31dp"
-                                    android:layout_height="25dp"
-                                    android:backgroundTint="#00FFFFFF"
-                                    android:translationX="30dp"
-                                    android:translationY="-15dp"
-                                    app:srcCompat="@android:drawable/ic_menu_add"
-                                    app:tint="#03034C" />
-
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
-                    </LinearLayout>
-                </LinearLayout>
-            </ScrollView>
+                android:layout_height="wrap_content"
+                android:translationY="50dp"
+                android:id="@+id/adminEquiposRecyclerView"/>
 
         </LinearLayout>
-
-        <!--    luego borrar y hacerlo con fragmentos -->
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
