@@ -30,9 +30,11 @@
             android:id="@+id/barraBusqueda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/titulo"
             android:layout_marginTop="10dp"
-            >
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titulo"
+            app:layout_constraintVertical_bias="0.0">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/siuuu"
@@ -43,20 +45,21 @@
                 <com.google.android.material.search.SearchBar
                     android:id="@+id/search_bar"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Busqueda" />
+                    android:layout_height="38dp"
+                    android:hint="Búsqueda" />
             </com.google.android.material.appbar.AppBarLayout>
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/superadminMensajesRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="364dp"
+            android:layout_height="533dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/barraBusqueda" />
+            app:layout_constraintTop_toBottomOf="@+id/barraBusqueda"
+            app:layout_constraintVertical_bias="0.08" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
