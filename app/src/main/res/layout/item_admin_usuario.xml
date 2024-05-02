@@ -17,6 +17,7 @@
         android:id="@+id/nombreItem"
         android:layout_toEndOf="@+id/fotoItem"
         android:textSize="30sp"
+        android:textColor="@color/black"
         android:text="Nombre"/>
     <TextView
         android:layout_width="match_parent"
@@ -25,6 +26,7 @@
         android:layout_toEndOf="@+id/fotoItem"
         android:layout_below="@+id/nombreItem"
         android:textSize="20sp"
+        android:textColor="@color/black"
         android:text="Cargo"/>
 
 </RelativeLayout>
