@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/superadmin_usuario"
+    app:startDestination="@id/usuariosSuperadminFragment">
+
+    <fragment
+        android:id="@+id/usuariosSuperadminFragment"
+        android:name="com.example.netpulseiot.fragmentos.superadmin.UsuariosSuperadminFragment"
+        android:label="fragment_usuarios_superadmin"
+        tools:layout="@layout/fragment_usuarios_superadmin" >
+        <action
+            android:id="@+id/action_usuariosSuperadminFragment_to_superadminListaUsuariosActivity"
+            app:destination="@id/superadminListaUsuariosActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/superadminListaUsuariosActivity"
+        android:name="com.example.netpulseiot.fragmentos.superadmin.SuperadminListaUsuariosActivity"
+        android:label="activity_superadmin_lista_usuarios"
+        tools:layout="@layout/activity_superadmin_lista_usuarios" />
+</navigation>

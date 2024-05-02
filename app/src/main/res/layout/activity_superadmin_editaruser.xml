@@ -131,7 +131,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/textView2"
+                            android:id="@+id/titulo"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Rodrigo Luis"

@@ -32,8 +32,6 @@ public class SuperadminActivity extends AppCompatActivity {
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
-
-
             if (item.getItemId() == R.id.inicioSuperadmin) {
                 replaceFragment(new InicioSuperadminFragment());
             } else if (item.getItemId() == R.id.mensajesSuperadmin) {
@@ -41,6 +39,10 @@ public class SuperadminActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.usuariosSuperadmin) {
                 replaceFragment(new UsuariosSuperadminFragment());
             }
+
+//            else if (R.id.listaUsuarios) {
+//                replaceFragment(new UsuariosSuperadminFragment());
+//            }
 
             return true;
 
@@ -70,6 +72,12 @@ public class SuperadminActivity extends AppCompatActivity {
 
     public void listaUsuarios(View view){
         Intent intent = new Intent(this, SuperAdminListaUsarios.class);
+        startActivity(intent);
+    }
+
+//Nuevo usuario
+    public void nuevoUsuario(View view){
+        Intent intent = new Intent(this, NuevoUsuarioSuperadminActivity.class);
         startActivity(intent);
     }
 }

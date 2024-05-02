@@ -85,7 +85,7 @@
                         android:translationY="25dp">
 
                         <TextView
-                            android:id="@+id/textView2"
+                            android:id="@+id/titulo"
                             android:layout_width="231dp"
                             android:layout_height="59dp"
                             android:fontFamily="sans-serif-light"
