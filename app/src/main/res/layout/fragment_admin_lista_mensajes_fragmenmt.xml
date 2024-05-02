@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragmentos.admin.AdminUsuariosFragment">
+    tools:context=".fragmentos.admin.AdminListaMensajesFragmenmt">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -91,45 +91,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:text="USUARIOS"
+                android:text="MENSAJES"
                 android:textAlignment="center"
                 android:textColor="#076067"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="411dp"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
 
-
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="20dp"
-                    android:text="Filtar" />
-
-                <Button
-                    android:id="@+id/button6"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="15dp"
-                    android:onClick="nuevoUsuario"
-                    android:text="Agregar"
-                    android:translationX="0dp" />
-
-                <SearchView
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="15dp"
-                    android:translationX="20dp" />
-            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/adminUsariosRecyclerView"/>
+                android:id="@+id/adminMensajesRecyclerView"/>
 
         </LinearLayout>
 
