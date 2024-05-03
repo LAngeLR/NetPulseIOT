@@ -38,6 +38,8 @@ public class SuperadminActivity extends AppCompatActivity {
                 replaceFragment(new MensajesSuperadminFragment());
             } else if (item.getItemId() == R.id.usuariosSuperadmin) {
                 replaceFragment(new UsuariosSuperadminFragment());
+            }else if (item.getItemId() == R.id.logsSuperadmin) {
+                replaceFragment(new HistorialSuperadminFragment());
             }
 
 //            else if (R.id.listaUsuarios) {

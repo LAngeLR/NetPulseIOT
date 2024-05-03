@@ -13,4 +13,8 @@
         android:icon="@drawable/ic_user"
         android:id="@+id/usuariosSuperadmin"
         />
+    <item android:title="Logs"
+        android:icon="@drawable/ic_user"
+        android:id="@+id/logsSuperadmin"
+        />
 </menu>
