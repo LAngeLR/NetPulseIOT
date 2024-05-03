@@ -9,13 +9,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.netpulseiot.Adapter.SupervisorEquipoAdapter;
+import com.example.netpulseiot.entity.SupervisorEquipoItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdminListaEquiposActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_lista_equipos);
+        setContentView(R.layout.fragment_admin_equipos);
+
+        //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
+        List<SupervisorEquipoItem> list = new ArrayList<SupervisorEquipoItem>();
+        for (int i=0; i<=12;i++){
+            list.add(new SupervisorEquipoItem("Nombre Equipo", R.drawable.fotoperfil_u));
+        }
+        //implementación del RecyclerViewer
+        RecyclerView recyler = findViewById(R.id.adminEquiposRecyclerView);
+        recyler.setLayoutManager(new LinearLayoutManager(this));
+        recyler.setAdapter(new SupervisorEquipoAdapter(getApplicationContext(),list));
 
     }
     //luego borrar y hacerlo con fragmento

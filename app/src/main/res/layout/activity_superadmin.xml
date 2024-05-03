@@ -11,14 +11,15 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#254CEA"
+        android:background="#00254CEA"
+        android:backgroundTint="#1AFFFFFF"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:menu="@menu/toolbar"
-        app:title="NetPulse"
 
+        app:title="NetPulse"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
-        app:titleTextColor="#fff" />
+        app:titleTextColor="#3F51B5" />
 
     <FrameLayout
         android:id="@+id/fragment_superadmin"

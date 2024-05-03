@@ -15,16 +15,17 @@
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:text="FUNCIONALIDADES"
             android:textAlignment="center"
             android:textColor="#FFFDFD"
             android:textSize="25sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.038" />
 
         <TextView
             android:id="@+id/textView63"
@@ -37,20 +38,21 @@
             android:textSize="20sp"
             android:translationX="0dp"
             android:translationY="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.58"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
             android:id="@+id/imageButton7"
             android:layout_width="104dp"
             android:layout_height="105dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="44dp"
             android:backgroundTint="#80D3E1EA"
             android:translationX="10dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView19"
-            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView63"
             app:srcCompat="@mipmap/ic_usuarionuevo_foreground" />
@@ -73,12 +75,11 @@
             android:id="@+id/imageButton8"
             android:layout_width="118dp"
             android:layout_height="105dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="16dp"
             android:backgroundTint="#E6F1E7"
             android:translationX="10dp"
             android:translationY="30dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView19"
-            app:layout_constraintHorizontal_bias="0.583"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/NuevoUsuario"
             app:srcCompat="@mipmap/ic_usuariooo_foreground" />
@@ -91,21 +92,22 @@
             android:backgroundTint="#5AADB4"
             android:text="Lista de Usuarios"
             android:translationY="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView19"
             app:layout_constraintHorizontal_bias="0.74"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
+            app:layout_constraintTop_toBottomOf="@+id/imageButton8"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
             android:id="@+id/imageButton9"
             android:layout_width="118dp"
             android:layout_height="105dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="68dp"
             android:backgroundTint="#E6F1E7"
             android:translationX="10dp"
             android:translationY="30dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView19"
-            app:layout_constraintHorizontal_bias="0.541"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageButton8"
             app:srcCompat="@drawable/ic_history" />
@@ -127,11 +129,11 @@
             android:id="@+id/imageView19"
             android:layout_width="218dp"
             android:layout_height="513dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="92dp"
             android:layout_weight="1"
             android:translationY="-60dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintHorizontal_bias="0.917"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView63"
             app:srcCompat="@mipmap/ingeniero" />
