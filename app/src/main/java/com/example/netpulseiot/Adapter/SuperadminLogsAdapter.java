@@ -29,7 +29,6 @@ public class SuperadminLogsAdapter extends RecyclerView.Adapter<SuperadminLogsAd
     @Override
     public SuperadminLogViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_superadmin_logs,parent,false);
-
         return new SuperadminLogViewHolder(view);
     }
 
@@ -39,6 +38,7 @@ public class SuperadminLogsAdapter extends RecyclerView.Adapter<SuperadminLogsAd
         holder.descripcionItem.setText(list.get(position).getDescripcion());
         holder.fechaItem.setText(list.get(position).getFecha());
         holder.fotoItem.setImageResource(list.get(position).getImage());
+        holder.horaItem.setText(list.get(position).getHora());
     }
 
     @Override
@@ -47,7 +47,7 @@ public class SuperadminLogsAdapter extends RecyclerView.Adapter<SuperadminLogsAd
 
     public class SuperadminLogViewHolder extends RecyclerView.ViewHolder{
         ImageView fotoItem;
-        TextView codigoItem, fechaItem,descripcionItem;
+        TextView codigoItem, fechaItem,descripcionItem, horaItem;
         public SuperadminLogViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -55,7 +55,7 @@ public class SuperadminLogsAdapter extends RecyclerView.Adapter<SuperadminLogsAd
             codigoItem = itemView.findViewById(R.id.codigoItem);
             fechaItem = itemView.findViewById(R.id.fechaItem);
             descripcionItem = itemView.findViewById(R.id.descripcionItem);
-
+            horaItem = itemView.findViewById(R.id.horaItem);
         }
     }
 }

@@ -1,10 +1,11 @@
 package com.example.netpulseiot.fragmentos.superadmin;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -29,33 +30,30 @@ public class UsuariosSuperadminFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-//        binding = FragmentUsuariosSuperadminBinding.inflate(inflater,container,false);
-//
-//        /**
-//        View v = inflater.inflate(R.layout.fragment_usuarios_superadmin, container, false);
-//        Button tv = v.findViewById(R.id.NuevoUsuario);
-//        Intent intent = new Intent(getActivity(), NuevoUsuarioSuperadminActivity.class);
-//        startActivity(intent);
-//
-//         **/
-//
-//        NavController navController = NavHostFragment.findNavController(UsuariosSuperadminFragment.this);
-//        binding.ListaUsuariosSuperadmin.setOnClickListener(view -> {
-//            navController.navigate(R.id.action_usuariosSuperadminFragment_to_superadminListaUsuariosActivity);
-//        });
-//
-//
-//
-//
-//        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_usuarios_superadmin, container, false);
-//        return v;
-//        return binding.getRoot();
+        binding = FragmentUsuariosSuperadminBinding.inflate(inflater, container, false);
+
+
+        binding.ListaUsuariosSuperadmin.setOnClickListener(view -> {
+            replaceFragment(new ListaUsuariosSuperadminFragment());
+        });
+
+        return binding.getRoot();
+
+
+
+        /** SOLO ESTABA ESTA LINEA Y FUNCIONABA CORRECTAMENTE **/
+        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_usuarios_superadmin, container, false);
 
     }
 
-//    public void nuevoUsuario(View view){
-//        Intent intent = new Intent(this, NuevoUsuarioSuperadminActivity);
-//        startActivity(intent);
-//    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_superadmin, fragment);
+        fragmentTransaction.addToBackStack(null); // Añadir a la pila de retroceso
+        fragmentTransaction.commit();
+    }
+
 }

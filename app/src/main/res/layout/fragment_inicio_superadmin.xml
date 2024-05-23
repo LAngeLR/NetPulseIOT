@@ -16,7 +16,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-39dp">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -92,10 +94,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView1"
-                android:layout_width="match_parent"
+                android:layout_width="330dp"
                 android:layout_height="100dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
                 app:cardBackgroundColor="#E3F3F1"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -105,16 +105,19 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/card_white">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:text="Visualiza la lista de mensajes disponibles"
                         android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@+id/textView73"
-                        tools:layout_editor_absoluteX="31dp" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.483"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView73" />
 
                     <TextView
                         android:id="@+id/textView73"
@@ -125,7 +128,7 @@
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.12"
+                        app:layout_constraintHorizontal_bias="0.067"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -134,19 +137,20 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
-                android:layout_width="322dp"
-                android:layout_height="122dp"
+                android:layout_width="330dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-150dp"
                 app:cardBackgroundColor="#E3F3F1"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.7">
+                app:layout_constraintTop_toBottomOf="@+id/cardView1">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/card_white">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -154,8 +158,9 @@
                         android:layout_marginTop="16dp"
                         android:text="Visualiza la lista de mensajes disponibles"
                         android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@+id/textView72"
-                        tools:layout_editor_absoluteX="31dp" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView72" />
 
                     <TextView
                         android:id="@+id/textView72"
@@ -166,7 +171,7 @@
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.12"
+                        app:layout_constraintHorizontal_bias="0.068"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -176,19 +181,20 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView3"
-                android:layout_width="331dp"
-                android:layout_height="98dp"
+                android:layout_width="330dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-20dp"
                 app:cardBackgroundColor="#E3F3F1"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.88">
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/card_white">
 
                     <TextView
                         android:id="@+id/textView71"
@@ -197,8 +203,9 @@
                         android:layout_marginTop="16dp"
                         android:text="Visualiza la lista de mensajes disponibles"
                         android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@+id/textView70"
-                        tools:layout_editor_absoluteX="31dp" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView70" />
 
                     <TextView
                         android:id="@+id/textView70"
@@ -209,7 +216,7 @@
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.12"
+                        app:layout_constraintHorizontal_bias="0.066"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>

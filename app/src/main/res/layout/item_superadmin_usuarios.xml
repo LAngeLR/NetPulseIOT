@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/perfilFotoItem"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:id="@+id/nombreItem"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/perfilFotoItem"
+        android:fontFamily="serif"
+        android:text="Código"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cargoItem"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombreItem"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/perfilFotoItem"
+        android:fontFamily="serif"
+        android:text="Descripción"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="45dp"
+        android:layout_toEndOf="@+id/nombreItem" />
+</RelativeLayout>

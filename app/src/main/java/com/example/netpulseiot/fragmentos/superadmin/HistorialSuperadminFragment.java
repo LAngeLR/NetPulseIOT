@@ -31,7 +31,7 @@ public class HistorialSuperadminFragment extends Fragment {
         binding = FragmentHistorialSuperadminBinding.inflate(inflater,container,false);
         List<SuperadminLogsItem> list = new ArrayList<SuperadminLogsItem>();
         for (int i=0; i<=12;i++){
-            list.add(new SuperadminLogsItem("Log-08/11/2023 - 27","Cambio realizado por Fabian Bustos",R.drawable.fotoperfil_u2,"08/11/2023"));
+            list.add(new SuperadminLogsItem("Oscar Diaz","Ingreso detalles del usuario Fabian Bustos", R.drawable.fotoperfil_u2,"08/11/2023", "05:15:02"));
         }
 
         binding.superadminLogsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
