@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_mensajes"
+    app:startDestination="@id/adminListaMensajesFragmenmt">
+
+    <fragment
+        android:id="@+id/adminListaMensajesFragmenmt"
+        android:name="com.example.netpulseiot.fragmentos.admin.AdminListaMensajesFragmenmt"
+        android:label="fragment_admin_lista_mensajes_fragmenmt"
+        tools:layout="@layout/fragment_admin_lista_mensajes_fragmenmt" >
+        <action
+            android:id="@+id/action_adminListaMensajesFragmenmt_to_adminMensajesFragment"
+            app:destination="@id/adminMensajesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminMensajesFragment"
+        android:name="com.example.netpulseiot.fragmentos.admin.AdminMensajesFragment"
+        android:label="fragment_admin_mensajes"
+        tools:layout="@layout/fragment_admin_mensajes" />
+</navigation>

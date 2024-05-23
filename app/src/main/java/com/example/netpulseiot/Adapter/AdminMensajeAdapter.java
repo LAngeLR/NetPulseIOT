@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
@@ -20,10 +21,12 @@ public class AdminMensajeAdapter extends RecyclerView.Adapter<AdminMensajeAdapte
 
     Context context;
     List<AdminMensajeItem> lista;
+//    NavController navController;  //importado para usar nav controller en el botón
 
     public AdminMensajeAdapter(Context context, List<AdminMensajeItem> lista) {
         this.context = context;
         this.lista = lista;
+//        this.navController = navController; //agregado apra nav controller
     }
 
     @NonNull
@@ -60,6 +63,11 @@ public class AdminMensajeAdapter extends RecyclerView.Adapter<AdminMensajeAdapte
             contadorItem = itemView.findViewById(R.id.contadorItem);
 
         }
+    }
+
+    public void bind(NavController navController){
+
+        //hola
     }
 
 }

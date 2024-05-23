@@ -3,6 +3,9 @@ package com.example.netpulseiot.fragmentos.admin;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.NavHostController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -33,6 +36,12 @@ public class AdminListaMensajesFragmenmt extends Fragment {
 
         binding.adminMensajesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.adminMensajesRecyclerView.setAdapter(new AdminMensajeAdapter(getContext(),list));
+
+        //llamado al Nav Controller para pasarlo al Adapter del ítem
+        NavController navController = NavHostFragment.findNavController(this);
+
+        
+
 
         // Inflate the layout for this fragment
         return binding.getRoot();
