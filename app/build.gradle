@@ -4,8 +4,13 @@ plugins {
 }
 
 android {
+
     namespace 'com.example.netpulseiot'
     compileSdk 34
+
+    dataBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.netpulseiot"

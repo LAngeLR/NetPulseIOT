@@ -5,6 +5,7 @@ public class SuperadminUsuarioItem {
     String name;
     String cargo;
     int image;
+    private boolean checked;
 
     public SuperadminUsuarioItem(String name, String cargo, int image) {
         this.name = name;
@@ -12,6 +13,9 @@ public class SuperadminUsuarioItem {
         this.image = image;
     }
 
+    public boolean isChecked() {
+        return checked;
+    }
     public String getName() {
         return name;
     }
@@ -34,5 +38,9 @@ public class SuperadminUsuarioItem {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
     }
 }
