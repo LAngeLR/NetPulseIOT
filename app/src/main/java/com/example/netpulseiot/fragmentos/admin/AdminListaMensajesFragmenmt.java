@@ -40,7 +40,7 @@ public class AdminListaMensajesFragmenmt extends Fragment {
         //llamado al Nav Controller para pasarlo al Adapter del ítem
         NavController navController = NavHostFragment.findNavController(this);
 
-        
+
 
 
         // Inflate the layout for this fragment
