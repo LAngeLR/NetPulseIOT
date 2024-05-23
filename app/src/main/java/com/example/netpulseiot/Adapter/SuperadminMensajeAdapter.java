@@ -30,12 +30,12 @@ public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMen
     @Override
     public SuperadminMensajeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_superadmin_mensaje,parent,false);
-
         return new SuperadminMensajeViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SuperadminMensajeViewHolder holder, int position) {
+        SuperadminMensajeItem item = lista.get(position);
         holder.nombreItem.setText(lista.get(position).getName());
         holder.mensajeItem.setText(lista.get(position).getMensaje());
         holder.fotoItem.setImageResource(lista.get(position).getImage());
@@ -47,6 +47,12 @@ public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMen
         return lista.size();
     }
 
+    /** SE AÑADIO CON CHAT GPT **/
+    public void updateList(List<SuperadminMensajeItem> newList) {
+        lista = newList;
+        notifyDataSetChanged();
+    }
+
     public class SuperadminMensajeViewHolder extends RecyclerView.ViewHolder{
         ImageView fotoItem;
         TextView nombreItem, mensajeItem;
@@ -54,7 +60,6 @@ public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMen
 
         public SuperadminMensajeViewHolder(@NonNull View itemView) {
             super(itemView);
-
             fotoItem = itemView.findViewById(R.id.fotoItem);
             nombreItem = itemView.findViewById(R.id.nombreItem);
             mensajeItem = itemView.findViewById(R.id.mensajeItem);

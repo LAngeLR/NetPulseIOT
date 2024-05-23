@@ -4,57 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
     tools:context=".fragmentos.superadmin.HistorialSuperadminFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@mipmap/fondo2"
-        tools:context=".AdminListaSitiosActivity">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="404dp"
-            android:layout_height="618dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:id="@+id/textViewU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="LOGS"
+            android:textAlignment="center"
+            android:textColor="#E2F5F6"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <com.google.android.material.search.SearchBar
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:hint="Búsqueda"
+            app:layout_constraintTop_toBottomOf="@+id/textViewU"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/superadminLogsRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:translationY="30dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/textViewU"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="LOGS"
-                android:textAlignment="center"
-                android:textColor="#E2F5F6"
-                android:textSize="28sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/siuuu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF">
-
-                <com.google.android.material.search.SearchBar
-                    android:id="@+id/search_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Búsqueda" />
-            </com.google.android.material.appbar.AppBarLayout>
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/superadminLogsRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:translationY="30dp" />
-
-        </LinearLayout>
-
-
+            app:layout_constraintTop_toBottomOf="@+id/search_bar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -6,44 +6,62 @@
     <!--    si van a copiar  y pegar no se olviden de modificar estos 3 parámetros de arriba-->
 
     <ImageView
+        android:id="@+id/fotoItem"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/fotoItem"
-        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        />
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="20dp" />
 
     <TextView
         android:id="@+id/codigoItem"
-        android:layout_width="match_parent"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_toEndOf="@+id/fotoItem"
         android:fontFamily="serif"
         android:text="Código"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/descripcionItem"
-        android:layout_width="match_parent"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/codigoItem"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/fotoItem"
         android:fontFamily="serif"
         android:text="Descripción"
         android:textColor="@color/black"
-        android:textSize="12sp" />
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/fechaItem"
-        android:layout_width="match_parent"
+        android:layout_width="117dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/descripcionItem"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/fotoItem"
         android:fontFamily="serif"
         android:text="fecha"
         android:textColor="@color/black"
-        android:textSize="12sp" />
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/horaItem"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descripcionItem"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toEndOf="@+id/fechaItem"
+        android:fontFamily="serif"
+        android:text="hora"
+        android:textColor="#020202" />
 
 </RelativeLayout>
