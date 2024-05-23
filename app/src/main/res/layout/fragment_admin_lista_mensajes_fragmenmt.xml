@@ -28,12 +28,20 @@
                 android:layout_height="wrap_content"
                 android:text="MENSAJES"
                 android:textAlignment="center"
-                android:textColor="#E2F5F6"
-                android:textSize="28sp"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
                 android:textStyle="bold" />
 
+            <!--<SearchView
+                android:layout_width="327dp"
+                android:layout_height="33dp"
+                android:background="#F1EBEB"
+                android:backgroundTint="#F6F4F4"
+                android:foregroundTint="#000000"
+                android:translationX="40dp"
+                android:translationY="20dp" /> -->
+
             <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/siuuu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF">
@@ -42,15 +50,14 @@
                     android:id="@+id/search_bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Búsqueda" />
+                    android:hint="@string/searchbar_hint" />
             </com.google.android.material.appbar.AppBarLayout>
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/adminMensajesRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:translationY="30dp" />
+                android:translationY="60dp" />
 
         </LinearLayout>
 
