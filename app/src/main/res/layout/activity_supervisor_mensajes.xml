@@ -20,7 +20,7 @@
             android:text="MENSAJES"
             android:textAlignment="center"
             android:textColor="#F9FBFB"
-            android:textSize="24sp"
+            android:textSize="34sp"
             android:textStyle="bold" />
 
         <SearchView
