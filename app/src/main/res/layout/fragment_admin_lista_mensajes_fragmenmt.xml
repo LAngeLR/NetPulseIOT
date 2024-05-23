@@ -32,26 +32,15 @@
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
-            <!--<SearchView
+            <SearchView
                 android:layout_width="327dp"
                 android:layout_height="33dp"
                 android:background="#F1EBEB"
                 android:backgroundTint="#F6F4F4"
                 android:foregroundTint="#000000"
                 android:translationX="40dp"
-                android:translationY="20dp" /> -->
+                android:translationY="20dp" />
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF">
-
-                <com.google.android.material.search.SearchBar
-                    android:id="@+id/search_bar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/searchbar_hint" />
-            </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/adminMensajesRecyclerView"
