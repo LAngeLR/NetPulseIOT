@@ -46,9 +46,9 @@
         <activity
             android:name=".AdminListaUsuarioActivity"
             android:exported="false" />
-        <activity
+        <!--<activity
             android:name=".AdminListaUsuarios"
-            android:exported="false" />
+            android:exported="false" /> -->
         <activity
             android:name=".SupervisorListaEquiposActivity"
             android:exported="false" />
