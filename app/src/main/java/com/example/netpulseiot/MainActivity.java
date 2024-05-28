@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -23,18 +24,45 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.netpulseiot.databinding.ActivityMainBinding;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.example.netpulseiot.dto.UsuarioDTO;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-
     String canal1 = "importanteDefault";
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        /** CREAR INSTANCIA DE BD FIREBASE **/
+        db = FirebaseFirestore.getInstance();
+
+        /** PRUEBA PARA GUARDAR DATOS **/
+
+        /*
+        UsuarioDTO usuario = new UsuarioDTO();
+        usuario.setNombre( "Rommel");
+        usuario.setApellido( "Garay");
+        usuario.setCorreo( "a20200241@pucp.edu.pe" );
+        usuario.setDni( 74839806);
+        usuario.setCelular(960439740);
+        usuario.setDireccion("El agustino xd - No doxeen :v");
+        usuario.setFoto("Muy sexy como para poner una foto xd");
+
+        db.collection("usuarios")
+//                .document( "12345678")
+                .add(usuario)
+                .addOnSuccessListener(unused -> {
+                    Log.d("msg-test","Data guardada exitosamente");
+                })
+                .addOnFailureListener(e -> e.printStackTrace()) ;
+        */
+
 
         crearCanalesNotificacion();
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "715203512508",
+    "project_id": "netpulse-1d538",
+    "storage_bucket": "netpulse-1d538.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715203512508:android:f05e0f2a3347e5c39568b9",
+        "android_client_info": {
+          "package_name": "com.example.netpulseiot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD23JC17cuSvI62EqkorQ8Kt5Nm6TYtQ2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
