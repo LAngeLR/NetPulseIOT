@@ -43,16 +43,16 @@ public class MainActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         /** PRUEBA PARA GUARDAR DATOS **/
-
         /*
         UsuarioDTO usuario = new UsuarioDTO();
-        usuario.setNombre( "Rommel");
-        usuario.setApellido( "Garay");
-        usuario.setCorreo( "a20200241@pucp.edu.pe" );
+        usuario.setNombre( "Luis Angel");
+        usuario.setApellido( "Quispe");
+        usuario.setCorreo( "a20204455@pucp.edu.pe" );
         usuario.setDni( 74839806);
         usuario.setCelular(960439740);
-        usuario.setDireccion("El agustino xd - No doxeen :v");
-        usuario.setFoto("Muy sexy como para poner una foto xd");
+        usuario.setDireccion("Desconocido xd - No doxeen :v");
+        usuario.setFoto("De pocas palabras xd");
+
 
         db.collection("usuarios")
 //                .document( "12345678")
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("msg-test","Data guardada exitosamente");
                 })
                 .addOnFailureListener(e -> e.printStackTrace()) ;
-        */
+*/
 
 
         crearCanalesNotificacion();

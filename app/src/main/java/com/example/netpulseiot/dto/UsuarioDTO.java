@@ -10,6 +10,18 @@ public class UsuarioDTO {
     private String direccion;
     private String foto;
 
+    public UsuarioDTO() {
+    }
+
+    public UsuarioDTO(String nombre, String apellido, int dni, String correo, int celular, String direccion, String foto) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.correo = correo;
+        this.celular = celular;
+        this.direccion = direccion;
+        this.foto = foto;
+    }
 
     public String getNombre() {
         return nombre;

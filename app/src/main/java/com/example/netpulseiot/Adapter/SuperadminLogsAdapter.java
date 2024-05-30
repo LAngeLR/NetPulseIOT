@@ -34,11 +34,18 @@ public class SuperadminLogsAdapter extends RecyclerView.Adapter<SuperadminLogsAd
 
     @Override
     public void onBindViewHolder(@NonNull SuperadminLogViewHolder holder, int position) {
-        holder.codigoItem.setText(list.get(position).getCodigo());
-        holder.descripcionItem.setText(list.get(position).getDescripcion());
-        holder.fechaItem.setText(list.get(position).getFecha());
-        holder.fotoItem.setImageResource(list.get(position).getImage());
-        holder.horaItem.setText(list.get(position).getHora());
+//        holder.codigoItem.setText(list.get(position).getCodigo());
+//        holder.descripcionItem.setText(list.get(position).getDescripcion());
+//        holder.fechaItem.setText(list.get(position).getFecha());
+//        holder.fotoItem.setImageResource(list.get(position).getImage());
+//        holder.horaItem.setText(list.get(position).getHora());
+
+        /** CAMBIO **/
+        holder.codigoItem.setText(list.get(position).getNombre());
+        holder.descripcionItem.setText(list.get(position).getDireccion());
+        holder.fechaItem.setText("hoy");
+//        holder.fotoItem.setImageResource(list.get(position).getImage());
+        holder.horaItem.setText(list.get(position).getApellido());
     }
 
     @Override
@@ -51,7 +58,7 @@ public class SuperadminLogsAdapter extends RecyclerView.Adapter<SuperadminLogsAd
         public SuperadminLogViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            fotoItem = itemView.findViewById(R.id.fotoItem);
+//            fotoItem = itemView.findViewById(R.id.fotoItem);
             codigoItem = itemView.findViewById(R.id.codigoItem);
             fechaItem = itemView.findViewById(R.id.fechaItem);
             descripcionItem = itemView.findViewById(R.id.descripcionItem);
