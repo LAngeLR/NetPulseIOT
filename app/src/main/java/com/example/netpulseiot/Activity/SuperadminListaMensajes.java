@@ -1,4 +1,4 @@
-package com.example.netpulseiot;
+package com.example.netpulseiot.Activity;
 
 import android.os.Bundle;
 
@@ -8,7 +8,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class SuperAdminListaUsarios extends AppCompatActivity {
+import com.example.netpulseiot.R;
+
+public class SuperadminListaMensajes extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

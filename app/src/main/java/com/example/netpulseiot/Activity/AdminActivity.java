@@ -1,4 +1,4 @@
-package com.example.netpulseiot;
+package com.example.netpulseiot.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,16 +9,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.ActivityAdmin1Binding;
 import com.example.netpulseiot.fragmentos.admin.AdminEquiposFragment;
 import com.example.netpulseiot.fragmentos.admin.AdminInicioFragment;
 import com.example.netpulseiot.fragmentos.admin.AdminListaMensajesFragmenmt;
-import com.example.netpulseiot.fragmentos.admin.AdminMensajesFragment;
 import com.example.netpulseiot.fragmentos.admin.AdminSitiosFragment;
 import com.example.netpulseiot.fragmentos.admin.AdminUsuariosFragment;
-import com.example.netpulseiot.fragmentos.superadmin.InicioSuperadminFragment;
-import com.example.netpulseiot.fragmentos.superadmin.MensajesSuperadminFragment;
-import com.example.netpulseiot.fragmentos.superadmin.UsuariosSuperadminFragment;
 
 public class AdminActivity extends AppCompatActivity {
 

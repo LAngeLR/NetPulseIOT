@@ -1,4 +1,4 @@
-package com.example.netpulseiot;
+package com.example.netpulseiot.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,40 +8,38 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.netpulseiot.Adapter.AdminUsuarioAdapter;
-import com.example.netpulseiot.Adapter.SupervisorSitioAdapter;
-import com.example.netpulseiot.entity.AdminUserItem;
-import com.example.netpulseiot.entity.SupervisorSitioItem;
+import com.example.netpulseiot.Adapter.SupervisorEquipoAdapter;
+import com.example.netpulseiot.R;
+import com.example.netpulseiot.entity.SupervisorEquipoItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SupervisorListaSitiosActivity extends AppCompatActivity {
+public class AdminListaEquiposActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.fragment_supervisor_equipos);
+        setContentView(R.layout.fragment_admin_equipos);
 
         //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
-        List<SupervisorSitioItem> list = new ArrayList<SupervisorSitioItem>();
+        List<SupervisorEquipoItem> list = new ArrayList<SupervisorEquipoItem>();
         for (int i=0; i<=12;i++){
-            list.add(new SupervisorSitioItem("Lima","Lima","Surco", "Tipo1", R.drawable.fotoperfil_u));
+            list.add(new SupervisorEquipoItem("Nombre Equipo", R.drawable.fotoperfil_u));
         }
         //implementación del RecyclerViewer
-        RecyclerView recyler = findViewById(R.id.supervisorSitiosRecyclerView);
+        RecyclerView recyler = findViewById(R.id.adminEquiposRecyclerView);
         recyler.setLayoutManager(new LinearLayoutManager(this));
-        recyler.setAdapter(new SupervisorSitioAdapter(getApplicationContext(),list));
+        recyler.setAdapter(new SupervisorEquipoAdapter(getApplicationContext(),list));
 
     }
-
-
+    //luego borrar y hacerlo con fragmento
     public void listaSitio(View view){
-        Intent intent = new Intent(this, SupervisorListaSitiosActivity.class);
+        Intent intent = new Intent(this, AdminListaSitiosActivity.class);
         startActivity(intent);
     }
     public void listaEquipo(View view){
-        Intent intent = new Intent(this, SupervisorListaEquiposActivity.class);
+        Intent intent = new Intent(this, AdminListaEquiposActivity.class);
         startActivity(intent);
     }
     public void listaMensaje(View view){
@@ -59,17 +57,6 @@ public class SupervisorListaSitiosActivity extends AppCompatActivity {
 
     public void perfil1(View view){
         Intent intent = new Intent(this, AdminPerfilActivity.class);
-        startActivity(intent);
-    }
-
-
-    public void nuevoUsuario(View view){
-        Intent intent = new Intent(this, AdminNUevoUsuario.class);
-        startActivity(intent);
-    }
-
-    public void infoUsuario(View view){
-        Intent intent = new Intent(this, AdminInfoUsuarioActivity.class);
         startActivity(intent);
     }
 }

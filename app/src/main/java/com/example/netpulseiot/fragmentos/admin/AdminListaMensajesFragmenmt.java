@@ -7,6 +7,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.NavHostController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,9 @@ import java.util.List;
 public class AdminListaMensajesFragmenmt extends Fragment {
 
     FragmentAdminListaMensajesFragmenmtBinding binding;
+    private AdminMensajeAdapter adminMensajeAdapter;
+    private RecyclerView recyclerView;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,13 +38,15 @@ public class AdminListaMensajesFragmenmt extends Fragment {
             list.add(new AdminMensajeItem("Alex Valera","La reunión será a las 11:00 am",R.drawable.fotoperfil_u2,"1"));
         }
 
-        binding.adminMensajesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.adminMensajesRecyclerView.setAdapter(new AdminMensajeAdapter(getContext(),list));
-
         //llamado al Nav Controller para pasarlo al Adapter del ítem
         NavController navController = NavHostFragment.findNavController(this);
 
+        binding.adminMensajesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.adminMensajesRecyclerView.setAdapter(new AdminMensajeAdapter(getContext(),list,navController));
 
+        //uso del constructor del adaptar ya pasando el navcontroller
+        adminMensajeAdapter = new AdminMensajeAdapter(getContext(),list,navController);
+        recyclerView.setAdapter(adminMensajeAdapter);
 
 
         // Inflate the layout for this fragment

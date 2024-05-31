@@ -21,12 +21,13 @@ public class AdminMensajeAdapter extends RecyclerView.Adapter<AdminMensajeAdapte
 
     Context context;
     List<AdminMensajeItem> lista;
-//    NavController navController;  //importado para usar nav controller en el botón
+    NavController navController;  //importado para usar nav controller en el botón
 
-    public AdminMensajeAdapter(Context context, List<AdminMensajeItem> lista) {
+    //modificación del adaptador para que se le pase tmb el Nac Controller desde el Fragment
+    public AdminMensajeAdapter(Context context, List<AdminMensajeItem> lista, NavController navController) {
         this.context = context;
         this.lista = lista;
-//        this.navController = navController; //agregado apra nav controller
+        this.navController = navController; //agregado apra nav controller
     }
 
     @NonNull
@@ -43,6 +44,11 @@ public class AdminMensajeAdapter extends RecyclerView.Adapter<AdminMensajeAdapte
         holder.mensajeItem.setText(lista.get(position).getMensaje());
         holder.fotoItem.setImageResource(lista.get(position).getImage());
         holder.contadorItem.setText(lista.get(position).getContador());
+
+        holder.contadorItem.setOnClickListener(v -> {
+            navController.navigate(R.id.action_adminListaMensajesFragmenmt_to_adminMensajesFragment);
+        });
+
     }
 
     @Override
@@ -65,9 +71,5 @@ public class AdminMensajeAdapter extends RecyclerView.Adapter<AdminMensajeAdapte
         }
     }
 
-    public void bind(NavController navController){
-
-        //hola
-    }
 
 }

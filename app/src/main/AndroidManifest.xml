@@ -23,58 +23,58 @@
             android:name=".fragmentos.superadmin.NuevoUsuarioSuperadminActivity"
             android:exported="false" />
         <activity
-            android:name=".SuperAdminListaUsarios"
+            android:name=".Activity.SuperAdminListaUsarios"
             android:exported="false" />
         <activity
-            android:name=".SuperadminListaMensajes"
+            android:name=".Activity.SuperadminListaMensajes"
             android:exported="false" />
         <activity
-            android:name=".AdminInfoUsuarioActivity"
+            android:name=".Activity.AdminInfoUsuarioActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminNUevoUsuario"
+            android:name=".Activity.AdminNUevoUsuario"
             android:exported="false" />
         <activity
-            android:name=".AdminMensajeActivity"
+            android:name=".Activity.AdminMensajeActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminPerfilEditActivity"
+            android:name=".Activity.AdminPerfilEditActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminPerfilActivity"
+            android:name=".Activity.AdminPerfilActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminListaUsuarioActivity"
+            android:name=".Activity.AdminListaUsuarioActivity"
             android:exported="false" />
         <!--<activity
             android:name=".AdminListaUsuarios"
             android:exported="false" /> -->
         <activity
-            android:name=".SupervisorListaEquiposActivity"
+            android:name=".Activity.SupervisorListaEquiposActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminListaMensajeActivity"
+            android:name=".Activity.AdminListaMensajeActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminListaEquiposActivity"
+            android:name=".Activity.AdminListaEquiposActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminListaSitiosActivity"
+            android:name=".Activity.AdminListaSitiosActivity"
             android:exported="false" />
         <activity
-            android:name=".SupervisorActivity"
+            android:name=".Activity.SupervisorActivity"
             android:exported="false" />
         <activity
-            android:name=".SupervisorListaSitiosActivity"
+            android:name=".Activity.SupervisorListaSitiosActivity"
             android:exported="false" />
         <activity
             android:name=".fragmentos.superadmin.SuperadminActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminActivity"
+            android:name=".Activity.AdminActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

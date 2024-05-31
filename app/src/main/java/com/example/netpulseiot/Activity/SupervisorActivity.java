@@ -1,26 +1,16 @@
-package com.example.netpulseiot;
+package com.example.netpulseiot.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.netpulseiot.databinding.ActivityAdmin1Binding;
+import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.ActivitySupervisorBinding;
-import com.example.netpulseiot.fragmentos.admin.AdminEquiposFragment;
-import com.example.netpulseiot.fragmentos.admin.AdminInicioFragment;
-import com.example.netpulseiot.fragmentos.admin.AdminMensajesFragment;
-import com.example.netpulseiot.fragmentos.admin.AdminSitiosFragment;
-import com.example.netpulseiot.fragmentos.admin.AdminUsuariosFragment;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorEquiposFragment;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorInicioFragment;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorMensajesFragment;

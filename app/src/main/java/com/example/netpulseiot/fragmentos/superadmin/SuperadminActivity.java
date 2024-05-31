@@ -1,22 +1,17 @@
 package com.example.netpulseiot.fragmentos.superadmin;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.SuperAdminListaUsarios;
-import com.example.netpulseiot.SuperadminListaMensajes;
+import com.example.netpulseiot.Activity.SuperAdminListaUsarios;
+import com.example.netpulseiot.Activity.SuperadminListaMensajes;
 import com.example.netpulseiot.databinding.ActivitySuperadminBinding;
 
 public class SuperadminActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.netpulseiot;
+package com.example.netpulseiot.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.Adapter.SupervisorEquipoAdapter;
-import com.example.netpulseiot.Adapter.SupervisorSitioAdapter;
+import com.example.netpulseiot.R;
 import com.example.netpulseiot.entity.SupervisorEquipoItem;
-import com.example.netpulseiot.entity.SupervisorSitioItem;
 
 import java.util.ArrayList;
 import java.util.List;
