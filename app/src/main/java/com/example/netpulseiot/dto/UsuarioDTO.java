@@ -10,10 +10,12 @@ public class UsuarioDTO {
     private String direccion;
     private String foto;
 
+    private String cargo;
+
     public UsuarioDTO() {
     }
 
-    public UsuarioDTO(String nombre, String apellido, int dni, String correo, int celular, String direccion, String foto) {
+    public UsuarioDTO(String nombre, String apellido, int dni, String correo, int celular, String direccion, String foto, String cargo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -21,6 +23,7 @@ public class UsuarioDTO {
         this.celular = celular;
         this.direccion = direccion;
         this.foto = foto;
+        this.cargo = cargo;
     }
 
     public String getNombre() {
@@ -77,5 +80,13 @@ public class UsuarioDTO {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 }

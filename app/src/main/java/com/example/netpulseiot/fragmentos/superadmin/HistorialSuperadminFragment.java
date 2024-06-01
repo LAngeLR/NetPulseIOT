@@ -44,7 +44,7 @@ public class HistorialSuperadminFragment extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         /** Carga los datos desde Firestore **/
-        db.collection("usuarios")
+        db.collection("logs")
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

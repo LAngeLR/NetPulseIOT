@@ -22,7 +22,7 @@
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@+id/perfilFotoItem"
         android:fontFamily="serif"
-        android:text="Código"
+        android:text="Nombre"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -36,7 +36,7 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/perfilFotoItem"
         android:fontFamily="serif"
-        android:text="Descripción"
+        android:text="Rol"
         android:textColor="@color/black"
         android:textSize="17sp" />
 

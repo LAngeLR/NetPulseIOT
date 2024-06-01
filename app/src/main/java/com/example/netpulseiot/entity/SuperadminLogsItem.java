@@ -1,98 +1,43 @@
 package com.example.netpulseiot.entity;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 public class SuperadminLogsItem {
 
-    String codigo;
-    String descripcion;
-    int image;
+    String usuario;
+    String accion;
     String fecha;
     String hora;
 
-    /** SE AÑADIO PARA PROBAR  **/
-
-    String nombre;
-    String apellido;
-    String cargo;
-    String direccion;
-
-//    public SuperadminLogsItem(String codigo, String descripcion, int image, String fecha, String hora) {
-//        this.codigo = codigo;
-//        this.descripcion = descripcion;
-//        this.image = image;
-//        this.fecha = fecha;
-//        this.hora = hora;
-//    }
-
+    java.util.Date fechaCreacion;
 
     public SuperadminLogsItem() {
     }
 
-    public SuperadminLogsItem(String codigo, String descripcion, int image, String fecha, String hora, String nombre, String apellido, String cargo, String direccion) {
-        this.codigo = codigo;
-        this.descripcion = descripcion;
-        this.image = image;
+    public SuperadminLogsItem(String usuario, String accion, String fecha, String hora, Date fechaCreacion) {
+        this.usuario = usuario;
+        this.accion = accion;
         this.fecha = fecha;
         this.hora = hora;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cargo = cargo;
-        this.direccion = direccion;
+        this.fechaCreacion = fechaCreacion;
     }
 
-    public String getNombre() {
-        return nombre;
+
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getAccion() {
+        return accion;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
+    public void setAccion(String accion) {
+        this.accion = accion;
     }
 
     public String getFecha() {
@@ -109,5 +54,13 @@ public class SuperadminLogsItem {
 
     public void setHora(String hora) {
         this.hora = hora;
+    }
+
+    public java.util.Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(java.util.Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 }

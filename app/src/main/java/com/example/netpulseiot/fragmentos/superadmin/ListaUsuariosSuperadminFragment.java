@@ -17,6 +17,7 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,10 @@ import com.example.netpulseiot.Adapter.SuperadminUsuarioAdapter;
 import com.example.netpulseiot.MainActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentListaUsuariosSuperadminBinding;
+import com.example.netpulseiot.entity.SuperadminLogsItem;
 import com.example.netpulseiot.entity.SuperadminUsuarioItem;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,18 +39,44 @@ public class ListaUsuariosSuperadminFragment extends Fragment {
     String canal1 = "importanteDefault";
     FragmentListaUsuariosSuperadminBinding binding;
 
+    SuperadminUsuarioAdapter adapter;
+    List<SuperadminUsuarioItem> list;
+
+    List<String> list1;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentListaUsuariosSuperadminBinding.inflate(inflater, container, false);
-        List<SuperadminUsuarioItem> list = new ArrayList<>();
-        for (int i = 0; i <= 12; i++) {
-            list.add(new SuperadminUsuarioItem("Oscar Diaz", "Superadmin", R.drawable.fotoperfil_u2));
-        }
+        list = new ArrayList<>();
+        list1 = new ArrayList<>();
+        adapter = new SuperadminUsuarioAdapter(getContext(), list, list1);
+
         crearCanalesNotificacion();
         binding.superadminUsuariosRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        SuperadminUsuarioAdapter adapter = new SuperadminUsuarioAdapter(this, list); // Pasar el fragmento como contexto
+//        SuperadminUsuarioAdapter adapter = new SuperadminUsuarioAdapter(this, list); // Pasar el fragmento como contexto
         binding.superadminUsuariosRecyclerView.setAdapter(adapter);
+
+        /** Instancia de Firestore **/
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        /** Carga los datos desde Firestore **/
+        db.collection("usuarios")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            SuperadminUsuarioItem logUsuario = document.toObject(SuperadminUsuarioItem.class);
+                            list.add(logUsuario);
+                        }
+                        /** Notifica al adaptador que los datos han cambiado **/
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        Log.d("msg-test", "Error getting documents: ", task.getException());
+                    }
+                });
+
+
 
         // Inflate the layout for this fragment
         return binding.getRoot();
@@ -100,4 +130,5 @@ public class ListaUsuariosSuperadminFragment extends Fragment {
             notificationManager.notify(1, notification);
         }
     }
+
 }
