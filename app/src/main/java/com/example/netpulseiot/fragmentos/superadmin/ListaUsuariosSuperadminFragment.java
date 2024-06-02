@@ -42,15 +42,12 @@ public class ListaUsuariosSuperadminFragment extends Fragment {
     SuperadminUsuarioAdapter adapter;
     List<SuperadminUsuarioItem> list;
 
-    List<String> list1;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentListaUsuariosSuperadminBinding.inflate(inflater, container, false);
         list = new ArrayList<>();
-        list1 = new ArrayList<>();
-        adapter = new SuperadminUsuarioAdapter(getContext(), list, list1);
+        adapter = new SuperadminUsuarioAdapter(getContext(), list);
 
         crearCanalesNotificacion();
         binding.superadminUsuariosRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

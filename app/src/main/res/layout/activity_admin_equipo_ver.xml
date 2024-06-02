@@ -97,7 +97,7 @@
                 android:id="@+id/textView106"
                 android:layout_width="336dp"
                 android:layout_height="wrap_content"
-                android:text="@string/descripción"
+                android:text="@string/infoEquipos"
                 android:translationX="50dp"
                 android:translationY="20dp" />
 

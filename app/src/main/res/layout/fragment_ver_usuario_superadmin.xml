@@ -54,7 +54,7 @@
                         android:translationX="50dp" />
 
                     <TextView
-                        android:id="@+id/nombre"
+                        android:id="@+id/nombreUser"
                         android:layout_width="215dp"
                         android:layout_height="wrap_content"
                         android:text="Rodrigo Luis"
@@ -82,7 +82,7 @@
                         android:translationX="50dp" />
 
                     <TextView
-                        android:id="@+id/apellido"
+                        android:id="@+id/apellidoUser"
                         android:layout_width="215dp"
                         android:layout_height="wrap_content"
                         android:text="Rodriguez Torres"
@@ -110,7 +110,7 @@
                         android:translationX="50dp" />
 
                     <TextView
-                        android:id="@+id/rol"
+                        android:id="@+id/rolUser"
                         android:layout_width="215dp"
                         android:layout_height="wrap_content"
                         android:text="Administrador"
@@ -138,7 +138,7 @@
                         android:translationX="50dp" />
 
                     <TextView
-                        android:id="@+id/correo"
+                        android:id="@+id/correoUser"
                         android:layout_width="292dp"
                         android:layout_height="wrap_content"
                         android:text="administradorrodr@gmail.com"
@@ -166,7 +166,7 @@
                         android:translationX="50dp" />
 
                     <TextView
-                        android:id="@+id/telefono"
+                        android:id="@+id/telefonoUser"
                         android:layout_width="215dp"
                         android:layout_height="wrap_content"
                         android:text="990122890"
@@ -194,7 +194,7 @@
                         android:translationX="50dp" />
 
                     <TextView
-                        android:id="@+id/direccion"
+                        android:id="@+id/direccionUser"
                         android:layout_width="215dp"
                         android:layout_height="wrap_content"
                         android:text="Av. Universitaria 123"

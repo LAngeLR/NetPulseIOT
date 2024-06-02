@@ -27,7 +27,14 @@ import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.example.netpulseiot.dto.UsuarioDTO;
 
+import java.security.SecureRandom;
+
 public class MainActivity extends AppCompatActivity {
+
+    /** Para generar un código aleatorio **/
+    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private static final int CODE_LENGTH = 20;
+
 
     ActivityMainBinding binding;
     String canal1 = "importanteDefault";
@@ -43,25 +50,28 @@ public class MainActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
 
         /** PRUEBA PARA GUARDAR DATOS **/
-
+        /**
         UsuarioDTO usuario = new UsuarioDTO();
-        usuario.setNombre( "Luis Angel");
-        usuario.setApellido( "Quispe");
-        usuario.setCorreo( "a20204455@pucp.edu.pe" );
+        // Para obtener el ID de manera aleatoria
+        SecureRandom random = new SecureRandom();
+        String randomCode = generateRandomCode(random, CODE_LENGTH);
+        usuario.setId(randomCode);
+        usuario.setNombre("Prueba");
+        usuario.setApellido("Quispe");
+        usuario.setCorreo("a20204455@pucp.edu.pe" );
         usuario.setDni(74839806);
         usuario.setCelular(960439740);
         usuario.setDireccion("Desconocido xd - No doxeen :v");
         usuario.setFoto("De pocas palabras xd");
-
-
         db.collection("usuarios")
-//                .document( "12345678")
-                .add(usuario)
-                .addOnSuccessListener(documentReference -> {
-                    String idUsuario = documentReference.getId();
+                .document( usuario.getId())
+                .set(usuario)
+//                .add(usuario)
+                .addOnSuccessListener( unused -> {
                     Log.d("msg-test","Data guardada exitosamente");
                 })
                 .addOnFailureListener(e -> e.printStackTrace()) ;
+         **/
 
 
 
@@ -160,6 +170,15 @@ public class MainActivity extends AppCompatActivity {
         notificarImportanceDefault("supervisor");
         Intent intent = new Intent(this, SupervisorActivity.class);
         startActivity(intent);
+    }
+
+    /** Generar código aleatorio - Se debe usar en crear usuario **/
+    private static String generateRandomCode(SecureRandom random, int length) {
+        StringBuilder code = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            code.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
+        }
+        return code.toString();
     }
 
 }

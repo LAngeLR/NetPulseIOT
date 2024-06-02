@@ -1,7 +1,7 @@
 package com.example.netpulseiot.entity;
 
 public class SuperadminUsuarioItem {
-    String idDocumento;
+    String id;
     String nombre;
     String apellido;
     String rol;
@@ -49,13 +49,11 @@ public class SuperadminUsuarioItem {
         this.checked = checked;
     }
 
-    public String getIdDocumento() {
-        return idDocumento;
+    public String getId() {
+        return id;
     }
 
-    // SE AÑADIO ESTO PARA LOS ID'S NI IDEA
-    public String setIdDocumento(String idDocumento) {
-        this.idDocumento = idDocumento;
-        return idDocumento;
+    public void setId(String id) {
+        this.id = id;
     }
 }

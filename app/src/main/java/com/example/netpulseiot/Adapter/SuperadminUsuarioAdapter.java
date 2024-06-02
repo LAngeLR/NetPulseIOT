@@ -17,10 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.AdminVerUsuarioFragment;
 import com.example.netpulseiot.R;
+import com.example.netpulseiot.dto.UsuarioDTO;
 import com.example.netpulseiot.entity.SuperadminUsuarioItem;
 import com.example.netpulseiot.fragmentos.superadmin.ListaUsuariosSuperadminFragment;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
 import com.example.netpulseiot.fragmentos.superadmin.VerUsuarioSuperadminFragment;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
@@ -28,23 +31,11 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
 
     Context context; // Cambio de tipo de Context a Fragment
     List<SuperadminUsuarioItem> list;
-    List<String> documentIds;
 
-    public SuperadminUsuarioAdapter(Context context, List<SuperadminUsuarioItem> list, List<String> documentIds) {
-        this.context = context;
-        this.list = list;
-        this.documentIds = documentIds;
-    }
-
-    /**
     public SuperadminUsuarioAdapter(Context context, List<SuperadminUsuarioItem> list) {
         this.context = context;
         this.list = list;
     }
-    **/
-
-
-
 
     @NonNull
     @Override
@@ -61,22 +52,8 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
         holder.nombreItem.setText(nombreCompleto);
         holder.cargoItem.setText(currentItem.getRol());
 
-//        String idDocumento = documentIds.get(position);
-//        String idPasar = currentItem.setIdDocumento(idDocumento);
-
-
-//        currentItem.setIdDocumento(getSnapshots().getSnapshot(position).getId());
 //        holder.switchButton.setOnCheckedChangeListener(null);
 //        holder.switchButton.setChecked(currentItem.isChecked());
-
-        // Verificar si documentIds no está vacío y si tiene el tamaño suficiente para la posición actual
-        if (documentIds != null && !documentIds.isEmpty() && position < documentIds.size()) {
-            String idDocumento = documentIds.get(position);
-            currentItem.setIdDocumento(idDocumento);
-            Log.d("msg-test", "ID del documento: " + idDocumento);
-        } else {
-            Log.e("msg-test", "La lista de documentIds está vacía o no tiene el tamaño suficiente en la posición " + position);
-        }
 
         /**
         holder.switchButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -91,26 +68,56 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
          **/
 
         holder.itemView.setOnClickListener(v -> {
-            // Llamar al método replaceFragment y pasar el fragmento de destino
+            /* Llamar al método replaceFragment y pasar el fragmento de destino */
             Fragment verUsuarioSuperadminFragment = new VerUsuarioSuperadminFragment();
-
             SuperadminUsuarioItem usuario = list.get(position);
-            String idDocumento = documentIds.get(position);
 
+            /* Acceder a FireStore */
 
-            // Opcional: pasar datos al nuevo fragmento
-            Bundle args = new Bundle();
-            args.putString("nombre", currentItem.getNombre());
-            args.putString("rol", currentItem.getRol());
-//            args.putString("idUsuario", currentItem.setIdDocumento(documentIds.get(position)));
-            args.putString("idUsuario", currentItem.setIdDocumento(idDocumento));
-            verUsuarioSuperadminFragment.setArguments(args);
-            Log.d("msg-test", currentItem.setIdDocumento(idDocumento));
+            /** Instancia de Firestore **/
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-            // Verificar que context es una instancia de la actividad para llamar el método replaceFragment
-            if (context instanceof SuperadminActivity) {
-                ((SuperadminActivity) context).replaceFragment(verUsuarioSuperadminFragment);
-            }
+            db.collection("usuarios")
+                    .document(usuario.getId())
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (((DocumentSnapshot) document).exists()) {
+                                UsuarioDTO usuario1 = document.toObject(UsuarioDTO.class);
+                                if(usuario != null){
+                                    Log.d("msg-test", "Nombre: " + usuario1.getNombre());
+                                    Log.d("msg-test", "Apellido: " + usuario1.getApellido());
+                                    Log.d("msg-test", "Cargo: " + usuario1.getCargo());
+                                    Log.d("msg-test", "Correo: " + usuario1.getCorreo());
+                                    Log.d("msg-test", "Nombre: " + usuario1.getCelular());
+                                    Log.d("msg-test", "Nombre: " + usuario1.getDireccion());
+
+                                    // Pasar los datos al fragmento destino
+                                    Bundle args = new Bundle();
+                                    args.putString("nombre", usuario1.getNombre());
+                                    args.putString("apellido", usuario1.getApellido());
+                                    args.putString("cargo", usuario1.getCargo());
+                                    args.putString("correo", usuario1.getCorreo());
+                                    args.putString("telefono", String.valueOf(usuario1.getCelular()));
+                                    args.putString("direccion", usuario1.getDireccion());
+
+                                    verUsuarioSuperadminFragment.setArguments(args);
+
+                                    // Reemplazar el fragmento
+                                    if (context instanceof SuperadminActivity) {
+                                        ((SuperadminActivity) context).replaceFragment(verUsuarioSuperadminFragment);
+                                    }
+
+                                }
+                            } else {
+                                Log.d("nsg-test", "No such document");
+                            }
+                        } else {
+                            Log.d("msg-test", "get failed with ", task.getException());
+                        }
+                    });
+
         });
 
 
