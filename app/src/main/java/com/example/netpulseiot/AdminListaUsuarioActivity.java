@@ -26,16 +26,6 @@ public class AdminListaUsuarioActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_lista_usuario);
 
-        //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
-        List<AdminUserItem> list = new ArrayList<AdminUserItem>();
-        for (int i=0; i<=12;i++){
-            list.add(new AdminUserItem("José Rivera","supervisor",R.drawable.fotoperfil_u));
-        }
-        //implementación del RecyclerViewer
-        RecyclerView recyler = findViewById(R.id.adminUsariosRecyclerView);
-        recyler.setLayoutManager(new LinearLayoutManager(this));
-        recyler.setAdapter(new AdminUsuarioAdapter(getApplicationContext(),list));
-
     }
 
 

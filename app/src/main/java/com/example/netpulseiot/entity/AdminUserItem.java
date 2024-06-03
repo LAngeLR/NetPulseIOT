@@ -1,42 +1,50 @@
 package com.example.netpulseiot.entity;
 
 public class AdminUserItem {
+    String id;
+    String nombre;
+    String apellido;
+    String rol;
 
-    String name;
-    String cargo;
-    int image;
-
-
-    public String getName() {
-        return name;
+    public AdminUserItem() {
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public AdminUserItem(String id, String nombre, String apellido, String rol) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.rol = rol;
     }
 
-    public String getCargo() {
-        return cargo;
+    public String getId() {
+        return id;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public int getImage() {
-        return image;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public AdminUserItem(String name, String cargo, int image) {
-        this.name = name;
-        this.cargo = cargo;
-        this.image = image;
+    public String getApellido() {
+        return apellido;
     }
 
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
+    public String getRol() {
+        return rol;
+    }
 
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 }

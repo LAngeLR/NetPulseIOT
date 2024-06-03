@@ -1,60 +1,117 @@
 package com.example.netpulseiot.Adapter;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.R;
+import com.example.netpulseiot.dto.UsuarioDTO;
 import com.example.netpulseiot.entity.AdminUserItem;
+import com.example.netpulseiot.entity.SuperadminUsuarioItem;
+import com.example.netpulseiot.fragmentos.admin.VerUsuarioAdminFragment;
+import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
+import com.example.netpulseiot.fragmentos.superadmin.VerUsuarioSuperadminFragment;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
-public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapter.adminUsuarioViewHolder>{
 
 
+public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapter.AdminUsuarioViewHolder> {
 
-    private Context context;
-    List<AdminUserItem> listaUsuarios;
-    //cree un constructor de estas 2 instancias para poder usarlo en el onBindViewHolder
-    public AdminUsuarioAdapter(Context context, List<AdminUserItem> listaUsuarios) {
+    Context context;
+    List<AdminUserItem> list;
+
+    public AdminUsuarioAdapter(Context context, List<AdminUserItem> list) {
         this.context = context;
-        this.listaUsuarios = listaUsuarios;
+        this.list = list;
     }
 
     @NonNull
     @Override
-    public adminUsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_admin_usuario,parent,false);
-        return new adminUsuarioViewHolder(view);
+    public AdminUsuarioAdapter.AdminUsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_admin_usuario, parent, false);
+        return new AdminUsuarioAdapter.AdminUsuarioViewHolder(view);
     }
+
     @Override
-    public void onBindViewHolder(@NonNull adminUsuarioViewHolder holder, int position) {
-        holder.nombreItem.setText(listaUsuarios.get(position).getName());
-        holder.cargoItem.setText(listaUsuarios.get(position).getCargo());
-        holder.fotoItem.setImageResource(listaUsuarios.get(position).getImage());
+    public void onBindViewHolder(@NonNull AdminUsuarioAdapter.AdminUsuarioViewHolder holder, int position) {
+        AdminUserItem currentItem = list.get(position);
+
+        String nombreCompleto = currentItem.getNombre() + " " + currentItem.getApellido();
+        holder.nombreItem.setText(nombreCompleto);
+        holder.cargoItem.setText(currentItem.getRol());
+
+        holder.itemView.setOnClickListener(v -> {
+            Fragment verUsuarioAdminFragment = new VerUsuarioAdminFragment();
+            AdminUserItem usuario = list.get(position);
+
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection("usuarios")
+                    .document(usuario.getId())
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                UsuarioDTO usuario1 = document.toObject(UsuarioDTO.class);
+                                if (usuario1 != null) {
+                                    Log.d("msg-test", "Nombre: " + usuario1.getNombre());
+                                    Log.d("msg-test", "Apellido: " + usuario1.getApellido());
+                                    Log.d("msg-test", "Cargo: " + usuario1.getCargo());
+                                    Log.d("msg-test", "Correo: " + usuario1.getCorreo());
+                                    Log.d("msg-test", "Celular: " + usuario1.getCelular());
+                                    Log.d("msg-test", "Direccion: " + usuario1.getDireccion());
+
+                                    Bundle args = new Bundle();
+                                    args.putString("nombre", usuario1.getNombre());
+                                    args.putString("apellido", usuario1.getApellido());
+                                    args.putString("cargo", usuario1.getCargo());
+                                    args.putString("correo", usuario1.getCorreo());
+                                    args.putString("telefono", String.valueOf(usuario1.getCelular()));
+                                    args.putString("direccion", usuario1.getDireccion());
+
+                                    verUsuarioAdminFragment.setArguments(args);
+
+                                    if (context instanceof AdminActivity) {
+                                        ((AdminActivity) context).replaceFragment(verUsuarioAdminFragment);
+                                    }
+
+                                }
+                            } else {
+                                Log.d("msg-test", "No such document");
+                            }
+                        } else {
+                            Log.d("msg-test", "get failed with ", task.getException());
+                        }
+                    });
+        });
     }
+
     @Override
     public int getItemCount() {
-        return listaUsuarios.size();
+        return list.size();
     }
-    //View Holder
-    public class adminUsuarioViewHolder extends RecyclerView.ViewHolder{
-        ImageView fotoItem;
+
+    public class AdminUsuarioViewHolder extends RecyclerView.ViewHolder {
         TextView nombreItem, cargoItem;
 
-        public adminUsuarioViewHolder(@NonNull View itemView) {
+        public AdminUsuarioViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            fotoItem = itemView.findViewById(R.id.fotoItem);
             nombreItem = itemView.findViewById(R.id.nombreItem);
             cargoItem = itemView.findViewById(R.id.cargoItem);
         }
     }
-
 }
