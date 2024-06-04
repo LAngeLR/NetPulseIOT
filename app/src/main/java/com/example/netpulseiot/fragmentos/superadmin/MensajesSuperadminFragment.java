@@ -11,16 +11,13 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.netpulseiot.Adapter.SuperadminMensajeAdapter;
+import com.example.netpulseiot.Adapter.Superadmin.SuperadminMensajeAdapter;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentMensajesSuperadminBinding;
-import com.example.netpulseiot.entity.AdminMensajeItem;
 import com.example.netpulseiot.entity.SuperadminMensajeItem;
-import com.google.android.material.search.SearchBar;
 
 import java.util.ArrayList;
 import java.util.List;

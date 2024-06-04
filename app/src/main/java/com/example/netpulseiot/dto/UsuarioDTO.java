@@ -9,7 +9,6 @@ public class UsuarioDTO {
     private int celular;
     private String direccion;
     private String foto;
-
     private String cargo;
 
     public UsuarioDTO() {

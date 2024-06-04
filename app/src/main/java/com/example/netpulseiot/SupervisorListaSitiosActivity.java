@@ -8,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.netpulseiot.Adapter.AdminUsuarioAdapter;
-import com.example.netpulseiot.Adapter.SupervisorSitioAdapter;
-import com.example.netpulseiot.entity.AdminUserItem;
+import com.example.netpulseiot.Adapter.Supervisor.SupervisorSitioAdapter;
 import com.example.netpulseiot.entity.SupervisorSitioItem;
 
 import java.util.ArrayList;

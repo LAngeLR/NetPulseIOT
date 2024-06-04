@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Adapter;
+package com.example.netpulseiot.Adapter.Supervisor;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,30 +12,30 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.entity.SuperadminMensajeItem;
+import com.example.netpulseiot.entity.SupervisorMensajeItem;
 
 import java.util.List;
 
-public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMensajeAdapter.SuperadminMensajeViewHolder> {
+public class SupervisorMensajeAdapter extends RecyclerView.Adapter<SupervisorMensajeAdapter.SupervisorMensajeViewHolder>{
 
     Context context;
-    List<SuperadminMensajeItem> lista;
+    List<SupervisorMensajeItem> lista;
 
-    public SuperadminMensajeAdapter(Context context, List<SuperadminMensajeItem> lista) {
+    public SupervisorMensajeAdapter(Context context, List<SupervisorMensajeItem> lista) {
         this.context = context;
         this.lista = lista;
     }
 
     @NonNull
     @Override
-    public SuperadminMensajeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_superadmin_mensaje,parent,false);
-        return new SuperadminMensajeViewHolder(view);
+    public SupervisorMensajeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_superadmin_mensaje, parent,false);
+
+        return new SupervisorMensajeViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SuperadminMensajeViewHolder holder, int position) {
-        SuperadminMensajeItem item = lista.get(position);
+    public void onBindViewHolder(@NonNull SupervisorMensajeViewHolder holder, int position) {
         holder.nombreItem.setText(lista.get(position).getName());
         holder.mensajeItem.setText(lista.get(position).getMensaje());
         holder.fotoItem.setImageResource(lista.get(position).getImage());
@@ -47,18 +47,11 @@ public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMen
         return lista.size();
     }
 
-    /** SE AÑADIO CON CHAT GPT **/
-    public void updateList(List<SuperadminMensajeItem> newList) {
-        lista = newList;
-        notifyDataSetChanged();
-    }
-
-    public class SuperadminMensajeViewHolder extends RecyclerView.ViewHolder{
+    public class SupervisorMensajeViewHolder extends RecyclerView.ViewHolder{
         ImageView fotoItem;
         TextView nombreItem, mensajeItem;
         Button contadorItem;
-
-        public SuperadminMensajeViewHolder(@NonNull View itemView) {
+        public SupervisorMensajeViewHolder(@NonNull View itemView) {
             super(itemView);
             fotoItem = itemView.findViewById(R.id.fotoItem);
             nombreItem = itemView.findViewById(R.id.nombreItem);
@@ -66,4 +59,5 @@ public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMen
             contadorItem = itemView.findViewById(R.id.contadorItem);
         }
     }
+
 }

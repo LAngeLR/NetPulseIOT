@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Adapter;
+package com.example.netpulseiot.Adapter.Superadmin;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,13 +13,11 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.netpulseiot.AdminVerUsuarioFragment;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.dto.UsuarioDTO;
+import com.example.netpulseiot.entity.AdminUserItem;
 import com.example.netpulseiot.entity.SuperadminUsuarioItem;
-import com.example.netpulseiot.fragmentos.superadmin.ListaUsuariosSuperadminFragment;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
 import com.example.netpulseiot.fragmentos.superadmin.VerUsuarioSuperadminFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -84,11 +82,11 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             if (((DocumentSnapshot) document).exists()) {
-                                UsuarioDTO usuario1 = document.toObject(UsuarioDTO.class);
+                                AdminUserItem usuario1 = document.toObject(AdminUserItem.class);
                                 if(usuario != null){
                                     Log.d("msg-test", "Nombre: " + usuario1.getNombre());
                                     Log.d("msg-test", "Apellido: " + usuario1.getApellido());
-                                    Log.d("msg-test", "Cargo: " + usuario1.getCargo());
+                                    Log.d("msg-test", "rol: " + usuario1.getRol());
                                     Log.d("msg-test", "Correo: " + usuario1.getCorreo());
                                     Log.d("msg-test", "Nombre: " + usuario1.getCelular());
                                     Log.d("msg-test", "Nombre: " + usuario1.getDireccion());
@@ -97,7 +95,7 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
                                     Bundle args = new Bundle();
                                     args.putString("nombre", usuario1.getNombre());
                                     args.putString("apellido", usuario1.getApellido());
-                                    args.putString("cargo", usuario1.getCargo());
+                                    args.putString("rol", usuario1.getRol());
                                     args.putString("correo", usuario1.getCorreo());
                                     args.putString("telefono", String.valueOf(usuario1.getCelular()));
                                     args.putString("direccion", usuario1.getDireccion());

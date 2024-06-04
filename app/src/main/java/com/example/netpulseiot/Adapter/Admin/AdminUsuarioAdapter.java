@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Adapter;
+package com.example.netpulseiot.Adapter.Admin;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,8 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,10 +16,7 @@ import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.dto.UsuarioDTO;
 import com.example.netpulseiot.entity.AdminUserItem;
-import com.example.netpulseiot.entity.SuperadminUsuarioItem;
 import com.example.netpulseiot.fragmentos.admin.VerUsuarioAdminFragment;
-import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
-import com.example.netpulseiot.fragmentos.superadmin.VerUsuarioSuperadminFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -66,11 +61,11 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
-                                UsuarioDTO usuario1 = document.toObject(UsuarioDTO.class);
+                                AdminUserItem usuario1 = document.toObject(AdminUserItem.class);
                                 if (usuario1 != null) {
                                     Log.d("msg-test", "Nombre: " + usuario1.getNombre());
                                     Log.d("msg-test", "Apellido: " + usuario1.getApellido());
-                                    Log.d("msg-test", "Cargo: " + usuario1.getCargo());
+                                    Log.d("msg-test", "Rol: " + usuario1.getRol());
                                     Log.d("msg-test", "Correo: " + usuario1.getCorreo());
                                     Log.d("msg-test", "Celular: " + usuario1.getCelular());
                                     Log.d("msg-test", "Direccion: " + usuario1.getDireccion());
@@ -78,7 +73,7 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
                                     Bundle args = new Bundle();
                                     args.putString("nombre", usuario1.getNombre());
                                     args.putString("apellido", usuario1.getApellido());
-                                    args.putString("cargo", usuario1.getCargo());
+                                    args.putString("rol", usuario1.getRol());
                                     args.putString("correo", usuario1.getCorreo());
                                     args.putString("telefono", String.valueOf(usuario1.getCelular()));
                                     args.putString("direccion", usuario1.getDireccion());

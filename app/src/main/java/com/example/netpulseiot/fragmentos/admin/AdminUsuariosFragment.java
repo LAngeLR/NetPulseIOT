@@ -6,7 +6,6 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -23,14 +22,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.netpulseiot.Adapter.AdminUsuarioAdapter;
-import com.example.netpulseiot.Adapter.SuperadminUsuarioAdapter;
+import com.example.netpulseiot.Adapter.Admin.AdminUsuarioAdapter;
 import com.example.netpulseiot.MainActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminUsuariosBinding;
-import com.example.netpulseiot.databinding.FragmentListaUsuariosSuperadminBinding;
 import com.example.netpulseiot.entity.AdminUserItem;
-import com.example.netpulseiot.entity.SuperadminUsuarioItem;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
