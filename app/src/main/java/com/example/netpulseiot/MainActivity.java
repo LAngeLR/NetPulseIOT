@@ -10,10 +10,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
@@ -25,7 +23,6 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.netpulseiot.databinding.ActivityMainBinding;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.example.netpulseiot.dto.UsuarioDTO;
 
 import java.security.SecureRandom;
 
@@ -49,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         /** CREAR INSTANCIA DE BD FIREBASE **/
         db = FirebaseFirestore.getInstance();
 
-        /** PRUEBA PARA GUARDAR DATOS **/
-        /**
+        /** PRUEBA PARA GUARDAR DATOS
+
         UsuarioDTO usuario = new UsuarioDTO();
         // Para obtener el ID de manera aleatoria
         SecureRandom random = new SecureRandom();
@@ -66,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         db.collection("usuarios")
                 .document( usuario.getId())
                 .set(usuario)
-//                .add(usuario)
+                .add(usuario)
                 .addOnSuccessListener( unused -> {
                     Log.d("msg-test","Data guardada exitosamente");
                 })
@@ -82,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
     }
 
     public void crearCanalesNotificacion() {
@@ -171,6 +169,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SupervisorActivity.class);
         startActivity(intent);
     }
+    //QR PROBANDO
+    public void qrleer(View view){
+        Intent intent = new Intent(this, QRActivity.class);
+        startActivity(intent);
+    }
+
 
     /** Generar código aleatorio - Se debe usar en crear usuario **/
     private static String generateRandomCode(SecureRandom random, int length) {
@@ -180,5 +184,17 @@ public class MainActivity extends AppCompatActivity {
         }
         return code.toString();
     }
+
+    public void ingresarCuenta(View view){
+        Intent intent = new Intent(this, AuthActivity2.class);
+        startActivity(intent);
+    }
+
+    public void registrarCuenta(View view){
+        Intent intent = new Intent(this, AuthActivity.class);
+        startActivity(intent);
+    }
+
+
 
 }

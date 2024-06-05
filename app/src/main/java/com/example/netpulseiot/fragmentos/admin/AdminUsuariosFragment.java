@@ -1,81 +1,129 @@
 package com.example.netpulseiot.fragmentos.admin;
 
-import android.content.Context;
+import static android.Manifest.permission.POST_NOTIFICATIONS;
+
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.netpulseiot.Adapter.AdminUsuarioAdapter;
+import com.example.netpulseiot.Adapter.Admin.AdminUsuarioAdapter;
+import com.example.netpulseiot.MainActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminUsuariosBinding;
 import com.example.netpulseiot.entity.AdminUserItem;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdminUsuariosFragment extends Fragment {
 
-//    // TODO: Rename parameter arguments, choose names that match
-//    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-//    private static final String ARG_PARAM1 = "param1";
-//    private static final String ARG_PARAM2 = "param2";
-//
-//    // TODO: Rename and change types of parameters
-//    private String mParam1;
-//    private String mParam2;
-//
-//    public AdminUsuariosFragment() {
-//        // Required empty public constructor
-//    }
-//
-//    /**
-//     * Use this factory method to create a new instance of
-//     * this fragment using the provided parameters.
-//     *
-//     * @param param1 Parameter 1.
-//     * @param param2 Parameter 2.
-//     * @return A new instance of fragment AdminUsuariosFragment.
-//     */
-//    // TODO: Rename and change types and number of parameters
-//    public static AdminUsuariosFragment newInstance(String param1, String param2) {
-//        AdminUsuariosFragment fragment = new AdminUsuariosFragment();
-//        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
-//    }
+    String canal1 = "importanteDefault";
     FragmentAdminUsuariosBinding binding;
+
+    AdminUsuarioAdapter adapter;
+    List<AdminUserItem> list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        binding = FragmentAdminUsuariosBinding.inflate(inflater,container,false);
+        binding = FragmentAdminUsuariosBinding.inflate(inflater, container, false);
+        list = new ArrayList<>();
+        adapter = new AdminUsuarioAdapter(getContext(), list);
 
-        //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
-        List<AdminUserItem> list = new ArrayList<AdminUserItem>();
-        for (int i=0; i<=12;i++){
-            list.add(new AdminUserItem("José Rivera","supervisor",R.drawable.fotoperfil_u));
-        }
-
+        crearCanalesNotificacion();
         binding.adminUsariosRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.adminUsariosRecyclerView.setAdapter(new AdminUsuarioAdapter(getContext(),list));
+//        SuperadminUsuarioAdapter adapter = new SuperadminUsuarioAdapter(this, list); // Pasar el fragmento como contexto
+        binding.adminUsariosRecyclerView.setAdapter(adapter);
 
+        /** Instancia de Firestore **/
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        /** Carga los datos desde Firestore **/
+        db.collection("usuarios")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            AdminUserItem logUsuario = document.toObject(AdminUserItem.class);
+                            list.add(logUsuario);
+                        }
+                        /** Notifica al adaptador que los datos han cambiado **/
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        Log.d("msg-test", "Error getting documents: ", task.getException());
+                    }
+                });
+
+
+
+        // Inflate the layout for this fragment
         return binding.getRoot();
+    }
+
+    public void crearCanalesNotificacion() {
+
+        NotificationChannel channel = new NotificationChannel(canal1,
+                "Canal notificaciones default",
+                NotificationManager.IMPORTANCE_DEFAULT);
+        channel.setDescription("Canal para notificaciones con prioridad default");
+        channel.enableVibration(true);
+
+        NotificationManager notificationManager = requireActivity().getSystemService(NotificationManager.class);
+        notificationManager.createNotificationChannel(channel);
+
+        pedirPermisos();
+    }
+
+    public void pedirPermisos() {
+        // TIRAMISU = 33
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+                ActivityCompat.checkSelfPermission(requireContext(), POST_NOTIFICATIONS) == PackageManager.PERMISSION_DENIED) {
+
+            ActivityCompat.requestPermissions(requireActivity(), new String[]{POST_NOTIFICATIONS}, 101);
+        }
+    }
+
+    public void notificarImportanceDefault() {
+
+        //Crear notificación
+        //Agregar información a la notificación que luego sea enviada a la actividad que se abre
+        Intent intent = new Intent(requireContext(), MainActivity.class);
+        intent.putExtra("pid", "4616");
+        PendingIntent pendingIntent = PendingIntent.getActivity(requireContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE);
+        //
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(requireContext(), canal1)
+                .setSmallIcon(R.drawable.baseline_rocket_launch_24)
+                .setContentTitle("Prohibicion de Acceso")
+                .setContentText("El usuario Oscar Diaz ha sido deshabilitado")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true);
+
+        Notification notification = builder.build();
+
+        //Lanzar notificación
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(requireContext());
+
+        if (ActivityCompat.checkSelfPermission(requireContext(), POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+            notificationManager.notify(1, notification);
+        }
     }
 }

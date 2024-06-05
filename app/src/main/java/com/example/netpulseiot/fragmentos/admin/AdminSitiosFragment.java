@@ -5,15 +5,20 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.netpulseiot.Adapter.SupervisorSitioAdapter;
+import com.example.netpulseiot.Adapter.Admin.AdminSitioAdapter;
+import com.example.netpulseiot.Adapter.Supervisor.SupervisorSitioAdapter;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminSitiosBinding;
-import com.example.netpulseiot.databinding.FragmentSupervisorSitiosBinding;
+import com.example.netpulseiot.entity.AdminSitioItem;
+import com.example.netpulseiot.entity.AdminUserItem;
 import com.example.netpulseiot.entity.SupervisorSitioItem;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,20 +27,43 @@ import java.util.List;
 public class AdminSitiosFragment extends Fragment {
 
     FragmentAdminSitiosBinding binding;
+    List<AdminSitioItem> list;
+    AdminSitioAdapter adapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentAdminSitiosBinding.inflate(inflater,container,false);
-
-        //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
-        List<SupervisorSitioItem> list = new ArrayList<SupervisorSitioItem>();
-        for (int i=0; i<=12;i++){
-            list.add(new SupervisorSitioItem("Lima","Lima","Surco", "Tipo1", R.drawable.fotoperfil_u));
-        }
-
+        list = new ArrayList<>();
+        //se setea el adapter con una lista vacía, después se actualiza con lo obtenido de BD
+        adapter = new AdminSitioAdapter(getContext(),list);
         binding.adminSitiosRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.adminSitiosRecyclerView.setAdapter(new SupervisorSitioAdapter(getContext(),list));
+        binding.adminSitiosRecyclerView.setAdapter(adapter);
+
+        //instanciar Firestore
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("sitios")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            AdminSitioItem logSitio = document.toObject(AdminSitioItem.class);
+                            if (logSitio!=null){
+                                logSitio.setId(document.getId());
+                                list.add(logSitio);
+                            }
+                        }
+                        Log.d("msg-test", "Se mandó la lista");
+                        /** Notifica al adaptador que los datos han cambiado **/
+                        adapter.notifyDataSetChanged();
+                    } else {
+                        Log.d("msg-test", "Error getting documents: ", task.getException());
+                    }
+                });
+
+
+
 
         return binding.getRoot();
     }

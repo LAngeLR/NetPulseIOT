@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Adapter;
+package com.example.netpulseiot.Adapter.Admin;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,33 +9,36 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.entity.SupervisorMensajeItem;
+import com.example.netpulseiot.entity.AdminMensajeItem;
 
 import java.util.List;
 
-public class SupervisorMensajeAdapter extends RecyclerView.Adapter<SupervisorMensajeAdapter.SupervisorMensajeViewHolder>{
+public class AdminMensajeAdapter extends RecyclerView.Adapter<AdminMensajeAdapter.AdminMensajeViewHolder>{
 
     Context context;
-    List<SupervisorMensajeItem> lista;
+    List<AdminMensajeItem> lista;
+//    NavController navController;  //importado para usar nav controller en el botón
 
-    public SupervisorMensajeAdapter(Context context, List<SupervisorMensajeItem> lista) {
+    public AdminMensajeAdapter(Context context, List<AdminMensajeItem> lista) {
         this.context = context;
         this.lista = lista;
+//        this.navController = navController; //agregado apra nav controller
     }
 
     @NonNull
     @Override
-    public SupervisorMensajeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_superadmin_mensaje, parent,false);
-
-        return new SupervisorMensajeViewHolder(view);
+    public AdminMensajeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_admin_mensaje,parent,false);
+        return new AdminMensajeViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SupervisorMensajeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdminMensajeViewHolder holder, int position) {
+
         holder.nombreItem.setText(lista.get(position).getName());
         holder.mensajeItem.setText(lista.get(position).getMensaje());
         holder.fotoItem.setImageResource(lista.get(position).getImage());
@@ -47,17 +50,24 @@ public class SupervisorMensajeAdapter extends RecyclerView.Adapter<SupervisorMen
         return lista.size();
     }
 
-    public class SupervisorMensajeViewHolder extends RecyclerView.ViewHolder{
+
+    public class AdminMensajeViewHolder extends RecyclerView.ViewHolder{
         ImageView fotoItem;
         TextView nombreItem, mensajeItem;
         Button contadorItem;
-        public SupervisorMensajeViewHolder(@NonNull View itemView) {
+        public AdminMensajeViewHolder(@NonNull View itemView) {
             super(itemView);
             fotoItem = itemView.findViewById(R.id.fotoItem);
             nombreItem = itemView.findViewById(R.id.nombreItem);
             mensajeItem = itemView.findViewById(R.id.mensajeItem);
             contadorItem = itemView.findViewById(R.id.contadorItem);
+
         }
+    }
+
+    public void bind(NavController navController){
+
+        //hola
     }
 
 }

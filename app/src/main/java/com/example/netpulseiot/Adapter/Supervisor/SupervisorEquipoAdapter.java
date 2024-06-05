@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Adapter;
+package com.example.netpulseiot.Adapter.Supervisor;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.entity.SupervisorEquipoItem;
-import com.example.netpulseiot.entity.SupervisorSitioItem;
 
 import java.util.List;
 

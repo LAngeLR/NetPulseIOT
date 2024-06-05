@@ -9,13 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.netpulseiot.Adapter.SupervisorEquipoAdapter;
-import com.example.netpulseiot.Adapter.SupervisorSitioAdapter;
+import com.example.netpulseiot.Adapter.Supervisor.SupervisorEquipoAdapter;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentSupervisorEquiposBinding;
-import com.example.netpulseiot.databinding.FragmentSupervisorSitiosBinding;
 import com.example.netpulseiot.entity.SupervisorEquipoItem;
-import com.example.netpulseiot.entity.SupervisorSitioItem;
 
 import java.util.ArrayList;
 import java.util.List;

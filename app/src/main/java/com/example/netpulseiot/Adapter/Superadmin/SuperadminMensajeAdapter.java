@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Adapter;
+package com.example.netpulseiot.Adapter.Superadmin;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,36 +9,33 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.entity.AdminMensajeItem;
+import com.example.netpulseiot.entity.SuperadminMensajeItem;
 
 import java.util.List;
 
-public class AdminMensajeAdapter extends RecyclerView.Adapter<AdminMensajeAdapter.AdminMensajeViewHolder>{
+public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMensajeAdapter.SuperadminMensajeViewHolder> {
 
     Context context;
-    List<AdminMensajeItem> lista;
-//    NavController navController;  //importado para usar nav controller en el botón
+    List<SuperadminMensajeItem> lista;
 
-    public AdminMensajeAdapter(Context context, List<AdminMensajeItem> lista) {
+    public SuperadminMensajeAdapter(Context context, List<SuperadminMensajeItem> lista) {
         this.context = context;
         this.lista = lista;
-//        this.navController = navController; //agregado apra nav controller
     }
 
     @NonNull
     @Override
-    public AdminMensajeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_admin_mensaje,parent,false);
-        return new AdminMensajeViewHolder(view);
+    public SuperadminMensajeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_superadmin_mensaje,parent,false);
+        return new SuperadminMensajeViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdminMensajeViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull SuperadminMensajeViewHolder holder, int position) {
+        SuperadminMensajeItem item = lista.get(position);
         holder.nombreItem.setText(lista.get(position).getName());
         holder.mensajeItem.setText(lista.get(position).getMensaje());
         holder.fotoItem.setImageResource(lista.get(position).getImage());
@@ -50,24 +47,23 @@ public class AdminMensajeAdapter extends RecyclerView.Adapter<AdminMensajeAdapte
         return lista.size();
     }
 
+    /** SE AÑADIO CON CHAT GPT **/
+    public void updateList(List<SuperadminMensajeItem> newList) {
+        lista = newList;
+        notifyDataSetChanged();
+    }
 
-    public class AdminMensajeViewHolder extends RecyclerView.ViewHolder{
+    public class SuperadminMensajeViewHolder extends RecyclerView.ViewHolder{
         ImageView fotoItem;
         TextView nombreItem, mensajeItem;
         Button contadorItem;
-        public AdminMensajeViewHolder(@NonNull View itemView) {
+
+        public SuperadminMensajeViewHolder(@NonNull View itemView) {
             super(itemView);
             fotoItem = itemView.findViewById(R.id.fotoItem);
             nombreItem = itemView.findViewById(R.id.nombreItem);
             mensajeItem = itemView.findViewById(R.id.mensajeItem);
             contadorItem = itemView.findViewById(R.id.contadorItem);
-
         }
     }
-
-    public void bind(NavController navController){
-
-        //hola
-    }
-
 }

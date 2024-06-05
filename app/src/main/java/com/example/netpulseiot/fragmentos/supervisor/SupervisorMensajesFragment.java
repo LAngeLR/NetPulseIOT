@@ -9,12 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.netpulseiot.Adapter.SuperadminMensajeAdapter;
-import com.example.netpulseiot.Adapter.SupervisorMensajeAdapter;
+import com.example.netpulseiot.Adapter.Supervisor.SupervisorMensajeAdapter;
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.databinding.FragmentAdminListaMensajesFragmenmtBinding;
 import com.example.netpulseiot.databinding.FragmentSupervisorMensajesBinding;
-import com.example.netpulseiot.entity.SupervisorMensajeItem;
 import com.example.netpulseiot.entity.SupervisorMensajeItem;
 
 import java.util.ArrayList;

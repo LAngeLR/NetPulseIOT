@@ -10,12 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.netpulseiot.Adapter.AdminMensajeAdapter;
-import com.example.netpulseiot.Adapter.SuperadminLogsAdapter;
-import com.example.netpulseiot.Adapter.SupervisorMensajeAdapter;
-import com.example.netpulseiot.R;
+import com.example.netpulseiot.Adapter.Superadmin.SuperadminLogsAdapter;
 import com.example.netpulseiot.databinding.FragmentHistorialSuperadminBinding;
-import com.example.netpulseiot.entity.AdminMensajeItem;
 import com.example.netpulseiot.entity.SuperadminLogsItem;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;

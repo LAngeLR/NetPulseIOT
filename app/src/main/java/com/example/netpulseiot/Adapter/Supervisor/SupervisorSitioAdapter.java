@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Adapter;
+package com.example.netpulseiot.Adapter.Supervisor;
 
 import android.content.Context;
 import android.view.LayoutInflater;
