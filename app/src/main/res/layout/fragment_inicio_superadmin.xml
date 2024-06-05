@@ -52,6 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="68dp"
+                    android:textSize="18dp"
                     android:text="Hola"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.114"
@@ -64,6 +65,7 @@
                     android:layout_marginTop="68dp"
                     android:backgroundTint="#EF0101"
                     android:text="SUPERADMIN"
+                    android:textSize="18dp"
                     android:textColor="#C85A37"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -78,15 +80,17 @@
                     android:layout_marginStart="48dp"
                     android:layout_marginTop="32dp"
                     android:text="¿Que hacemos hoy?"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView75" />
 
                 <TextView
-                    android:layout_width="167dp"
-                    android:layout_height="61dp"
+                    android:layout_width="193dp"
+                    android:layout_height="66dp"
                     android:layout_marginStart="48dp"
                     android:layout_marginTop="36dp"
                     android:text="Encontrarás tus funciones a continuación:"
+                    android:textSize="18dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView74" />
 
@@ -96,7 +100,7 @@
                 android:id="@+id/cardView1"
                 android:layout_width="330dp"
                 android:layout_height="100dp"
-                app:cardBackgroundColor="#E3F3F1"
+                app:cardBackgroundColor="#E2F2F0"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -106,13 +110,13 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/card_white">
+                    >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Visualiza la lista de mensajes disponibles"
+                        android:text="Creación de usuarios tipo administrador."
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.483"
@@ -124,7 +128,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="Mensajes"
+                        android:text="Gestión"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -150,15 +154,17 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/card_white">
+                    >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Visualiza la lista de mensajes disponibles"
+                        android:layout_width="290dp"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="4dp"
+                        android:text="Puede activar y desactivar únicamente
+                        usuarios administradores"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.425"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView72" />
 
@@ -166,8 +172,8 @@
                         android:id="@+id/textView72"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Mensajes"
+                        android:layout_marginTop="14dp"
+                        android:text="Acciones"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -184,7 +190,7 @@
                 android:layout_width="330dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="-20dp"
-                app:cardBackgroundColor="#E3F3F1"
+                app:cardBackgroundColor="#E2F2F0"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -194,14 +200,15 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/card_white">
+                    >
 
                     <TextView
                         android:id="@+id/textView71"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Visualiza la lista de mensajes disponibles"
+                        android:layout_width="301dp"
+                        android:layout_height="37dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Visualiza todos los usuarios, pero solo puede
+modificar usuarios administradores"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -211,8 +218,8 @@
                         android:id="@+id/textView70"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Mensajes"
+                        android:layout_marginTop="14dp"
+                        android:text="Visualizar"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"

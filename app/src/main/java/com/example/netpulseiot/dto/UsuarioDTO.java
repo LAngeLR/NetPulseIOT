@@ -9,12 +9,14 @@ public class UsuarioDTO {
     private int celular;
     private String direccion;
     private String foto;
-    private String cargo;
+    private String rol;
+
+    private boolean habilitado;
 
     public UsuarioDTO() {
     }
 
-    public UsuarioDTO(String id, String nombre, String apellido, int dni, String correo, int celular, String direccion, String foto, String cargo) {
+    public UsuarioDTO(String id, String nombre, String apellido, int dni, String correo, int celular, String direccion, String foto, String rol, boolean habilitado) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -23,7 +25,8 @@ public class UsuarioDTO {
         this.celular = celular;
         this.direccion = direccion;
         this.foto = foto;
-        this.cargo = cargo;
+        this.rol = rol;
+        this.habilitado = habilitado;
     }
 
     public String getId() {
@@ -90,11 +93,19 @@ public class UsuarioDTO {
         this.foto = foto;
     }
 
-    public String getCargo() {
-        return cargo;
+    public String getRol() {
+        return rol;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public boolean isHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(boolean habilitado) {
+        this.habilitado = habilitado;
     }
 }

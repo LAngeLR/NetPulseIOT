@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/fondo2"
+    android:background="@drawable/brave"
     tools:context=".fragmentos.superadmin.ListaUsuariosSuperadminFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
             android:layout_marginTop="28dp"
             android:text="USUARIOS"
             android:textAlignment="center"
-            android:textColor="#E2F5F6"
+            android:textColor="#000000"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:backgroundTint="#fff"
+            android:backgroundTint="#D5E1F6"
             android:hint="Búsqueda"
             app:layout_constraintTop_toBottomOf="@+id/textViewU"
             tools:layout_editor_absoluteX="16dp" />
@@ -41,6 +41,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
+            android:background="#364FF4"
+            app:tabTextColor="@android:color/white"
             app:layout_constraintTop_toBottomOf="@+id/search_bar"
             app:tabMode="fixed"
             tools:ignore="MissingConstraints">

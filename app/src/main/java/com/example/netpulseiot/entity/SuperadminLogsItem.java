@@ -9,7 +9,6 @@ public class SuperadminLogsItem {
     String accion;
     String fecha;
     String hora;
-
     java.util.Date fechaCreacion;
 
     public SuperadminLogsItem() {

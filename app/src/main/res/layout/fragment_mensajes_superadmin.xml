@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo2"
+    android:background="@drawable/brave"
     tools:context=".fragmentos.superadmin.MensajesSuperadminFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +36,7 @@
             android:fontFamily="sans-serif"
             android:text="MENSAJES"
             android:textAlignment="center"
-            android:textColor="#FDFDFD"
+            android:textColor="#070707"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

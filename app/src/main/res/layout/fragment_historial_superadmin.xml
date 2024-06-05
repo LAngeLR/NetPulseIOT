@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo2"
+    android:background="@drawable/brave"
     tools:context=".fragmentos.superadmin.HistorialSuperadminFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
             android:layout_marginTop="28dp"
             android:text="LOGS"
             android:textAlignment="center"
-            android:textColor="#E2F5F6"
+            android:textColor="#000000"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,8 +35,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/superadminLogsRecyclerView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="381dp"
+            android:layout_height="549dp"
             android:layout_marginTop="30dp"
             android:textAlignment="center"
             android:translationY="30dp"

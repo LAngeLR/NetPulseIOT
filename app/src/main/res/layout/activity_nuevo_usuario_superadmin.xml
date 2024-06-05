@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/brave"
     tools:context=".fragmentos.superadmin.NuevoUsuarioSuperadminActivity">
 
 
@@ -16,7 +17,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#254CEA"
+            android:background="#00254CEA"
+            android:backgroundTint="#1AFFFFFF"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +28,7 @@
             app:menu="@menu/toolbar"
             app:title="NetPulse"
             app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
-            app:titleTextColor="#fff" />
+            app:titleTextColor="#0738E6" />
 
         <TextView
             android:id="@+id/titulo"
@@ -35,6 +37,7 @@
             android:layout_marginTop="40dp"
             android:text="Nuevo Usuario"
             android:textSize="30sp"
+            android:textColor="#000"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.261"
