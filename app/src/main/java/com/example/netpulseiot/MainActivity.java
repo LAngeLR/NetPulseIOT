@@ -10,10 +10,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
@@ -24,12 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.netpulseiot.databinding.ActivityMainBinding;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
-import com.example.netpulseiot.fragmentos.supervisor.SupervisorEquiposFragment;
-import com.example.netpulseiot.fragmentos.supervisor.SupervisorInicioFragment;
-import com.example.netpulseiot.fragmentos.supervisor.SupervisorMensajesFragment;
-import com.example.netpulseiot.fragmentos.supervisor.SupervisorSitiosFragment;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.example.netpulseiot.dto.UsuarioDTO;
 
 import java.security.SecureRandom;
 
@@ -176,6 +169,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SupervisorActivity.class);
         startActivity(intent);
     }
+    //QR PROBANDO
+    public void qrleer(View view){
+        Intent intent = new Intent(this, QRActivity.class);
+        startActivity(intent);
+    }
+
 
     /** Generar código aleatorio - Se debe usar en crear usuario **/
     private static String generateRandomCode(SecureRandom random, int length) {
@@ -195,5 +194,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AuthActivity.class);
         startActivity(intent);
     }
+
+
 
 }
