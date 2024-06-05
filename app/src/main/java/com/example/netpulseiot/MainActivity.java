@@ -24,6 +24,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.netpulseiot.databinding.ActivityMainBinding;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
+import com.example.netpulseiot.fragmentos.supervisor.SupervisorEquiposFragment;
+import com.example.netpulseiot.fragmentos.supervisor.SupervisorInicioFragment;
+import com.example.netpulseiot.fragmentos.supervisor.SupervisorMensajesFragment;
+import com.example.netpulseiot.fragmentos.supervisor.SupervisorSitiosFragment;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.example.netpulseiot.dto.UsuarioDTO;
 
@@ -49,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         /** CREAR INSTANCIA DE BD FIREBASE **/
         db = FirebaseFirestore.getInstance();
 
-        /** PRUEBA PARA GUARDAR DATOS **/
-        /**
+        /** PRUEBA PARA GUARDAR DATOS
+
         UsuarioDTO usuario = new UsuarioDTO();
         // Para obtener el ID de manera aleatoria
         SecureRandom random = new SecureRandom();
@@ -66,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         db.collection("usuarios")
                 .document( usuario.getId())
                 .set(usuario)
-//                .add(usuario)
+                .add(usuario)
                 .addOnSuccessListener( unused -> {
                     Log.d("msg-test","Data guardada exitosamente");
                 })
@@ -82,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
     }
 
     public void crearCanalesNotificacion() {
@@ -179,6 +184,16 @@ public class MainActivity extends AppCompatActivity {
             code.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
         }
         return code.toString();
+    }
+
+    public void ingresarCuenta(View view){
+        Intent intent = new Intent(this, AuthActivity2.class);
+        startActivity(intent);
+    }
+
+    public void registrarCuenta(View view){
+        Intent intent = new Intent(this, AuthActivity.class);
+        startActivity(intent);
     }
 
 }
