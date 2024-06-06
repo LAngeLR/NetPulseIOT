@@ -44,14 +44,11 @@ public class NuevoUsuarioSuperadminActivity extends AppCompatActivity {
         binding = ActivityNuevoUsuarioSuperadminBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
-
-
         binding.cancelar.setOnClickListener(view -> {
             Intent intent = new Intent(NuevoUsuarioSuperadminActivity.this, SuperadminActivity.class);
             intent.putExtra("fragmentToLoad", "usuariosSuperadmin");
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            Toast.makeText(this, "Accion cancelada", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "Accion cancelada", Toast.LENGTH_LONG).show();
             startActivity(intent);
             finish();
         });
@@ -70,7 +67,6 @@ public class NuevoUsuarioSuperadminActivity extends AppCompatActivity {
             DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-
             /** Usuario **/
             String nombres = binding.nombres.getEditText().getText().toString().trim();
             String apellidos = binding.apellidos.getEditText().getText().toString().trim();
@@ -78,7 +74,6 @@ public class NuevoUsuarioSuperadminActivity extends AppCompatActivity {
             String correo = binding.correo.getEditText().getText().toString().trim();
             String celular = binding.celular.getEditText().getText().toString().trim();
             String domicilio = binding.domicilio.getEditText().getText().toString().trim();
-
 
             /** CREAR INSTANCIA DE BD FIREBASE **/
             db = FirebaseFirestore.getInstance();
@@ -105,7 +100,6 @@ public class NuevoUsuarioSuperadminActivity extends AppCompatActivity {
             logsItem.setHora(horaActual.format(formatoHora));
             logsItem.setFechaCreacion(fechaHoraActualPeruDate);
 
-
              db.collection("usuarios")
                  .document(usuario.getId())
                  .set(usuario)
@@ -120,10 +114,6 @@ public class NuevoUsuarioSuperadminActivity extends AppCompatActivity {
                         Log.d("msg-test","LOG DATA guardada exitosamente");
                     })
                     .addOnFailureListener(e -> e.printStackTrace());
-
-
-
-
 
             // Luego redirige de vuelta a SuperadminActivity con el fragmento UsuariosSuperadminFragment
             Intent intent = new Intent(NuevoUsuarioSuperadminActivity.this, SuperadminActivity.class);

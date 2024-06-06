@@ -47,7 +47,7 @@ public class AdminNUevoUsuario extends AppCompatActivity {
             Intent intent = new Intent(AdminNUevoUsuario.this, AdminActivity.class);
             intent.putExtra("fragmentToLoad", "usuariosSuperadmin");
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            Toast.makeText(this, "Accion cancelada", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "Accion cancelada", Toast.LENGTH_LONG).show();
             startActivity(intent);
             finish();
         });
@@ -66,7 +66,6 @@ public class AdminNUevoUsuario extends AppCompatActivity {
 
             DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm:ss");
-
 
             /** Usuario **/
             String nombres = binding.nombres.getEditText().getText().toString().trim();
@@ -118,10 +117,6 @@ public class AdminNUevoUsuario extends AppCompatActivity {
                     })
                     .addOnFailureListener(e -> e.printStackTrace());
 
-
-
-
-
             // Luego redirige de vuelta a SuperadminActivity con el fragmento UsuariosSuperadminFragment
             Intent intent = new Intent(AdminNUevoUsuario.this, AdminActivity.class);
             intent.putExtra("fragmentToLoad", "usuariosSuperadmin");
@@ -130,7 +125,6 @@ public class AdminNUevoUsuario extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
-
     }
 
     /** Generar código aleatorio - Se debe usar en crear usuario **/
