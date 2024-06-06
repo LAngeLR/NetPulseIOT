@@ -1,10 +1,17 @@
 package com.example.netpulseiot.fragmentos.superadmin;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
+import java.lang.reflect.Field;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -28,6 +35,7 @@ public class SuperadminActivity extends AppCompatActivity {
 
     ActivitySuperadminBinding binding;
     FirebaseFirestore db;
+    private android.text.Html Html;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,8 +99,30 @@ public class SuperadminActivity extends AppCompatActivity {
             }else if (item.getItemId() == R.id.logsSuperadmin) {
                 replaceFragment(new HistorialSuperadminFragment());
             }
+
+            int selectedItemId = item.getItemId();
+            changeSelectedMenuItemTextAppearance(selectedItemId);
+
             return true;
         });
+
+
+    }
+    private void changeSelectedMenuItemTextAppearance(int selectedItemId) {
+        Menu menu = binding.bottomNavigationView.getMenu();
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem menuItem = menu.getItem(i);
+            boolean isSelected = menuItem.getItemId() == selectedItemId;
+
+            // Change text appearance based on selection (using SpannableString)
+            if (isSelected) {
+                menuItem.setTitle(menuItem.getTitle().toString().replaceFirst("[\\p{Cntrl}]", "").replaceFirst("[\\p{Punct}]", "")); // Remove special characters
+                menuItem.setTitle(Html.fromHtml("<font color='#FFFFFF'>" + menuItem.getTitle() + "</font>")); // Set text content with color
+            } else {
+                // Set default text appearance (optional)
+                menuItem.setTitle(menuItem.getTitle().toString()); // Reset text (optional)
+            }
+        }
     }
 
     public void replaceFragment(Fragment fragment){
@@ -101,8 +131,6 @@ public class SuperadminActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_superadmin, fragment);
         fragmentTransaction.commit();
     }
-
-
 
 
     public void superAdmin(View view){

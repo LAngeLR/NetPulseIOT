@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/brave"
+    android:background="#FFFFFF"
     tools:context=".fragmentos.superadmin.InicioSuperadminFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,82 +17,84 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="-39dp">
+            tools:layout_editor_absoluteX="-100dp"
+            tools:layout_editor_absoluteY="16dp">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_width="422dp"
+                android:layout_height="320dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.037">
+                app:layout_constraintVertical_bias="0.0">
 
 
                 <ImageView
                     android:id="@+id/imageView20"
-                    android:layout_width="194dp"
-                    android:layout_height="259dp"
+                    android:layout_width="276dp"
+                    android:layout_height="372dp"
+                    android:layout_marginEnd="192dp"
                     android:layout_weight="1"
                     android:translationY="-20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.609"
-                    app:layout_constraintStart_toEndOf="@+id/textView74"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.753"
                     app:srcCompat="@mipmap/superadmin" />
 
                 <TextView
                     android:id="@+id/textView75"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="68dp"
-                    android:textSize="18dp"
-                    android:text="Hola"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/gothic_a1"
+                    android:text="Hola,"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.114"
+                    app:layout_constraintHorizontal_bias="0.501"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="68dp"
-                    android:backgroundTint="#EF0101"
+                    android:layout_marginTop="92dp"
+                    android:fontFamily="@font/aclonica"
                     android:text="SUPERADMIN"
-                    android:textSize="18dp"
-                    android:textColor="#C85A37"
+                    android:textColor="#3A9ECC"
+                    android:textSize="26sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.031"
-                    app:layout_constraintStart_toEndOf="@+id/textView75"
+                    app:layout_constraintHorizontal_bias="0.772"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView74"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="32dp"
-                    android:text="¿Que hacemos hoy?"
-                    android:textSize="18dp"
+                    android:layout_width="144dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="184dp"
+                    android:layout_marginTop="80dp"
+                    android:fontFamily="@font/gothic_a1"
+                    android:text="¿Que haremos hoy?"
+                    android:textSize="14sp"
+                    android:textStyle="italic"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView75" />
 
                 <TextView
-                    android:layout_width="193dp"
-                    android:layout_height="66dp"
+                    android:layout_width="321dp"
+                    android:layout_height="47dp"
                     android:layout_marginStart="48dp"
-                    android:layout_marginTop="36dp"
+                    android:layout_marginTop="264dp"
+                    android:fontFamily="@font/gothic_a1"
                     android:text="Encontrarás tus funciones a continuación:"
-                    android:textSize="18dp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -100,39 +102,43 @@
                 android:id="@+id/cardView1"
                 android:layout_width="330dp"
                 android:layout_height="100dp"
-                app:cardBackgroundColor="#E2F2F0"
+                app:cardBackgroundColor="#D1EAC0"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                app:layout_constraintVertical_bias="0.0">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/gothic_a1"
                         android:text="Creación de usuarios tipo administrador."
-                        android:textSize="16sp"
+                        android:textColor="#577859"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.483"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView73" />
+                        app:layout_constraintHorizontal_bias="0.507"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
                         android:id="@+id/textView73"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="Gestión"
+                        android:fontFamily="@font/aclonica"
+                        android:text="GESTIÓN"
+                        android:textColor="#577859"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.067"
+                        app:layout_constraintHorizontal_bias="0.1"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -143,28 +149,29 @@
                 android:id="@+id/cardView2"
                 android:layout_width="330dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="-150dp"
-                app:cardBackgroundColor="#E3F3F1"
+                app:cardBackgroundColor="#A6CA8D"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView1">
+                app:layout_constraintTop_toBottomOf="@+id/cardView1"
+                app:layout_constraintVertical_bias="0.16000003">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:layout_width="290dp"
                         android:layout_height="42dp"
                         android:layout_marginTop="4dp"
+                        android:fontFamily="@font/gothic_a1"
                         android:text="Puede activar y desactivar únicamente
                         usuarios administradores"
-                        android:textSize="16sp"
+                        android:textColor="#FAF8F8"
+                        android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.425"
+                        app:layout_constraintHorizontal_bias="0.825"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView72" />
 
@@ -172,12 +179,14 @@
                         android:id="@+id/textView72"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:text="Acciones"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/aclonica"
+                        android:text="ACCIONES"
+                        android:textColor="#FDFAFA"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.068"
+                        app:layout_constraintHorizontal_bias="0.115"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -189,28 +198,30 @@
                 android:id="@+id/cardView3"
                 android:layout_width="330dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="-20dp"
-                app:cardBackgroundColor="#E2F2F0"
+                app:cardBackgroundColor="#82A867"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+                app:layout_constraintTop_toBottomOf="@+id/cardView2"
+                app:layout_constraintVertical_bias="0.39">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/textView71"
                         android:layout_width="301dp"
                         android:layout_height="37dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/gothic_a1"
                         android:text="Visualiza todos los usuarios, pero solo puede
 modificar usuarios administradores"
-                        android:textSize="16sp"
+                        android:textColor="#F4F3F3"
+                        android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.896"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView70" />
 
@@ -218,12 +229,14 @@ modificar usuarios administradores"
                         android:id="@+id/textView70"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
-                        android:text="Visualizar"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/aclonica"
+                        android:text="VISUALIZAR"
+                        android:textColor="#FAF6F6"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.066"
+                        app:layout_constraintHorizontal_bias="0.08"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,21 +5,31 @@
     <item android:title="Inicio"
         android:icon="@drawable/ic_home"
         android:id="@+id/inicioAdmin"
+        android:textColor="#FFFFFF"
+        android:iconTint="#FFFFFF"
         />
     <item android:title="Mensajes"
         android:icon="@drawable/ic_message"
         android:id="@+id/mensajesAdmin"
+        android:textColor="#FFFFFF"
+        android:iconTint="#FFFFFF"
         />
     <item android:title="Usuarios"
         android:icon="@drawable/ic_user"
         android:id="@+id/usuariosAdmin"
+        android:textColor="#FFFFFF"
+        android:iconTint="#FFFFFF"
         />
     <item android:title="Sitios"
         android:icon="@drawable/ic_user"
         android:id="@+id/sitiosAdmin"
+        android:textColor="#FFFFFF"
+        android:iconTint="#FFFFFF"
         />
     <item android:title="Equipos"
         android:icon="@drawable/ic_user"
         android:id="@+id/equiposAdmin"
+        android:textColor="#FFFFFF"
+        android:iconTint="#FFFFFF"
         />
 </menu>

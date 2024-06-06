@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    >
 
-    <item android:title="Inicio"
-        android:icon="@drawable/ic_home"
+    <item
         android:id="@+id/inicioSuperadmin"
-        />
+        android:icon="@drawable/ic_home"
+        android:title="Inicio"
+        android:background="#FFFFFF"/>
+
     <item android:title="Mensajes"
         android:icon="@drawable/ic_message"
         android:id="@+id/mensajesSuperadmin"
+        android:background="#FFFFFF"
         />
     <item android:title="Usuarios"
         android:icon="@drawable/ic_user"
         android:id="@+id/usuariosSuperadmin"
+        android:background="#FFFFFF"
         />
     <item android:title="Logs"
         android:icon="@drawable/ic_history"
         android:id="@+id/logsSuperadmin"
+        android:background="#FFFFFF"
         />
 </menu>
