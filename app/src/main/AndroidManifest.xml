@@ -17,9 +17,11 @@
         android:theme="@style/Base.Theme.NetPulseIoT"
         tools:targetApi="31">
         <activity
-            android:name=".AdminNuevoSitio"
+            android:name=".AdminNuevoEquipo"
             android:exported="false" />
-        <!-- QR probando -->
+        <activity
+            android:name=".AdminNuevoSitio"
+            android:exported="false" /> <!-- QR probando -->
         <activity
             android:name=".QRActivity"
             android:exported="false" />

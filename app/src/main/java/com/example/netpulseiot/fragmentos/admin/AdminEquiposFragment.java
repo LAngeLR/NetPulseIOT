@@ -1,5 +1,6 @@
 package com.example.netpulseiot.fragmentos.admin;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,10 +14,13 @@ import android.view.ViewGroup;
 import com.example.netpulseiot.Adapter.Admin.AdminEquipoAdapter;
 import com.example.netpulseiot.Adapter.Admin.AdminSitioAdapter;
 import com.example.netpulseiot.Adapter.Supervisor.SupervisorEquipoAdapter;
+import com.example.netpulseiot.AdminNuevoEquipo;
+import com.example.netpulseiot.AdminNuevoSitio;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminEquiposBinding;
 import com.example.netpulseiot.entity.AdminSitioItem;
 import com.example.netpulseiot.entity.EquipoItem;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -62,6 +66,12 @@ public class AdminEquiposFragment extends Fragment {
                         Log.d("msg-test", "Error getting documents: ", task.getException());
                     }
                 });
+
+        FloatingActionButton fabAddUser = binding.getRoot().findViewById(R.id.fabAddUser);
+        fabAddUser.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), AdminNuevoEquipo.class); // Reemplaza con tu actividad
+            startActivity(intent);
+        });
 
         return binding.getRoot();
     }
