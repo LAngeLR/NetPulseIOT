@@ -1,6 +1,5 @@
 package com.example.netpulseiot.fragmentos.superadmin;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,21 +10,14 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.SuperAdminListaUsarios;
-import com.example.netpulseiot.SuperadminListaMensajes;
 import com.example.netpulseiot.databinding.ActivitySuperadminBinding;
-import com.example.netpulseiot.dto.UsuarioDTO;
-import com.example.netpulseiot.entity.SuperadminLogsItem;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.LocalDate;
@@ -111,10 +103,7 @@ public class SuperadminActivity extends AppCompatActivity {
     }
 
 
-    public void listaMensajes(View view){
-        Intent intent = new Intent(this, SuperadminListaMensajes.class);
-        startActivity(intent);
-    }
+
 
     public void superAdmin(View view){
         Intent intent = new Intent(this, SuperadminActivity.class);

@@ -21,18 +21,14 @@
             android:name=".QRActivity"
             android:exported="false"
             />
-        <activity
-            android:name=".fragmentos.superadmin.SuperadminListaUsuariosActivity"
-            android:exported="false" />
+
         <activity
             android:name=".fragmentos.superadmin.NuevoUsuarioSuperadminActivity"
             android:exported="false" />
         <activity
             android:name=".SuperAdminListaUsarios"
             android:exported="false" />
-        <activity
-            android:name=".SuperadminListaMensajes"
-            android:exported="false" />
+
         <activity
             android:name=".AdminInfoUsuarioActivity"
             android:exported="false" />
