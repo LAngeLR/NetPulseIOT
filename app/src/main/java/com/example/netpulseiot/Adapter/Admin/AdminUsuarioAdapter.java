@@ -63,12 +63,14 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
                             if (document.exists()) {
                                 AdminUserItem usuario1 = document.toObject(AdminUserItem.class);
                                 if (usuario1 != null) {
+                                    /**
                                     Log.d("msg-test", "Nombre: " + usuario1.getNombre());
                                     Log.d("msg-test", "Apellido: " + usuario1.getApellido());
                                     Log.d("msg-test", "Rol: " + usuario1.getRol());
                                     Log.d("msg-test", "Correo: " + usuario1.getCorreo());
                                     Log.d("msg-test", "Celular: " + usuario1.getCelular());
                                     Log.d("msg-test", "Direccion: " + usuario1.getDireccion());
+                                     **/
 
                                     Bundle args = new Bundle();
                                     args.putString("nombre", usuario1.getNombre());

@@ -43,35 +43,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        /** CREAR INSTANCIA DE BD FIREBASE **/
-        db = FirebaseFirestore.getInstance();
-
-        /** PRUEBA PARA GUARDAR DATOS
-
-        UsuarioDTO usuario = new UsuarioDTO();
-        // Para obtener el ID de manera aleatoria
-        SecureRandom random = new SecureRandom();
-        String randomCode = generateRandomCode(random, CODE_LENGTH);
-        usuario.setId(randomCode);
-        usuario.setNombre("Prueba");
-        usuario.setApellido("Quispe");
-        usuario.setCorreo("a20204455@pucp.edu.pe" );
-        usuario.setDni(74839806);
-        usuario.setCelular(960439740);
-        usuario.setDireccion("Desconocido xd - No doxeen :v");
-        usuario.setFoto("De pocas palabras xd");
-        db.collection("usuarios")
-                .document( usuario.getId())
-                .set(usuario)
-                .add(usuario)
-                .addOnSuccessListener( unused -> {
-                    Log.d("msg-test","Data guardada exitosamente");
-                })
-                .addOnFailureListener(e -> e.printStackTrace()) ;
-         **/
-
-
-
         crearCanalesNotificacion();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

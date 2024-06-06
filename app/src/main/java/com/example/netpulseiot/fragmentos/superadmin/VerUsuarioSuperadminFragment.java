@@ -3,31 +3,34 @@ package com.example.netpulseiot.fragmentos.superadmin;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentVerUsuarioSuperadminBinding;
+//import com.example.netpulseiot.databinding.FragmentSuperadminVerUsuarioBinding;
 import com.example.netpulseiot.dto.UsuarioDTO;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class VerUsuarioSuperadminFragment extends Fragment {
 
     FragmentVerUsuarioSuperadminBinding binding;
-    String idUsuario;
-
-
+//    FragmentSuperadminVerUsuario binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         binding = FragmentVerUsuarioSuperadminBinding.inflate(inflater,container,false);
+        View rootView = binding.getRoot();
 
         Bundle args = getArguments();
         if (args != null) {
@@ -37,22 +40,25 @@ public class VerUsuarioSuperadminFragment extends Fragment {
             String correo = args.getString("correo");
             String telefono = args.getString("telefono");
             String direccion = args.getString("direccion");
+
             // Actualiza las vistas con los datos del usuario
-            binding.nombreUser.setText(nombre);
-            binding.apellidoUser.setText(apellido);
-            binding.rolUser.setText(cargo);
-            binding.correoUser.setText(correo);
-            binding.telefonoUser.setText(telefono);
-            binding.direccionUser.setText(direccion);
+            binding.nombreUser.setText(nombre != null ? nombre : "No definido");
+            binding.apellidoUser.setText(apellido != null ? apellido : "No definido");
+            binding.rolUser.setText(cargo != null ? cargo : "No definido");
+            binding.correoUser.setText(correo != null ? correo : "No definido");
+            binding.telefonoUser.setText(telefono != null ? telefono : "No definido");
+            binding.direccionUser.setText(direccion != null ? direccion : "No definido");
         }
 
-//        Log.d("msg-test", "ID ACCEDIDO: " + idUsuario);
+        FloatingActionButton fab = rootView.findViewById(R.id.floating_action_button);
+        /** Boton de editado **/
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("msg-test", "FUNCIONA EL BOTON FLOTANTE");
+            }
+        });
 
-
-
-
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ver_usuario_superadmin, container, false);
+        return rootView;
     }
 }

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.fragment.app.Fragment;
 
 import com.example.netpulseiot.R;
@@ -36,7 +36,9 @@ public class VerUsuarioAdminFragment extends Fragment {
             binding.textView111.setText(direccion != null ? direccion : "No definido");
         }
 
-        return binding.getRoot(); // Devolver la vista inflada correctamente
+
+
+        return binding.getRoot();
     }
 }
 

@@ -84,12 +84,14 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
                             if (((DocumentSnapshot) document).exists()) {
                                 AdminUserItem usuario1 = document.toObject(AdminUserItem.class);
                                 if(usuario != null){
+                                    /**
                                     Log.d("msg-test", "Nombre: " + usuario1.getNombre());
                                     Log.d("msg-test", "Apellido: " + usuario1.getApellido());
                                     Log.d("msg-test", "rol: " + usuario1.getRol());
                                     Log.d("msg-test", "Correo: " + usuario1.getCorreo());
                                     Log.d("msg-test", "Nombre: " + usuario1.getCelular());
                                     Log.d("msg-test", "Nombre: " + usuario1.getDireccion());
+                                    **/
 
                                     // Pasar los datos al fragmento destino
                                     Bundle args = new Bundle();
