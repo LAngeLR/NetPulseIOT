@@ -1,6 +1,8 @@
 package com.example.netpulseiot.Adapter.Supervisor;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,21 +10,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.R;
+import com.example.netpulseiot.SupervisorActivity;
+import com.example.netpulseiot.entity.AdminSitioItem;
 import com.example.netpulseiot.entity.SupervisorSitioItem;
+import com.example.netpulseiot.fragmentos.admin.AdminVerSitioFragment;
+import com.example.netpulseiot.fragmentos.supervisor.SupervisorVerSitioFragment;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
 
 import java.util.List;
 
 public class SupervisorSitioAdapter extends RecyclerView.Adapter<SupervisorSitioAdapter.supervisorSitioViewHolder>{
 
     private Context context;
-    List<SupervisorSitioItem> listaSitios;
-    //cree un constructor de estas 2 instancias para poder usarlo en el onBindViewHolder
-    public SupervisorSitioAdapter(Context context, List<SupervisorSitioItem> listaSitios) {
+    List<AdminSitioItem> list;
+    public SupervisorSitioAdapter(Context context, List<AdminSitioItem> list) {
         this.context = context;
-        this.listaSitios = listaSitios;
+        this.list = list;
     }
 
     @NonNull
@@ -33,25 +43,66 @@ public class SupervisorSitioAdapter extends RecyclerView.Adapter<SupervisorSitio
     }
     @Override
     public void onBindViewHolder(@NonNull SupervisorSitioAdapter.supervisorSitioViewHolder holder, int position) {
-        holder.nombreItem.setText(listaSitios.get(position).getNombre());
-        holder.provinciaItem.setText(listaSitios.get(position).getProvincia());
-        holder.distritoItem.setText(listaSitios.get(position).getDistrito());
-        holder.tipoItem.setText(listaSitios.get(position).getTipo());
-        holder.imageItem.setImageResource(listaSitios.get(position).getImage());
+        AdminSitioItem currentItem = list.get(position);
+        
+        holder.nombreItem.setText(currentItem.getNombre());
+        holder.provinciaItem.setText(currentItem.getProvincia());
+        holder.distritoItem.setText(currentItem.getDistrito());
+        holder.tipoItem.setText(currentItem.getTipoSitio());
+
+        //linkeo a ver info
+        holder.itemView.setOnClickListener(v -> {
+            Fragment supervisorVerSitioFragment = new SupervisorVerSitioFragment();
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection("sitios")
+                    .document(currentItem.getId())
+                    .get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot documentSnapshot = task.getResult();
+                            if(documentSnapshot.exists()){
+                                AdminSitioItem sitioItem1 = documentSnapshot.toObject(AdminSitioItem.class);
+                                if (sitioItem1!=null){
+
+                                    Bundle args = new Bundle();
+                                    args.putString("id", currentItem.getId());
+                                    args.putString("nombre",sitioItem1.getNombre());
+                                    args.putString("departamento",sitioItem1.getDepartamento());
+                                    args.putString("provincia",sitioItem1.getProvincia());
+                                    args.putString("distrito",sitioItem1.getDistrito());
+                                    args.putString("tipoSitio",sitioItem1.getTipoSitio());
+                                    args.putString("tipoZona",sitioItem1.getTipoZona());
+                                    args.putString("ubigeo",sitioItem1.getUbigeo());
+                                    GeoPoint geoPoint = sitioItem1.getGeolocalizacion();
+                                    args.putDouble("latitud",geoPoint.getLatitude());
+                                    args.putDouble("longitud",geoPoint.getLongitude());
+
+                                    supervisorVerSitioFragment.setArguments(args);
+
+                                    if (context instanceof SupervisorActivity) {
+                                        ((SupervisorActivity) context).replaceFragment(supervisorVerSitioFragment);
+                                    }
+                                }
+                            } else {
+                                Log.d("msg-test", "No such document");
+                            }
+                        }else {
+                            Log.d("msg-test", "get failed with ", task.getException());
+                        }
+                    });
+        });
     }
     @Override
     public int getItemCount() {
-        return listaSitios.size();
+        return list.size();
     }
     //View Holder
     public class supervisorSitioViewHolder extends RecyclerView.ViewHolder{
-        ImageView imageItem;
         TextView nombreItem, provinciaItem, distritoItem, tipoItem ;
 
         public supervisorSitioViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageItem = itemView.findViewById(R.id.imageItem);
             nombreItem = itemView.findViewById(R.id.nombreItem);
             provinciaItem = itemView.findViewById(R.id.provinciaItem);
             distritoItem = itemView.findViewById(R.id.distritoItem);

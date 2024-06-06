@@ -26,7 +26,6 @@ public class AdminSitioAdapter extends RecyclerView.Adapter<AdminSitioAdapter.ad
 
     Context context;
     List<AdminSitioItem> list;
-
     public AdminSitioAdapter(Context context, List<AdminSitioItem> list) {
         this.context = context;
         this.list = list;
@@ -35,7 +34,6 @@ public class AdminSitioAdapter extends RecyclerView.Adapter<AdminSitioAdapter.ad
     @NonNull
     @Override
     public adminSitioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //el layout se dejó con el de supervisor porque eso sí no cambia absolutamente nada
         View view = LayoutInflater.from(context).inflate(R.layout.item_sitio,parent,false);
         return new AdminSitioAdapter.adminSitioViewHolder(view);
     }

@@ -21,15 +21,15 @@ public class SupervisorListaSitiosActivity extends AppCompatActivity {
 
         setContentView(R.layout.fragment_supervisor_equipos);
 
-        //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
-        List<SupervisorSitioItem> list = new ArrayList<SupervisorSitioItem>();
-        for (int i=0; i<=12;i++){
-            list.add(new SupervisorSitioItem("Lima","Lima","Surco", "Tipo1", R.drawable.fotoperfil_u));
-        }
-        //implementación del RecyclerViewer
-        RecyclerView recyler = findViewById(R.id.supervisorSitiosRecyclerView);
-        recyler.setLayoutManager(new LinearLayoutManager(this));
-        recyler.setAdapter(new SupervisorSitioAdapter(getApplicationContext(),list));
+//        //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
+//        List<SupervisorSitioItem> list = new ArrayList<SupervisorSitioItem>();
+//        for (int i=0; i<=12;i++){
+//            list.add(new SupervisorSitioItem("Lima","Lima","Surco", "Tipo1", R.drawable.fotoperfil_u));
+//        }
+//        //implementación del RecyclerViewer
+//        RecyclerView recyler = findViewById(R.id.supervisorSitiosRecyclerView);
+//        recyler.setLayoutManager(new LinearLayoutManager(this));
+//        recyler.setAdapter(new SupervisorSitioAdapter(getApplicationContext(),list));
 
     }
 
