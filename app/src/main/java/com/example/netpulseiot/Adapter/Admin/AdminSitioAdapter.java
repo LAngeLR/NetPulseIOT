@@ -52,7 +52,6 @@ public class AdminSitioAdapter extends RecyclerView.Adapter<AdminSitioAdapter.ad
         //linkeo a ver info
         holder.itemView.setOnClickListener(v -> {
             Fragment adminVerSitioFragment = new AdminVerSitioFragment();
-            AdminSitioItem sitioItem = list.get(position);
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             db.collection("sitios")
                     .document(currentItem.getId())

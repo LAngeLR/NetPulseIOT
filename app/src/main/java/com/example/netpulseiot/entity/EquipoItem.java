@@ -1,9 +1,7 @@
 package com.example.netpulseiot.entity;
 
 public class EquipoItem {
-    //estos 2 luego se borrarán
-
-    //-----
+    String id;
     String descripcion;
     String foto;
     String marca;
@@ -15,7 +13,8 @@ public class EquipoItem {
     public EquipoItem() {
     }
 
-    public EquipoItem(String descripcion, String foto, String marca, String modelo, String numSerie, String sku, String tipoEquipo) {
+    public EquipoItem(String id, String descripcion, String foto, String marca, String modelo, String numSerie, String sku, String tipoEquipo) {
+        this.id = id;
         this.descripcion = descripcion;
         this.foto = foto;
         this.marca = marca;
@@ -25,7 +24,13 @@ public class EquipoItem {
         this.tipoEquipo = tipoEquipo;
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getDescripcion() {
         return descripcion;

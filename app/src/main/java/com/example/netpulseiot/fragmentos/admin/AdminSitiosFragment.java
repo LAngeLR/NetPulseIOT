@@ -46,6 +46,7 @@ public class AdminSitiosFragment extends Fragment {
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             AdminSitioItem logSitio = document.toObject(AdminSitioItem.class);
                             if (logSitio!=null){
+                                //importante para evitar null pointer exception
                                 logSitio.setId(document.getId());
                                 list.add(logSitio);
                             }

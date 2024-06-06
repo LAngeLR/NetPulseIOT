@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragmentos.supervisor.SupervisorVerEquipoFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="420dp"
+        android:layout_height="744dp">
+
+        <LinearLayout
+            android:layout_width="412dp"
+            android:layout_height="721dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:text="INFORMACIÓN"
+                android:textAlignment="center"
+                android:textColor="#3C8A82"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:translationX="100dp"
+                android:translationY="30dp" />
+
+            <ImageView
+                android:id="@+id/imageView36"
+                android:layout_width="216dp"
+                android:layout_height="222dp"
+                android:translationX="100dp"
+                android:translationY="10dp"
+                android:layout_margin="25dp"
+                app:srcCompat="@mipmap/ic_launcher_u_round" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="30dp"
+                    android:orientation="vertical" >
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView100"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Tipo de equipo"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
+
+                            <TextView
+                                android:id="@+id/tipoEquipo"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="Tipo de equipo"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView104"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Modelo"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
+
+                            <TextView
+                                android:id="@+id/modelo"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="Modelo"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView106"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Marca"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
+
+                            <TextView
+                                android:id="@+id/marca"
+                                android:layout_width="292dp"
+                                android:layout_height="wrap_content"
+                                android:text="Marca"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView108"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Número de serie"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
+
+                            <TextView
+                                android:id="@+id/numSeriee"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="Número de serie"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView109"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="SKU"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
+
+                            <TextView
+                                android:id="@+id/sku"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="SKU"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView1081"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Descripción"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
+
+                            <TextView
+                                android:id="@+id/descripcion"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="Descripción"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </ScrollView>
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:backgroundTint="#289E93"
+                android:translationX="330dp"
+                android:translationY="-100dp"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/cambiarcontra" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

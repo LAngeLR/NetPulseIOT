@@ -24,7 +24,6 @@ import java.util.List;
 
 public class SupervisorEquiposFragment extends Fragment {
 
-
     FragmentSupervisorEquiposBinding binding;
     List<EquipoItem> list;
     SupervisorEquipoAdapter adapter;
@@ -38,8 +37,6 @@ public class SupervisorEquiposFragment extends Fragment {
         //se setea el adapter con una lista vacía, después se actualiza con lo obtenido de BD
         adapter = new SupervisorEquipoAdapter(getContext(),list);
 
-
-
         binding.supervisorEquiposRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.supervisorEquiposRecyclerView.setAdapter(adapter);
 
@@ -50,8 +47,12 @@ public class SupervisorEquiposFragment extends Fragment {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            EquipoItem logSitio = document.toObject(EquipoItem.class);
-                            list.add(logSitio);
+                            EquipoItem log = document.toObject(EquipoItem.class);
+                            if (log!=null){
+                                //importante para evitar null pointer exception
+                                log.setId(document.getId());
+                                list.add(log);
+                            }
                         }
                         Log.d("msg-test", "Se mandó la lista");
                         /** Notifica al adaptador que los datos han cambiado **/
