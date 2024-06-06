@@ -28,7 +28,7 @@ public class SupervisorSitioAdapter extends RecyclerView.Adapter<SupervisorSitio
     @NonNull
     @Override
     public SupervisorSitioAdapter.supervisorSitioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_supervisor_sitio,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_sitio,parent,false);
         return new SupervisorSitioAdapter.supervisorSitioViewHolder(view);
     }
     @Override

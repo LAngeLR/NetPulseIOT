@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Adapter.Supervisor;
+package com.example.netpulseiot.Adapter.Admin;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,37 +14,39 @@ import com.example.netpulseiot.entity.EquipoItem;
 
 import java.util.List;
 
-public class SupervisorEquipoAdapter extends RecyclerView.Adapter<SupervisorEquipoAdapter.supervisorEquipoViewHolder>{
+public class AdminEquipoAdapter extends RecyclerView.Adapter<AdminEquipoAdapter.adminEquipoViewHolder>{
 
-    private Context context;
+    Context context;
     List<EquipoItem> list;
-    //cree un constructor de estas 2 instancias para poder usarlo en el onBindViewHolder
-    public SupervisorEquipoAdapter(Context context, List<EquipoItem> list) {
+
+    public AdminEquipoAdapter(Context context, List<EquipoItem> list) {
         this.context = context;
         this.list = list;
     }
 
     @NonNull
     @Override
-    public SupervisorEquipoAdapter.supervisorEquipoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public adminEquipoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //verificar si está con el layout con nombre item equipo o item ssupervisor equipo pq le planee cambiar el nombre para uniformizar
         View view = LayoutInflater.from(context).inflate(R.layout.item_equipo,parent,false);
-        return new SupervisorEquipoAdapter.supervisorEquipoViewHolder(view);
+        return new adminEquipoViewHolder(view);
     }
+
     @Override
-    public void onBindViewHolder(@NonNull SupervisorEquipoAdapter.supervisorEquipoViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull adminEquipoViewHolder holder, int position) {
         EquipoItem item = list.get(position);
-        holder.modeloItem.setText(item.getModelo());
+        holder.modeloItem.setText(item.getModelo()); //cambiar lugeo nombre x modelo
     }
 
     @Override
     public int getItemCount() {
         return list.size();
     }
-    //View Holder
-    public class supervisorEquipoViewHolder extends RecyclerView.ViewHolder{
+
+    public class adminEquipoViewHolder extends RecyclerView.ViewHolder{
         TextView modeloItem;
 
-        public supervisorEquipoViewHolder(@NonNull View itemView) {
+        public adminEquipoViewHolder(@NonNull View itemView) {
             super(itemView);
             modeloItem = itemView.findViewById(R.id.nombreItem); //va el modelo pero en el layout el id se llama nombre
         }

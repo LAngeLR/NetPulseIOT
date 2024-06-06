@@ -23,9 +23,9 @@ public class AdminListaEquiposActivity extends AppCompatActivity {
 
         //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
         List<EquipoItem> list = new ArrayList<EquipoItem>();
-        for (int i=0; i<=12;i++){
-            list.add(new EquipoItem("Nombre Equipo", R.drawable.fotoperfil_u));
-        }
+//        for (int i=0; i<=12;i++){
+//            list.add(new EquipoItem("Nombre Equipo", R.drawable.fotoperfil_u));
+//        }
         //implementación del RecyclerViewer
         RecyclerView recyler = findViewById(R.id.adminEquiposRecyclerView);
         recyler.setLayoutManager(new LinearLayoutManager(this));

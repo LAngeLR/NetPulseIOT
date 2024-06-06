@@ -22,9 +22,9 @@ public class SupervisorListaEquiposActivity extends AppCompatActivity {
 
         //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
         List<EquipoItem> list = new ArrayList<EquipoItem>();
-        for (int i=0; i<=12;i++){
-            list.add(new EquipoItem("Equipo1", R.drawable.fotoperfil_u));
-        }
+//        for (int i=0; i<=12;i++){
+//            list.add(new EquipoItem("Equipo1", R.drawable.fotoperfil_u));
+//        }
         //implementación del RecyclerViewer
         RecyclerView recyler = findViewById(R.id.supervisorEquiposRecyclerView);
         recyler.setLayoutManager(new LinearLayoutManager(this));

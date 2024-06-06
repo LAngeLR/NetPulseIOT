@@ -6,14 +6,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.netpulseiot.Adapter.Supervisor.SupervisorSitioAdapter;
 import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.entity.AdminSitioItem;
@@ -38,7 +36,7 @@ public class AdminSitioAdapter extends RecyclerView.Adapter<AdminSitioAdapter.ad
     @Override
     public adminSitioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //el layout se dejó con el de supervisor porque eso sí no cambia absolutamente nada
-        View view = LayoutInflater.from(context).inflate(R.layout.item_supervisor_sitio,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_sitio,parent,false);
         return new AdminSitioAdapter.adminSitioViewHolder(view);
     }
 
