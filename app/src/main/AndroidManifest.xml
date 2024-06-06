@@ -9,26 +9,28 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher_u"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_u_round"
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.NetPulseIoT"
-        android:hardwareAccelerated="true"
         tools:targetApi="31">
-        <!--QR probando -->
+        <activity
+            android:name=".AdminNuevoEquipo"
+            android:exported="false" />
+        <activity
+            android:name=".AdminNuevoSitio"
+            android:exported="false" /> <!-- QR probando -->
         <activity
             android:name=".QRActivity"
-            android:exported="false"
-            />
-
+            android:exported="false" />
         <activity
             android:name=".fragmentos.superadmin.NuevoUsuarioSuperadminActivity"
             android:exported="false" />
         <activity
             android:name=".SuperAdminListaUsarios"
             android:exported="false" />
-
         <activity
             android:name=".AdminInfoUsuarioActivity"
             android:exported="false" />
@@ -47,9 +49,11 @@
         <activity
             android:name=".AdminListaUsuarioActivity"
             android:exported="false" />
-        <!--<activity
+        <!--
+<activity
             android:name=".AdminListaUsuarios"
-            android:exported="false" /> -->
+            android:exported="false" />
+        -->
         <activity
             android:name=".SupervisorListaEquiposActivity"
             android:exported="false" />

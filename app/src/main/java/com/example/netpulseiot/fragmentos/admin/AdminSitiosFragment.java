@@ -1,5 +1,6 @@
 package com.example.netpulseiot.fragmentos.admin;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,8 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.netpulseiot.Adapter.Admin.AdminSitioAdapter;
+import com.example.netpulseiot.AdminNUevoUsuario;
+import com.example.netpulseiot.AdminNuevoSitio;
+import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminSitiosBinding;
 import com.example.netpulseiot.entity.AdminSitioItem;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -59,8 +64,11 @@ public class AdminSitiosFragment extends Fragment {
                     }
                 });
 
-
-
+        FloatingActionButton fabAddUser = binding.getRoot().findViewById(R.id.fabAddUser);
+        fabAddUser.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), AdminNuevoSitio.class); // Reemplaza con tu actividad
+            startActivity(intent);
+        });
 
         return binding.getRoot();
     }
