@@ -42,15 +42,17 @@ public class AdminNUevoUsuario extends AppCompatActivity {
         binding = ActivityAdminNuevoUsuarioBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //cancelar
+        //cancelar Guardado
         binding.cancelar.setOnClickListener(view -> {
             Intent intent = new Intent(AdminNUevoUsuario.this, AdminActivity.class);
             intent.putExtra("fragmentToLoad", "usuariosSuperadmin");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             Toast.makeText(this, "Accion cancelada", Toast.LENGTH_LONG).show();
             startActivity(intent);
+            finish();
         });
 
-        //crear
+        //crear Guardado
         binding.crear.setOnClickListener(view -> {
 
             /** Fecha **/
@@ -123,8 +125,10 @@ public class AdminNUevoUsuario extends AppCompatActivity {
             // Luego redirige de vuelta a SuperadminActivity con el fragmento UsuariosSuperadminFragment
             Intent intent = new Intent(AdminNUevoUsuario.this, AdminActivity.class);
             intent.putExtra("fragmentToLoad", "usuariosSuperadmin");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             Toast.makeText(this, "Usuario creado exitosamente", Toast.LENGTH_LONG).show();
             startActivity(intent);
+            finish();
         });
 
     }

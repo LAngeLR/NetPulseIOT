@@ -50,8 +50,10 @@ public class NuevoUsuarioSuperadminActivity extends AppCompatActivity {
         binding.cancelar.setOnClickListener(view -> {
             Intent intent = new Intent(NuevoUsuarioSuperadminActivity.this, SuperadminActivity.class);
             intent.putExtra("fragmentToLoad", "usuariosSuperadmin");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             Toast.makeText(this, "Accion cancelada", Toast.LENGTH_LONG).show();
             startActivity(intent);
+            finish();
         });
 
         binding.crear.setOnClickListener(view -> {
@@ -126,8 +128,10 @@ public class NuevoUsuarioSuperadminActivity extends AppCompatActivity {
             // Luego redirige de vuelta a SuperadminActivity con el fragmento UsuariosSuperadminFragment
             Intent intent = new Intent(NuevoUsuarioSuperadminActivity.this, SuperadminActivity.class);
             intent.putExtra("fragmentToLoad", "usuariosSuperadmin");
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             Toast.makeText(this, "Usuario creado exitosamente", Toast.LENGTH_LONG).show();
             startActivity(intent);
+            finish();
         });
 
     }
