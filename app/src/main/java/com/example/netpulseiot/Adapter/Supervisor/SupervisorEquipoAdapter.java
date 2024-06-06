@@ -11,16 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.entity.SupervisorEquipoItem;
+import com.example.netpulseiot.entity.EquipoItem;
 
 import java.util.List;
 
 public class SupervisorEquipoAdapter extends RecyclerView.Adapter<SupervisorEquipoAdapter.supervisorEquipoViewHolder>{
 
     private Context context;
-    List<SupervisorEquipoItem> listaEquipos;
+    List<EquipoItem> listaEquipos;
     //cree un constructor de estas 2 instancias para poder usarlo en el onBindViewHolder
-    public SupervisorEquipoAdapter(Context context, List<SupervisorEquipoItem> listaEquipos) {
+    public SupervisorEquipoAdapter(Context context, List<EquipoItem> listaEquipos) {
         this.context = context;
         this.listaEquipos = listaEquipos;
     }

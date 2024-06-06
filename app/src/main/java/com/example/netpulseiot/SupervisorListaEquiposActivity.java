@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.Adapter.Supervisor.SupervisorEquipoAdapter;
-import com.example.netpulseiot.entity.SupervisorEquipoItem;
+import com.example.netpulseiot.entity.EquipoItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +21,9 @@ public class SupervisorListaEquiposActivity extends AppCompatActivity {
         setContentView(R.layout.fragment_supervisor_equipos);
 
         //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
-        List<SupervisorEquipoItem> list = new ArrayList<SupervisorEquipoItem>();
+        List<EquipoItem> list = new ArrayList<EquipoItem>();
         for (int i=0; i<=12;i++){
-            list.add(new SupervisorEquipoItem("Equipo1", R.drawable.fotoperfil_u));
+            list.add(new EquipoItem("Equipo1", R.drawable.fotoperfil_u));
         }
         //implementación del RecyclerViewer
         RecyclerView recyler = findViewById(R.id.supervisorEquiposRecyclerView);

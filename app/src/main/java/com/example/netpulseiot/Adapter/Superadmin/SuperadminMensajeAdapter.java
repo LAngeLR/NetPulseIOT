@@ -12,16 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.entity.SuperadminMensajeItem;
+import com.example.netpulseiot.entity.MensajeItem;
 
 import java.util.List;
 
 public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMensajeAdapter.SuperadminMensajeViewHolder> {
 
     Context context;
-    List<SuperadminMensajeItem> lista;
+    List<MensajeItem> lista;
 
-    public SuperadminMensajeAdapter(Context context, List<SuperadminMensajeItem> lista) {
+    public SuperadminMensajeAdapter(Context context, List<MensajeItem> lista) {
         this.context = context;
         this.lista = lista;
     }
@@ -35,7 +35,7 @@ public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMen
 
     @Override
     public void onBindViewHolder(@NonNull SuperadminMensajeViewHolder holder, int position) {
-        SuperadminMensajeItem item = lista.get(position);
+        MensajeItem item = lista.get(position);
         holder.nombreItem.setText(lista.get(position).getName());
         holder.mensajeItem.setText(lista.get(position).getMensaje());
         holder.fotoItem.setImageResource(lista.get(position).getImage());
@@ -48,7 +48,7 @@ public class SuperadminMensajeAdapter extends RecyclerView.Adapter<SuperadminMen
     }
 
     /** SE AÑADIO CON CHAT GPT **/
-    public void updateList(List<SuperadminMensajeItem> newList) {
+    public void updateList(List<MensajeItem> newList) {
         lista = newList;
         notifyDataSetChanged();
     }

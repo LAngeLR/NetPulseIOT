@@ -1,12 +1,12 @@
 package com.example.netpulseiot.entity;
 
-public class AdminMensajeItem {
+public class MensajeItem {
     String name;
     String mensaje;
     int image;
     String contador;
 
-    public AdminMensajeItem(String name, String mensaje, int image, String contador) {
+    public MensajeItem(String name, String mensaje, int image, String contador) {
         this.name = name;
         this.mensaje = mensaje;
         this.image = image;

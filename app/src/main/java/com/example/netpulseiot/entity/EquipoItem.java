@@ -1,6 +1,6 @@
 package com.example.netpulseiot.entity;
 
-public class SupervisorEquipoItem {
+public class EquipoItem {
     String nombre;
     int image;
 
@@ -20,7 +20,7 @@ public class SupervisorEquipoItem {
         this.image = image;
     }
 
-    public SupervisorEquipoItem(String nombre, int image) {
+    public EquipoItem(String nombre, int image) {
         this.nombre = nombre;
         this.image = image;
     }

@@ -8,16 +8,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.dto.UsuarioDTO;
-import com.example.netpulseiot.entity.AdminUserItem;
-import com.example.netpulseiot.entity.SuperadminUsuarioItem;
+import com.example.netpulseiot.entity.UserItem;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
 import com.example.netpulseiot.fragmentos.superadmin.VerUsuarioSuperadminFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -28,9 +25,9 @@ import java.util.List;
 public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsuarioAdapter.SuperadminUsuarioViewHolder> {
 
     Context context; // Cambio de tipo de Context a Fragment
-    List<SuperadminUsuarioItem> list;
+    List<UserItem> list;
 
-    public SuperadminUsuarioAdapter(Context context, List<SuperadminUsuarioItem> list) {
+    public SuperadminUsuarioAdapter(Context context, List<UserItem> list) {
         this.context = context;
         this.list = list;
     }
@@ -44,7 +41,7 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
 
     @Override
     public void onBindViewHolder(@NonNull SuperadminUsuarioViewHolder holder, int position) {
-        SuperadminUsuarioItem currentItem = list.get(position);
+        UserItem currentItem = list.get(position);
 
         String nombreCompleto = list.get(position).getNombre() + " " + list.get(position).getApellido();
         holder.nombreItem.setText(nombreCompleto);
@@ -68,7 +65,7 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
         holder.itemView.setOnClickListener(v -> {
             /* Llamar al método replaceFragment y pasar el fragmento de destino */
             Fragment verUsuarioSuperadminFragment = new VerUsuarioSuperadminFragment();
-            SuperadminUsuarioItem usuario = list.get(position);
+            UserItem usuario = list.get(position);
 
             /* Acceder a FireStore */
 
@@ -82,7 +79,7 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             if (((DocumentSnapshot) document).exists()) {
-                                AdminUserItem usuario1 = document.toObject(AdminUserItem.class);
+                                UserItem usuario1 = document.toObject(UserItem.class);
                                 if(usuario != null){
                                     /**
                                     Log.d("msg-test", "Nombre: " + usuario1.getNombre());
@@ -129,15 +126,12 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
     }
 
     public class SuperadminUsuarioViewHolder extends RecyclerView.ViewHolder{
-        ImageView perfilFotoItem;
         TextView nombreItem, cargoItem;
         Switch switchButton;
         public SuperadminUsuarioViewHolder(@NonNull View itemView) {
             super(itemView);
-//            perfilFotoItem = itemView.findViewById(R.id.perfilFotoItem);
             nombreItem = itemView.findViewById(R.id.nombreItem);
             cargoItem = itemView.findViewById(R.id.cargoItem);
-//            switchButton = itemView.findViewById(R.id.switch3);
         }
     }
 }

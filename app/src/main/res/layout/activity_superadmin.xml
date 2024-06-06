@@ -15,8 +15,9 @@
         android:backgroundTint="#1AFFFFFF"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:menu="@menu/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
 
+        app:menu="@menu/toolbar"
         app:title="NetPulse"
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
         app:titleTextColor="#3F51B5" />
@@ -39,8 +40,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_superadmin"
-        />
+        app:menu="@menu/menu_superadmin" />
 
     <!--    luego borrar y hacerlo con fragmentos -->
 

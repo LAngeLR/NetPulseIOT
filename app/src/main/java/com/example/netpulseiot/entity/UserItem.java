@@ -1,6 +1,6 @@
 package com.example.netpulseiot.entity;
 
-public class AdminUserItem {
+public class UserItem {
     private String id;
     private String nombre;
     private String apellido;
@@ -11,10 +11,10 @@ public class AdminUserItem {
     private String direccion;
     private String foto;
 
-    public AdminUserItem() {
+    public UserItem() {
     }
 
-    public AdminUserItem(String id, String nombre, String apellido, String rol, int dni, String correo, int celular, String direccion, String foto) {
+    public UserItem(String id, String nombre, String apellido, String rol, int dni, String correo, int celular, String direccion, String foto) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;

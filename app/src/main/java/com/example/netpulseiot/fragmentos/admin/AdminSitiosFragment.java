@@ -11,12 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.netpulseiot.Adapter.Admin.AdminSitioAdapter;
-import com.example.netpulseiot.Adapter.Supervisor.SupervisorSitioAdapter;
-import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminSitiosBinding;
 import com.example.netpulseiot.entity.AdminSitioItem;
-import com.example.netpulseiot.entity.AdminUserItem;
-import com.example.netpulseiot.entity.SupervisorSitioItem;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 

@@ -12,16 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.entity.SupervisorMensajeItem;
+import com.example.netpulseiot.entity.MensajeItem;
 
 import java.util.List;
 
 public class SupervisorMensajeAdapter extends RecyclerView.Adapter<SupervisorMensajeAdapter.SupervisorMensajeViewHolder>{
 
     Context context;
-    List<SupervisorMensajeItem> lista;
+    List<MensajeItem> lista;
 
-    public SupervisorMensajeAdapter(Context context, List<SupervisorMensajeItem> lista) {
+    public SupervisorMensajeAdapter(Context context, List<MensajeItem> lista) {
         this.context = context;
         this.lista = lista;
     }

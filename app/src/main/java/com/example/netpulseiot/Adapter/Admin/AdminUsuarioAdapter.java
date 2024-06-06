@@ -14,8 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.dto.UsuarioDTO;
-import com.example.netpulseiot.entity.AdminUserItem;
+import com.example.netpulseiot.entity.UserItem;
 import com.example.netpulseiot.fragmentos.admin.VerUsuarioAdminFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -27,9 +26,9 @@ import java.util.List;
 public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapter.AdminUsuarioViewHolder> {
 
     Context context;
-    List<AdminUserItem> list;
+    List<UserItem> list;
 
-    public AdminUsuarioAdapter(Context context, List<AdminUserItem> list) {
+    public AdminUsuarioAdapter(Context context, List<UserItem> list) {
         this.context = context;
         this.list = list;
     }
@@ -43,7 +42,7 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
 
     @Override
     public void onBindViewHolder(@NonNull AdminUsuarioAdapter.AdminUsuarioViewHolder holder, int position) {
-        AdminUserItem currentItem = list.get(position);
+        UserItem currentItem = list.get(position);
 
         String nombreCompleto = currentItem.getNombre() + " " + currentItem.getApellido();
         holder.nombreItem.setText(nombreCompleto);
@@ -51,7 +50,7 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
 
         holder.itemView.setOnClickListener(v -> {
             Fragment verUsuarioAdminFragment = new VerUsuarioAdminFragment();
-            AdminUserItem usuario = list.get(position);
+            UserItem usuario = list.get(position);
 
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             db.collection("usuarios")
@@ -61,7 +60,7 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
-                                AdminUserItem usuario1 = document.toObject(AdminUserItem.class);
+                                UserItem usuario1 = document.toObject(UserItem.class);
                                 if (usuario1 != null) {
                                     /**
                                     Log.d("msg-test", "Nombre: " + usuario1.getNombre());

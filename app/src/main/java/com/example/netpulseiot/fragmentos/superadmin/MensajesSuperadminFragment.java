@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.netpulseiot.Adapter.Superadmin.SuperadminMensajeAdapter;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentMensajesSuperadminBinding;
-import com.example.netpulseiot.entity.SuperadminMensajeItem;
+import com.example.netpulseiot.entity.MensajeItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +28,7 @@ public class MensajesSuperadminFragment extends Fragment {
     FragmentMensajesSuperadminBinding binding;
 
     /** SE AÑADIO CON CHAT GPT **/
-    private List<SuperadminMensajeItem> originalList; // Original data list
+    private List<MensajeItem> originalList; // Original data list
     private SuperadminMensajeAdapter adapter;
 
     @Override
@@ -40,7 +40,7 @@ public class MensajesSuperadminFragment extends Fragment {
         // Initialize the original list
         originalList = new ArrayList<>();
         for (int i = 0; i <= 12; i++) {
-            originalList.add(new SuperadminMensajeItem("Alex Valera", "La reunión será a las 11:00 am", R.drawable.fotoperfil_u2, "1"));
+            originalList.add(new MensajeItem("Alex Valera", "La reunión será a las 11:00 am", R.drawable.fotoperfil_u2, "1"));
         }
 
         // Setup RecyclerView
@@ -78,8 +78,8 @@ public class MensajesSuperadminFragment extends Fragment {
 
 
     private void filter(String text) {
-        List<SuperadminMensajeItem> filteredList = new ArrayList<>();
-        for (SuperadminMensajeItem item : originalList) {
+        List<MensajeItem> filteredList = new ArrayList<>();
+        for (MensajeItem item : originalList) {
             if (item.getMensaje().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(item);
             }

@@ -9,20 +9,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.entity.AdminMensajeItem;
+import com.example.netpulseiot.entity.MensajeItem;
 
 import java.util.List;
 
 public class AdminMensajeAdapter extends RecyclerView.Adapter<AdminMensajeAdapter.AdminMensajeViewHolder>{
 
     Context context;
-    List<AdminMensajeItem> lista;
+    List<MensajeItem> lista;
 
-    public AdminMensajeAdapter(Context context, List<AdminMensajeItem> lista) {
+    public AdminMensajeAdapter(Context context, List<MensajeItem> lista) {
         this.context = context;
         this.lista = lista;
     }

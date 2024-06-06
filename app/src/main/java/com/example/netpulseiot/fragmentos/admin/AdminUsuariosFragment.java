@@ -26,7 +26,7 @@ import com.example.netpulseiot.Adapter.Admin.AdminUsuarioAdapter;
 import com.example.netpulseiot.MainActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminUsuariosBinding;
-import com.example.netpulseiot.entity.AdminUserItem;
+import com.example.netpulseiot.entity.UserItem;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -39,7 +39,7 @@ public class AdminUsuariosFragment extends Fragment {
     FragmentAdminUsuariosBinding binding;
 
     AdminUsuarioAdapter adapter;
-    List<AdminUserItem> list;
+    List<UserItem> list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,7 +62,7 @@ public class AdminUsuariosFragment extends Fragment {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            AdminUserItem logUsuario = document.toObject(AdminUserItem.class);
+                            UserItem logUsuario = document.toObject(UserItem.class);
                             list.add(logUsuario);
                         }
                         /** Notifica al adaptador que los datos han cambiado **/

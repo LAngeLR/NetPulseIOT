@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.example.netpulseiot.Adapter.Supervisor.SupervisorMensajeAdapter;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentSupervisorMensajesBinding;
-import com.example.netpulseiot.entity.SupervisorMensajeItem;
+import com.example.netpulseiot.entity.MensajeItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +27,9 @@ public class SupervisorMensajesFragment extends Fragment {
         binding = FragmentSupervisorMensajesBinding.inflate(inflater,container,false);
 
         //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
-        List<SupervisorMensajeItem> list = new ArrayList<SupervisorMensajeItem>();
+        List<MensajeItem> list = new ArrayList<MensajeItem>();
         for (int i=0; i<=12;i++){
-            list.add(new SupervisorMensajeItem("Alex Valera","La reunión será a las 11:00 am",R.drawable.fotoperfil_u2,"1"));
+            list.add(new MensajeItem("Alex Valera","La reunión será a las 11:00 am",R.drawable.fotoperfil_u2,"1"));
         }
         binding.supervisorMensajesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.supervisorMensajesRecyclerView.setAdapter(new SupervisorMensajeAdapter(getContext(),list));
