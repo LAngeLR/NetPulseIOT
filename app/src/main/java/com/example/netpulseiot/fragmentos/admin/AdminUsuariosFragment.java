@@ -52,7 +52,6 @@ public class AdminUsuariosFragment extends Fragment {
 
         crearCanalesNotificacion();
         binding.adminUsariosRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        SuperadminUsuarioAdapter adapter = new SuperadminUsuarioAdapter(this, list); // Pasar el fragmento como contexto
         binding.adminUsariosRecyclerView.setAdapter(adapter);
 
         /** Instancia de Firestore **/
@@ -79,8 +78,6 @@ public class AdminUsuariosFragment extends Fragment {
             Intent intent = new Intent(getContext(), AdminNUevoUsuario.class); // Reemplaza con tu actividad
             startActivity(intent);
         });
-
-
 
         // Inflate the layout for this fragment
         return binding.getRoot();
