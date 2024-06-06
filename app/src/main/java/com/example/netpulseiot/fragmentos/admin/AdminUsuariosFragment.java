@@ -23,10 +23,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.netpulseiot.Adapter.Admin.AdminUsuarioAdapter;
+import com.example.netpulseiot.AdminNUevoUsuario;
 import com.example.netpulseiot.MainActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminUsuariosBinding;
 import com.example.netpulseiot.entity.UserItem;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -71,6 +73,12 @@ public class AdminUsuariosFragment extends Fragment {
                         Log.d("msg-test", "Error getting documents: ", task.getException());
                     }
                 });
+
+        FloatingActionButton fabAddUser = binding.getRoot().findViewById(R.id.fabAddUser);
+        fabAddUser.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), AdminNUevoUsuario.class); // Reemplaza con tu actividad
+            startActivity(intent);
+        });
 
 
 
