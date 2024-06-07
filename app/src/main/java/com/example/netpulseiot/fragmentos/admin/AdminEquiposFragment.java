@@ -10,12 +10,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.netpulseiot.Adapter.Admin.AdminEquipoAdapter;
 import com.example.netpulseiot.Adapter.Admin.AdminSitioAdapter;
 import com.example.netpulseiot.Adapter.Supervisor.SupervisorEquipoAdapter;
 import com.example.netpulseiot.AdminNuevoEquipo;
 import com.example.netpulseiot.AdminNuevoSitio;
+import com.example.netpulseiot.QRActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminEquiposBinding;
 import com.example.netpulseiot.entity.AdminSitioItem;
@@ -73,6 +75,15 @@ public class AdminEquiposFragment extends Fragment {
             startActivity(intent);
         });
 
+        ImageButton imageButton = binding.getRoot().findViewById(R.id.scannerButtom);
+        imageButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), QRActivity.class);
+            startActivity(intent);
+                }
+        );
+
         return binding.getRoot();
+
     }
+
 }

@@ -4,14 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/fondo2"
+    android:background="#ffffff"
     tools:context=".fragmentos.admin.AdminEquiposFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageButton
+            android:id="@+id/scannerButtom"
+            android:layout_width="46dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="142dp"
+            android:backgroundTint="#E8F0E1"
+            android:onClick="leer"
+            android:src="@mipmap/ic_scanner_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/searchView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="327dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="75dp"
+            android:background="#F1EBEB"
+            android:backgroundTint="#F6F4F4"
+            android:translationY="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <LinearLayout
+            android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -20,9 +45,10 @@
                 android:id="@+id/textView45"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/stoke"
                 android:text="EQUIPOS"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#577859"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 android:translationY="10dp" />
@@ -34,7 +60,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Sitio 1"
                 android:textAlignment="center"
-                android:textColor="#FAF6F6"
+                android:textColor="#577859"
                 android:textSize="16sp"
                 android:textStyle="italic"
                 android:translationY="10dp" />
@@ -51,8 +77,9 @@
                     android:layout_width="3dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#7CB7EA"
+                    android:backgroundTint="#D1EAC0"
                     android:text="Todos"
+                    android:textColor="#577859"
                     android:translationX="20dp" />
 
                 <Button
@@ -60,28 +87,23 @@
                     android:layout_width="18dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#F3F8EE"
+                    android:backgroundTint="#E9F1E2"
                     android:text="Agregar"
                     android:textColor="#0B0A0A"
                     android:translationX="-20dp" />
 
             </LinearLayout>
 
-            <SearchView
-                android:layout_width="327dp"
-                android:layout_height="33dp"
-                android:background="#F1EBEB"
-                android:backgroundTint="#F6F4F4"
-                android:translationX="40dp"
-                android:translationY="40dp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/adminEquiposRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="498dp"
-                android:translationY="70dp" />
-
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/adminEquiposRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="498dp"
+            android:translationY="70dp"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout4"
+            app:layout_constraintVertical_bias="0.49" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabAddUser"
@@ -90,6 +112,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
             android:src="@drawable/ic_add"
+            app:backgroundTint="#D1EAC0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
