@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/fondo"
+    android:background="#FFFFFF"
     tools:context=".fragmentos.supervisor.SupervisorInicioFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -47,6 +47,7 @@
                             android:layout_width="10dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/gothic_a1"
                             android:text="Hola,"
                             android:translationX="20dp" />
 
@@ -55,8 +56,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/aclonica"
                             android:text="SUPERVISOR"
-                            android:textColor="#CF7A2F"
+                            android:textColor="#009688"
                             android:textStyle="bold"
                             android:translationX="10dp" />
 
@@ -67,6 +69,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/gothic_a1"
                         android:text="¿Qué hacemos hoy?"
                         android:textStyle="italic"
                         android:translationX="20dp"
@@ -107,9 +110,9 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="347dp"
-                android:layout_height="105dp"
+                android:layout_height="87dp"
                 android:translationX="30dp"
-                app:cardBackgroundColor="#CCFFFFFF">
+                app:cardBackgroundColor="#EAF6E2">
 
                 <LinearLayout
                     android:layout_width="333dp"
@@ -120,6 +123,7 @@
                         android:id="@+id/card1"
                         android:layout_width="127dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="Mensajes"
                         android:textColor="#040404"
                         android:textStyle="bold"
@@ -130,6 +134,7 @@
                         android:id="@+id/textView14"
                         android:layout_width="303dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/gothic_a1"
                         android:text="Visualiza la lista de mensajes disponibles"
                         android:textColor="#000000"
                         android:translationX="20dp"
@@ -142,7 +147,7 @@
                 android:layout_height="80dp"
                 android:translationX="30dp"
                 android:translationY="20dp"
-                app:cardBackgroundColor="#CDFFFFFF">
+                app:cardBackgroundColor="#D9ECCC">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -153,6 +158,7 @@
                         android:id="@+id/textView15"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="SITIOS"
                         android:textColor="#090909"
                         android:textStyle="bold"
@@ -163,6 +169,7 @@
                         android:id="@+id/textView16"
                         android:layout_width="307dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/gothic_a1"
                         android:text="Visualiza la lista de sitios"
                         android:textColor="#090909"
                         android:translationX="20dp"
@@ -175,7 +182,7 @@
                 android:layout_height="65dp"
                 android:translationX="30dp"
                 android:translationY="40dp"
-                app:cardBackgroundColor="#CCFFFFFF">
+                app:cardBackgroundColor="#C5DCB6">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -186,6 +193,7 @@
                         android:id="@+id/textView17"
                         android:layout_width="170dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
                         android:text="EQUIPOS"
                         android:textColor="#050505"
                         android:textStyle="bold"
@@ -196,6 +204,7 @@
                         android:id="@+id/textView18"
                         android:layout_width="313dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/gothic_a1"
                         android:text="Visualiza la lista general de equipos"
                         android:textColor="#0C0C0C"
                         android:translationX="20dp"
