@@ -13,33 +13,42 @@
         android:layout_marginHorizontal="20dp"
         android:layout_centerVertical="true"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nombreItem"
-        android:layout_toEndOf="@+id/imageItem"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:text="Nombre"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/provinciaItem"
-        android:layout_toEndOf="@+id/imageItem"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:translationX="100dp"
-        android:text="Provincia"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/nombreItem"
+        android:layout_width="101dp"
         android:layout_height="wrap_content"
-        android:id="@+id/distritoItem"
         android:layout_toEndOf="@+id/imageItem"
-        android:textSize="20sp"
+        android:fontFamily="@font/gothic_a1"
+        android:text="Nombre"
         android:textColor="@color/black"
-        android:translationX="200dp"
-        android:text="Distrito"/>
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/provinciaItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_toEndOf="@+id/imageItem"
+        android:fontFamily="@font/gothic_a1"
+        android:text="Provincia"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:translationX="100dp" />
+
+    <TextView
+        android:id="@+id/distritoItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-71dp"
+        android:layout_toEndOf="@+id/provinciaItem"
+        android:fontFamily="@font/gothic_a1"
+        android:text="Distrito"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:translationX="200dp" />
+
     <TextView
         android:id="@+id/tipoItem"
         android:layout_width="95dp"
@@ -49,7 +58,7 @@
         android:layout_toEndOf="@+id/imageItem"
         android:text="Tipo"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
 
 </RelativeLayout>
 

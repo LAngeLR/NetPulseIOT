@@ -4,18 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/fondo2"
+    android:background="#ffffff"
     tools:context=".fragmentos.supervisor.SupervisorEquiposFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/fondoImageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/fondo2" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -90,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:text="EQUIPOS"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#782323"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -101,37 +97,9 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Sitio 1"
                 android:textAlignment="center"
-                android:textColor="#FAF6F6"
+                android:textColor="#805555"
                 android:textSize="12sp"
                 android:textStyle="italic" />
-
-            <LinearLayout
-                android:layout_width="324dp"
-                android:layout_height="45dp"
-                android:orientation="horizontal"
-                android:translationX="60dp"
-                android:translationY="10dp">
-
-                <Button
-                    android:id="@+id/button6"
-                    android:layout_width="3dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#7CB7EA"
-                    android:text="Todos"
-                    android:translationX="20dp" />
-
-                <Button
-                    android:id="@+id/button7"
-                    android:layout_width="18dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#F3F8EE"
-                    android:text="Agregar"
-                    android:textColor="#0B0A0A"
-                    android:translationX="-20dp" />
-
-            </LinearLayout>
 
             <SearchView
                 android:layout_width="327dp"
