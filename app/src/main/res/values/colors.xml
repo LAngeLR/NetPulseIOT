@@ -10,4 +10,8 @@
     <color name="colorPrimaryVariant">#B71C1C</color> <!-- Variante del color principal -->
     <color name="colorOnPrimary">#FFFFFF</color> <!-- Color del texto en el color principal -->
 
+
+<!-- COLOR XDD NAAA NO VALE -->
+    <color name="selected_item_color">#FF000000</color>
+    <color name="unselected_item_color">#B71C1C</color>
 </resources>

@@ -65,6 +65,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
 
+    implementation 'com.google.firebase:firebase-storage'
+
     //QR leer
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.journeyapps:zxing-android-embedded:4.1.0'
