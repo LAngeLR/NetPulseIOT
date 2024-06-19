@@ -88,15 +88,15 @@ public class MainActivity extends AppCompatActivity {
         Intent activityIntent = null;
 
         switch (valor) {
-            case "admin":
+            case "Administrador":
                 mensajeBienvenida = "Bienvenido Administrador";
                 activityIntent = new Intent(this, AdminActivity.class);
                 break;
-            case "superadmin":
+            case "Superadministrador":
                 mensajeBienvenida = "Bienvenido SuperAdministrador";
                 activityIntent = new Intent(this, SuperadminActivity.class);
                 break;
-            case "supervisor":
+            case "Supervisor":
                 mensajeBienvenida = "Bienvenido Supervisor";
                 activityIntent = new Intent(this, SupervisorActivity.class);
                 break;
@@ -124,19 +124,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void admin(View view){
-        notificarImportanceDefault("admin");
+        notificarImportanceDefault("Administrador");
         Intent intent = new Intent(this, AdminActivity.class);
         startActivity(intent);
     }
 
     public void superadmin(View view){
-        notificarImportanceDefault("superadmin");
+        notificarImportanceDefault("Superadministrador");
         Intent intent = new Intent(this, SuperadminActivity.class);
         startActivity(intent);
     }
 
     public void supervisor(View view){
-        notificarImportanceDefault("supervisor");
+        notificarImportanceDefault("Supervisor");
         Intent intent = new Intent(this, SupervisorActivity.class);
         startActivity(intent);
     }

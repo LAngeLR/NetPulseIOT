@@ -1,5 +1,6 @@
 package com.example.netpulseiot.fragmentos.superadmin;
 
+//import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -10,6 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.netpulseiot.AuthActivity2;
+import com.firebase.ui.auth.AuthUI;
 
 import java.lang.reflect.Field;
 import java.time.Instant;
@@ -34,6 +38,7 @@ import java.util.Date;
 public class SuperadminActivity extends AppCompatActivity {
 
     ActivitySuperadminBinding binding;
+
     FirebaseFirestore db;
     private android.text.Html Html;
 
@@ -86,6 +91,8 @@ public class SuperadminActivity extends AppCompatActivity {
         } else {
             replaceFragment(new InicioSuperadminFragment());
         }
+
+
 
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -148,4 +155,42 @@ public class SuperadminActivity extends AppCompatActivity {
         Intent intent = new Intent(this, NuevoUsuarioSuperadminActivity.class);
         startActivity(intent);
     }
+
+
+
+    /* TOOLBAR - CERRAR SESIÓN */
+
+    /**
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu); // Asumiendo que el archivo XML del menú se llama toolbar_menu.xml
+        return true;
+    }
+//    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.tercero : // Este es el ID del ítem "Cerrar sesión"
+                // Aquí es donde colocas el código para cerrar sesión
+                cerrarSesion();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void cerrarSesion() {
+        AuthUI.getInstance()
+                .signOut(this)
+                .addOnCompleteListener(task -> {
+                    Log.d("infoApp", "logout exitoso");
+                    // Opcional: Redirigir al usuario a la pantalla de inicio de sesión o a otra actividad
+                    Intent intent = new Intent(SuperadminActivity.this, AuthActivity2.class); // Asegúrate de que LoginActivity sea la actividad de inicio de sesión
+                    startActivity(intent);
+                    finish(); // Finaliza la actividad actual para que no puedan volver a ella presionando el botón "Atrás"
+                });
+    }
+
+    **/
+
 }

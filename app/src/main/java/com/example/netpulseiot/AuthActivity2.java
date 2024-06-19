@@ -58,7 +58,7 @@ public class AuthActivity2 extends AppCompatActivity {
                                                                 String rol = document.getString("rol");
                                                                 if (rol != null) {
                                                                     switch (rol) {
-                                                                        case "Admin":
+                                                                        case "Administrador":
                                                                             Intent adminIntent = new Intent(AuthActivity2.this, AdminActivity.class);
                                                                             startActivity(adminIntent);
                                                                             break;
@@ -66,7 +66,7 @@ public class AuthActivity2 extends AppCompatActivity {
                                                                             Intent supervisorIntent = new Intent(AuthActivity2.this, SupervisorActivity.class);
                                                                             startActivity(supervisorIntent);
                                                                             break;
-                                                                        case "Superadmin":
+                                                                        case "Superadministrador":
 
                                                                             Intent superadminIntent = new Intent(AuthActivity2.this, SuperadminActivity.class);
                                                                             startActivity(superadminIntent);
