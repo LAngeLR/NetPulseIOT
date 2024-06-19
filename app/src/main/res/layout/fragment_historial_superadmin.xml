@@ -16,10 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
+            android:fontFamily="@font/aclonica"
             android:text="LOGS"
             android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="28sp"
+            android:textColor="#30ACA0"
+            android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp" />
@@ -30,13 +31,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:hint="Búsqueda"
+            app:backgroundTint="#C4A9D8D3"
             app:layout_constraintTop_toBottomOf="@+id/textViewU"
             tools:layout_editor_absoluteX="16dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/superadminLogsRecyclerView"
-            android:layout_width="381dp"
-            android:layout_height="549dp"
+            android:layout_width="373dp"
+            android:layout_height="676dp"
             android:layout_marginTop="30dp"
             android:textAlignment="center"
             android:translationY="30dp"

@@ -33,11 +33,11 @@
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:layout_marginTop="28dp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/aclonica"
             android:text="MENSAJES"
             android:textAlignment="center"
-            android:textColor="#070707"
-            android:textSize="24sp"
+            android:textColor="#18A3B5"
+            android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -51,6 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:hint="Search here..."
+            app:backgroundTint="#7718A2B4"
             app:layout_constraintTop_toBottomOf="@+id/titulo"
             tools:layout_editor_absoluteX="16dp">
 

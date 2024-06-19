@@ -13,8 +13,8 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="404dp"
-            android:layout_height="618dp"
+            android:layout_width="421dp"
+            android:layout_height="872dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -25,10 +25,11 @@
                 android:id="@+id/textViewU"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
                 android:text="MENSAJES"
                 android:textAlignment="center"
                 android:textColor="#076067"
-                android:textSize="24sp"
+                android:textSize="34sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.appbar.AppBarLayout
@@ -41,13 +42,14 @@
                     android:id="@+id/search_bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Busqueda" />
+                    android:hint="Busqueda"
+                    app:backgroundTint="#9281C8CD" />
             </com.google.android.material.appbar.AppBarLayout>
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/supervisorMensajesRecyclerView"
-                android:layout_width="match_parent"
+                android:layout_width="402dp"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>

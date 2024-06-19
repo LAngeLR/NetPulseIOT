@@ -16,10 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
+            android:fontFamily="@font/aclonica"
             android:text="USUARIOS"
             android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="28sp"
+            android:textColor="#3B91D5"
+            android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp" />
@@ -38,14 +39,15 @@
         <!-- DESARROLLO DE LOS TABS-->
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="390dp"
+            android:layout_height="49dp"
             android:layout_marginTop="28dp"
-            android:background="#364FF4"
-            app:tabTextColor="@android:color/white"
+            android:background="#539EDA"
             app:layout_constraintTop_toBottomOf="@+id/search_bar"
             app:tabMode="fixed"
-            tools:ignore="MissingConstraints">
+            app:tabTextColor="@android:color/white"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="12dp">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
