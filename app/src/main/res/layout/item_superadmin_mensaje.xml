@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="15dp">
+    android:layout_marginTop="15dp"
+    android:background="#F6F5F5">
     <!--    si van a copiar  y pegar no se olviden de modificar estos 3 parámetros de arriba-->
 
     <ImageView
@@ -21,6 +22,7 @@
         android:layout_marginEnd="11dp"
         android:layout_toStartOf="@+id/contadorItem"
         android:layout_toEndOf="@+id/fotoItem"
+        android:fontFamily="serif"
         android:text="Nombre"
         android:textColor="@color/black"
         android:textSize="22sp"
@@ -36,6 +38,7 @@
         android:layout_marginEnd="8dp"
         android:layout_toStartOf="@+id/contadorItem"
         android:layout_toEndOf="@+id/fotoItem"
+        android:fontFamily="serif"
         android:text="Mensaje"
         android:textColor="@color/black"
         android:textSize="17sp" />

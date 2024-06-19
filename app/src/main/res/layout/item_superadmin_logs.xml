@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_marginTop="15dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:background="#FBFBFB">
     <!--    si van a copiar  y pegar no se olviden de modificar estos 3 parámetros de arriba-->
 
     <ImageView

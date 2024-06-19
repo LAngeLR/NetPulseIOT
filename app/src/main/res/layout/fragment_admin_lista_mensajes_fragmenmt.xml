@@ -14,8 +14,8 @@
         tools:context=".AdminListaSitiosActivity">
 
         <LinearLayout
-            android:layout_width="404dp"
-            android:layout_height="618dp"
+            android:layout_width="410dp"
+            android:layout_height="863dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,10 +26,11 @@
                 android:id="@+id/textViewU"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
                 android:text="MENSAJES"
                 android:textAlignment="center"
-                android:textColor="#E2F5F6"
-                android:textSize="28sp"
+                android:textColor="#287BB1"
+                android:textSize="34sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.appbar.AppBarLayout
@@ -42,14 +43,15 @@
                     android:id="@+id/search_bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Búsqueda" />
+                    android:hint="Búsqueda"
+                    app:backgroundTint="#C5E4F8" />
             </com.google.android.material.appbar.AppBarLayout>
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/adminMensajesRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="642dp"
                 android:translationY="30dp" />
 
         </LinearLayout>

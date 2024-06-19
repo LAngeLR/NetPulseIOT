@@ -15,8 +15,8 @@
 
 
         <LinearLayout
-            android:layout_width="407dp"
-            android:layout_height="664dp"
+            android:layout_width="415dp"
+            android:layout_height="856dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,17 +27,17 @@
                 android:id="@+id/titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/aclonica"
                 android:text="SITIOS"
                 android:textAlignment="center"
-                android:textColor="#852F2F"
+                android:textColor="#359C86"
                 android:textSize="34sp"
                 android:textStyle="bold" />
 
             <SearchView
                 android:layout_width="327dp"
                 android:layout_height="33dp"
-                android:background="#F1EBEB"
+                android:background="#359B85"
                 android:backgroundTint="#F6F4F4"
                 android:translationX="40dp"
                 android:translationY="40dp" />
@@ -46,7 +46,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/adminSitiosRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="699dp"
                 android:translationY="50dp" />
 
 
@@ -59,6 +59,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
             android:src="@drawable/ic_add"
+            app:backgroundTint="#BE359B85"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

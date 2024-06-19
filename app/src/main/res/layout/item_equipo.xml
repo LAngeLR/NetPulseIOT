@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="20dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,37 +11,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="EQUIPO 1"
+        android:fontFamily="serif"
+        android:text="EQUIPO #n"
         android:textColor="#0C0C0C"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <ImageView
+        android:id="@+id/imageItem"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/imageItem"
+        android:layout_alignTop="@+id/nombreItem"
+        android:layout_alignParentStart="true"
         android:layout_marginHorizontal="20dp"
-        android:layout_centerVertical="true"
-        android:translationX="50dp"
-        />
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="27dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton10"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp"
-        android:layout_below="@id/imageItem"
-        android:src="@android:drawable/ic_menu_delete"
-        android:tint="#AE1B1B" />
+        android:layout_marginStart="254dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="101dp"
+        android:clickable="true"
+        app:backgroundTint="#BADF8F"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
-    <ImageButton
-        android:id="@+id/imageButton11"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_below="@id/imageItem"
-        android:layout_toStartOf="@id/imageButton10"
-        android:src="@android:drawable/ic_menu_add"
-        android:tint="#03034C" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="255dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="100dp"
+        android:clickable="true"
+        app:backgroundTint="#DD8080"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
 </RelativeLayout>
