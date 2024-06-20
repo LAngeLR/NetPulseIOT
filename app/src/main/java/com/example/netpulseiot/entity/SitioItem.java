@@ -2,9 +2,7 @@ package com.example.netpulseiot.entity;
 
 import com.google.firebase.firestore.GeoPoint;
 
-import java.util.List;
-
-public class AdminSitioItem {
+public class SitioItem {
 
     String id;
     String nombre;
@@ -16,11 +14,12 @@ public class AdminSitioItem {
     String ubigeo;
     GeoPoint geolocalizacion;
     String foto;
+    String supervisor;
 
-    public AdminSitioItem() {
+    public SitioItem() {
     }
 
-    public AdminSitioItem(String id, String nombre, String departamento, String provincia, String distrito, String tipoSitio, String tipoZona, String ubigeo, GeoPoint geolocalizacion, String foto) {
+    public SitioItem(String id, String nombre, String departamento, String provincia, String distrito, String tipoSitio, String tipoZona, String ubigeo, GeoPoint geolocalizacion, String foto, String supervisor) {
         this.id = id;
         this.nombre = nombre;
         this.departamento = departamento;
@@ -31,6 +30,7 @@ public class AdminSitioItem {
         this.ubigeo = ubigeo;
         this.geolocalizacion = geolocalizacion;
         this.foto = foto;
+        this.supervisor = supervisor;
     }
 
     public String getId() {
@@ -111,5 +111,13 @@ public class AdminSitioItem {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public String getSupervisor() {
+        return supervisor;
+    }
+
+    public void setSupervisor(String supervisor) {
+        this.supervisor = supervisor;
     }
 }

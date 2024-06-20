@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.Activity.AdminActivity;
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.entity.AdminSitioItem;
+import com.example.netpulseiot.entity.SitioItem;
 import com.example.netpulseiot.fragmentos.admin.AdminVerSitioFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -25,8 +25,8 @@ import java.util.List;
 public class AdminSitioAdapter extends RecyclerView.Adapter<AdminSitioAdapter.adminSitioViewHolder>{
 
     Context context;
-    List<AdminSitioItem> list;
-    public AdminSitioAdapter(Context context, List<AdminSitioItem> list) {
+    List<SitioItem> list;
+    public AdminSitioAdapter(Context context, List<SitioItem> list) {
         this.context = context;
         this.list = list;
     }
@@ -40,7 +40,7 @@ public class AdminSitioAdapter extends RecyclerView.Adapter<AdminSitioAdapter.ad
 
     @Override
     public void onBindViewHolder(@NonNull adminSitioViewHolder holder, int position) {
-        AdminSitioItem currentItem = list.get(position);
+        SitioItem currentItem = list.get(position);
 
         holder.nombreItem.setText(currentItem.getNombre());
         holder.provinciaItem.setText(currentItem.getProvincia());
@@ -58,7 +58,7 @@ public class AdminSitioAdapter extends RecyclerView.Adapter<AdminSitioAdapter.ad
                         if (task.isSuccessful()) {
                             DocumentSnapshot documentSnapshot = task.getResult();
                             if(documentSnapshot.exists()){
-                                AdminSitioItem sitioItem1 = documentSnapshot.toObject(AdminSitioItem.class);
+                                SitioItem sitioItem1 = documentSnapshot.toObject(SitioItem.class);
                                 if (sitioItem1!=null){
 
                                     Bundle args = new Bundle();
@@ -70,6 +70,7 @@ public class AdminSitioAdapter extends RecyclerView.Adapter<AdminSitioAdapter.ad
                                     args.putString("tipoSitio",sitioItem1.getTipoSitio());
                                     args.putString("tipoZona",sitioItem1.getTipoZona());
                                     args.putString("ubigeo",sitioItem1.getUbigeo());
+                                    args.putString("supervisor",sitioItem1.getSupervisor());
                                     GeoPoint geoPoint = sitioItem1.getGeolocalizacion();
                                     args.putDouble("latitud",geoPoint.getLatitude());
                                     args.putDouble("longitud",geoPoint.getLongitude());

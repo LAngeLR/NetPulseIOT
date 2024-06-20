@@ -8,7 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.netpulseiot.databinding.ActivityAdminNuevoSitioBinding;
-import com.example.netpulseiot.entity.AdminSitioItem;
+import com.example.netpulseiot.entity.SitioItem;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
 
@@ -65,7 +65,7 @@ public class AdminNuevoSitio extends AppCompatActivity {
             /** CREAR INSTANCIA DE BD FIREBASE **/
             db = FirebaseFirestore.getInstance();
             /** Usuario **/
-            AdminSitioItem sitioItem = new AdminSitioItem();
+            SitioItem sitioItem = new SitioItem();
             SecureRandom random = new SecureRandom();
             String randomCode = generateRandomCode(random, CODE_LENGTH);
             sitioItem.setId(randomCode);

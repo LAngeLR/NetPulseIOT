@@ -10,12 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.netpulseiot.Adapter.Admin.AdminSitioAdapter;
 import com.example.netpulseiot.Adapter.Supervisor.SupervisorSitioAdapter;
-import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentSupervisorSitiosBinding;
-import com.example.netpulseiot.entity.AdminSitioItem;
-import com.example.netpulseiot.entity.SupervisorSitioItem;
+import com.example.netpulseiot.entity.SitioItem;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -25,7 +22,7 @@ import java.util.List;
 public class SupervisorSitiosFragment extends Fragment {
 
     FragmentSupervisorSitiosBinding binding;
-    List<AdminSitioItem> list;
+    List<SitioItem> list;
     SupervisorSitioAdapter adapter;
 
     @Override
@@ -46,7 +43,7 @@ public class SupervisorSitiosFragment extends Fragment {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            AdminSitioItem logSitio = document.toObject(AdminSitioItem.class);
+                            SitioItem logSitio = document.toObject(SitioItem.class);
                             if (logSitio!=null){
                                 //importante para evitar null pointer exception
                                 logSitio.setId(document.getId());

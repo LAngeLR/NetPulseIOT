@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.Activity.SupervisorActivity;
-import com.example.netpulseiot.entity.AdminSitioItem;
+import com.example.netpulseiot.entity.SitioItem;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorVerSitioFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -25,8 +25,8 @@ import java.util.List;
 public class SupervisorSitioAdapter extends RecyclerView.Adapter<SupervisorSitioAdapter.supervisorSitioViewHolder>{
 
     private Context context;
-    List<AdminSitioItem> list;
-    public SupervisorSitioAdapter(Context context, List<AdminSitioItem> list) {
+    List<SitioItem> list;
+    public SupervisorSitioAdapter(Context context, List<SitioItem> list) {
         this.context = context;
         this.list = list;
     }
@@ -39,7 +39,7 @@ public class SupervisorSitioAdapter extends RecyclerView.Adapter<SupervisorSitio
     }
     @Override
     public void onBindViewHolder(@NonNull SupervisorSitioAdapter.supervisorSitioViewHolder holder, int position) {
-        AdminSitioItem currentItem = list.get(position);
+        SitioItem currentItem = list.get(position);
         
         holder.nombreItem.setText(currentItem.getNombre());
         holder.provinciaItem.setText(currentItem.getProvincia());
@@ -57,7 +57,7 @@ public class SupervisorSitioAdapter extends RecyclerView.Adapter<SupervisorSitio
                         if (task.isSuccessful()) {
                             DocumentSnapshot documentSnapshot = task.getResult();
                             if(documentSnapshot.exists()){
-                                AdminSitioItem sitioItem1 = documentSnapshot.toObject(AdminSitioItem.class);
+                                SitioItem sitioItem1 = documentSnapshot.toObject(SitioItem.class);
                                 if (sitioItem1!=null){
 
                                     Bundle args = new Bundle();

@@ -15,7 +15,7 @@ import com.example.netpulseiot.Adapter.Admin.AdminSitioAdapter;
 import com.example.netpulseiot.Activity.AdminNuevoSitio;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminSitiosBinding;
-import com.example.netpulseiot.entity.AdminSitioItem;
+import com.example.netpulseiot.entity.SitioItem;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -27,7 +27,7 @@ import java.util.List;
 public class AdminSitiosFragment extends Fragment {
 
     FragmentAdminSitiosBinding binding;
-    List<AdminSitioItem> list;
+    List<SitioItem> list;
     AdminSitioAdapter adapter;
 
     @Override
@@ -48,7 +48,7 @@ public class AdminSitiosFragment extends Fragment {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            AdminSitioItem logSitio = document.toObject(AdminSitioItem.class);
+                            SitioItem logSitio = document.toObject(SitioItem.class);
                             if (logSitio!=null){
                                 //importante para evitar null pointer exception
                                 logSitio.setId(document.getId());

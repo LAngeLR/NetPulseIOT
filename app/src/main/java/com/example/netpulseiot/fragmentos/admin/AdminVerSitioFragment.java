@@ -5,31 +5,25 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.netpulseiot.Activity.AdminActivity;
-import com.example.netpulseiot.R;
-import com.example.netpulseiot.databinding.FragmentAdminAsignarSupervisorBinding;
 import com.example.netpulseiot.databinding.FragmentAdminVerSitioBinding;
-import com.example.netpulseiot.entity.AdminSitioItem;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.GeoPoint;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 public class AdminVerSitioFragment extends Fragment {
     FragmentAdminVerSitioBinding binding;
+    FirebaseFirestore db;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentAdminVerSitioBinding.inflate(inflater, container, false);
         Context context;
-
-
-
+        
         Bundle args = getArguments();
         if (args!= null) {
             String sitioId = args.getString("id");
@@ -40,6 +34,7 @@ public class AdminVerSitioFragment extends Fragment {
             String tipoSitio = args.getString("tipoSitio");
             String tipoZona = args.getString("tipoZona");
             String ubigeo = args.getString("ubigeo");
+            String supervisorId = args.getString("supervisor");
             Double latitud = args.getDouble("latitud");
             Double longitud = args.getDouble("longitud");
 
@@ -48,8 +43,29 @@ public class AdminVerSitioFragment extends Fragment {
             binding.ubicacionSitioItem.setText(distrito != null ? ubicacion : "No definido");
             binding.tipoSitioItem.setText(tipoSitio != null ? tipoSitio : "No definido");
             binding.tipoZonaItem.setText(tipoZona != null ? tipoZona : "No definido");
+//            binding.supervisorAsignado.setText(supervisor != null ? supervisor : "No asignado");
             String geolocalizacion = ("Lat: " + latitud + ", Lon: " + longitud);
             binding.geolocalizacionItem.setText(geolocalizacion);
+
+            //llamafo a la BD para obtener el nombre según el id
+            db = FirebaseFirestore.getInstance();
+            if (supervisorId != null && !supervisorId.isEmpty()) {
+                DocumentReference supervisorRef = db.collection("usuarios").document(supervisorId);
+                supervisorRef.get().addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        String supervisorNombre = documentSnapshot.getString("nombre");
+                        String supervisorApellido = documentSnapshot.getString("apellido");
+                        String nombreCompleto = supervisorNombre + " " + supervisorApellido;
+                        binding.supervisorAsignado.setText(supervisorNombre != null ? nombreCompleto : "No asignado");
+                    } else {
+                        binding.supervisorAsignado.setText("No asignado");
+                    }
+                }).addOnFailureListener(e -> {
+                    binding.supervisorAsignado.setText("No asignado");
+                });
+            } else {
+                binding.supervisorAsignado.setText("No asignado");
+            }
 
             binding.asignarSupervisores.setOnClickListener(v -> {
                 //lógica para ir a la vista de agregar supervisor a sitio
