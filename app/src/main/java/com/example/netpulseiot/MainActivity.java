@@ -156,11 +156,13 @@ public class MainActivity extends AppCompatActivity {
         return code.toString();
     }
 
+    /** INICIAR SESIÓN **/
     public void ingresarCuenta(View view){
         Intent intent = new Intent(this, AuthActivity2.class);
         startActivity(intent);
     }
 
+    /** FORMULARIO DE REGISTRO **/
     public void registrarCuenta(View view){
         Intent intent = new Intent(this, AuthActivity.class);
         startActivity(intent);

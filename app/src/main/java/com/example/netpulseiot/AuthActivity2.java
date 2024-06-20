@@ -24,6 +24,9 @@ public class AuthActivity2 extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore db;
 
+    /** INGRESO DEL LOGIN **/
+    /* Falta validación de conexión a internet */
+    /* Mejorar la vista */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +40,9 @@ public class AuthActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String correo = binding.editTextTextEmailAddress.getText().toString().trim();
-                String contraseña = binding.editTextTextPassword.getText().toString().trim();
+                String contrasena = binding.editTextTextPassword.getText().toString().trim();
 
-                mAuth.signInWithEmailAndPassword(correo, contraseña)
+                mAuth.signInWithEmailAndPassword(correo, contrasena)
                         .addOnCompleteListener(AuthActivity2.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
