@@ -27,6 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".fragmentos.superadmin.NuevoUsuarioSuperadminActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".Activity.SuperAdminListaUsarios"
@@ -74,7 +75,8 @@
             android:exported="false" />
         <activity
             android:name=".fragmentos.superadmin.SuperadminActivity"
-            android:exported="false" />
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false"/>
         <activity
             android:name=".Activity.AdminActivity"
             android:exported="false" />
@@ -82,7 +84,9 @@
             android:name=".Activity.AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.AuthActivity2"
+
+            android:name=".AuthActivity2"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".Activity.MainActivity"
