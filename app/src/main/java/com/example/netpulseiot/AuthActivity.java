@@ -95,6 +95,8 @@ public class AuthActivity extends AppCompatActivity {
         });
     }
 
+
+    /* Para regresar a la vista anterior con el OnClick */
     public void cancela(View view){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
