@@ -15,7 +15,7 @@
             android:id="@+id/textViewU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/aclonica"
             android:text="LOGS"
             android:textAlignment="center"
@@ -29,7 +29,7 @@
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:hint="Búsqueda"
             app:backgroundTint="#C4A9D8D3"
             app:layout_constraintTop_toBottomOf="@+id/textViewU"
@@ -37,15 +37,17 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/superadminLogsRecyclerView"
-            android:layout_width="373dp"
-            android:layout_height="676dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="365dp"
+            android:layout_height="556dp"
+            android:layout_marginTop="1dp"
             android:textAlignment="center"
             android:translationY="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+            app:layout_constraintTop_toBottomOf="@+id/search_bar"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

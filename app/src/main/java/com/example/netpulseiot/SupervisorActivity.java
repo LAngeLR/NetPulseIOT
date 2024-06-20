@@ -14,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.netpulseiot.databinding.ActivityAdmin1Binding;
 import com.example.netpulseiot.databinding.ActivitySupervisorBinding;
 import com.example.netpulseiot.fragmentos.admin.AdminEquiposFragment;
 import com.example.netpulseiot.fragmentos.admin.AdminInicioFragment;
