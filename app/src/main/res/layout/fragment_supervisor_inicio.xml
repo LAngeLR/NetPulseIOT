@@ -155,7 +155,7 @@
                         android:layout_width="307dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/gothic_a1"
-                        android:text="Visualiza la lista de sitios"
+                        android:text="Visualiza la lista de sitios a los que has sido asignado"
                         android:textColor="#090909"
                         android:translationX="20dp"
                         android:translationY="10dp" />

@@ -1,4 +1,4 @@
-package com.example.netpulseiot.fragmentos.admin;
+package com.example.netpulseiot.fragmentos.supervisor;
 
 import android.os.Bundle;
 
@@ -11,10 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.netpulseiot.AdminActivity;
-import com.example.netpulseiot.Adapter.Admin.AdminAsignarSupervisorAdapter;
-import com.example.netpulseiot.databinding.FragmentAdminAsignarSupervisorBinding;
-import com.example.netpulseiot.entity.SuperadminUsuarioItem;
+import com.example.netpulseiot.SupervisorActivity;
+import com.example.netpulseiot.Adapter.Supervisor.SupervisorAgregarEquipoAdapter;
+import com.example.netpulseiot.databinding.FragmentSupervisorAgregarEquipoBinding;
+import com.example.netpulseiot.entity.EquipoItem;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -22,38 +23,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AdminAsignarSupervisorFragment extends Fragment {
-    FragmentAdminAsignarSupervisorBinding binding;
-    List<SuperadminUsuarioItem> list;
-    AdminAsignarSupervisorAdapter adapter;
+public class SupervisorAgregarEquipoFragment extends Fragment {
+    FragmentSupervisorAgregarEquipoBinding binding;
+    List<EquipoItem> list;
     String sitioId;
+    SupervisorAgregarEquipoAdapter adapter;
     FirebaseFirestore db;
-    private SuperadminUsuarioItem superadminUsuarioItem;
+    private EquipoItem equipoItem;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentAdminAsignarSupervisorBinding.inflate(inflater,container,false);
-        //llenar de info de supervisores al adapter
+        binding = FragmentSupervisorAgregarEquipoBinding.inflate(inflater,container,false);
+        //llenar de info de equipos al adapter 
         list = new ArrayList<>();
-        adapter = new AdminAsignarSupervisorAdapter(getContext(),list);
-        binding.adminAsignarSupervisorRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.adminAsignarSupervisorRecyclerView.setAdapter(adapter);
+        adapter = new SupervisorAgregarEquipoAdapter(getContext(),list);
+        binding.supervisorAgregarEquiposRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.supervisorAgregarEquiposRecyclerView.setAdapter(adapter);
 
         //instanciar Firestore
         db = FirebaseFirestore.getInstance();
-        db.collection("usuarios")
-                .whereEqualTo("rol", "Supervisor") //filtrado para que solo muestre supervisores (U)
+        db.collection("equipos")
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            SuperadminUsuarioItem logUser = document.toObject(SuperadminUsuarioItem.class);
-                            if (logUser!=null){
+                            EquipoItem logEquipo = document.toObject(EquipoItem.class);
+                            if (logEquipo!=null){
                                 //importante para evitar null pointer exception
-                                logUser.setId(document.getId());
-                                list.add(logUser);
+                                logEquipo.setId(document.getId());
+                                list.add(logEquipo);
                             }
                         }
                         Log.d("msg-test", "Se mandó la lista");
@@ -63,25 +63,25 @@ public class AdminAsignarSupervisorFragment extends Fragment {
                         Log.d("msg-test", "Error getting documents: ", task.getException());
                     }
                 });
-
         // Configurar el listener para el adaptador
         adapter.setOnItemClickListener(item -> {
-            binding.supervisorElegidoTextView.setText(item.getNombre());
-            superadminUsuarioItem = item;
+            binding.equiposElegidoTextView.setText(item.getModelo());
+            equipoItem = item;
         });
-
+        
+        
         //recepeción del sitio al que se le asignará el supervisor
         Bundle args = getArguments();
         if (args != null){
             sitioId = args.getString("sitioId");
         }
-
+//        binding.textView.setText(sitioId);
 
         //cancelar Guardado
         binding.cancelar.setOnClickListener(view -> {
-            Fragment adminSitiosFragment =new AdminSitiosFragment();
-            if (getContext() instanceof AdminActivity){
-                ((AdminActivity) getContext()).replaceFragment(adminSitiosFragment);
+            Fragment supervisorSitiosFragment =new SupervisorSitiosFragment();
+            if (getContext() instanceof SupervisorActivity){
+                ((SupervisorActivity) getContext()).replaceFragment(supervisorSitiosFragment);
             }
         });
 
@@ -89,12 +89,12 @@ public class AdminAsignarSupervisorFragment extends Fragment {
             db = FirebaseFirestore.getInstance();
             db.collection("sitios")
                     .document(sitioId)
-                    .update("supervisor",superadminUsuarioItem.getId())
+                    .update("equipos", FieldValue.arrayUnion(equipoItem.getId()))
                     .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(getContext(), "Supervisor asignado", Toast.LENGTH_SHORT).show();
-                        Fragment adminSitiosFragment =new AdminSitiosFragment();
-                        if (getContext() instanceof AdminActivity){
-                            ((AdminActivity) getContext()).replaceFragment(adminSitiosFragment);
+                        Toast.makeText(getContext(), "equipo agregado", Toast.LENGTH_SHORT).show();
+                        Fragment supervisorSitiosFragment =new SupervisorSitiosFragment();
+                        if (getContext() instanceof SupervisorActivity){
+                            ((SupervisorActivity) getContext()).replaceFragment(supervisorSitiosFragment);
                         }
                     })
                     .addOnFailureListener(e -> {

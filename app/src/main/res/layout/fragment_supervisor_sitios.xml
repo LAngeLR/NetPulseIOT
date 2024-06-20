@@ -11,7 +11,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.SupervisorListaSitiosActivity">
+        tools:context=".SupervisorListaSitiosActivity">
 
         <LinearLayout
             android:layout_width="410dp"
@@ -34,6 +34,13 @@
                 android:textColor="#076067"
                 android:textSize="34sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView65"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Lista de sitios a los que ha sido asignado" />
 
             <LinearLayout
                 android:layout_width="411dp"

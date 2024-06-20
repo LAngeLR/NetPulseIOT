@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Activity;
+package com.example.netpulseiot;
 
 import android.content.Intent;
 import android.os.Bundle;

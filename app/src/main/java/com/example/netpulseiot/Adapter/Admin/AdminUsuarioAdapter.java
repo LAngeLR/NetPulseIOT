@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.netpulseiot.Activity.AdminActivity;
+import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.entity.UserItem;
 import com.example.netpulseiot.fragmentos.admin.EditarUsuarioAdminFragment;

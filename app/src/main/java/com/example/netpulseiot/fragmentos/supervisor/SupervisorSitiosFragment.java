@@ -38,7 +38,9 @@ public class SupervisorSitiosFragment extends Fragment {
 
         //instanciar Firestore
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        String supervisorIdHard = "1OefJq3BJzPhA7ZhWRxRmrrCLg43";
         db.collection("sitios")
+                .whereEqualTo("supervisor", supervisorIdHard) //como todavía no está authentification se hardcodeó para que se vea del perfil del único superv
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

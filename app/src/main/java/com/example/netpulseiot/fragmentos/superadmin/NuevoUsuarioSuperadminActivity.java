@@ -8,7 +8,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.netpulseiot.Activity.MainActivity;
+import com.example.netpulseiot.MainActivity;
 import com.example.netpulseiot.databinding.ActivityNuevoUsuarioSuperadminBinding;
 import com.example.netpulseiot.dto.UsuarioDTO;
 import com.example.netpulseiot.entity.SuperadminLogsItem;

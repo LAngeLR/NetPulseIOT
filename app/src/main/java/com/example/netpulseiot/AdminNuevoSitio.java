@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Activity;
+package com.example.netpulseiot;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdminNuevoSitio extends AppCompatActivity {
 
@@ -83,6 +85,9 @@ public class AdminNuevoSitio extends AppCompatActivity {
             GeoPoint geolocalizacion = new GeoPoint(latitud, longitud);
             sitioItem.setGeolocalizacion(geolocalizacion);
             sitioItem.setFoto("no hay foto XD");
+            sitioItem.setSupervisor("Sin asignar");
+            List<String> equipos = new ArrayList<>();
+            sitioItem.setEquipos(equipos);
 
 //            /** Log **/
 //            SuperadminLogsItem logsItem = new SuperadminLogsItem();

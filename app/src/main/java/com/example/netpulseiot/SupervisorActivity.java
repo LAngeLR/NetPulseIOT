@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Activity;
+package com.example.netpulseiot;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.ActivitySupervisorBinding;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorEquiposFragment;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorInicioFragment;

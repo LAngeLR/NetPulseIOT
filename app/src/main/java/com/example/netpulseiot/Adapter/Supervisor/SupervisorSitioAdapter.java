@@ -13,13 +13,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.Activity.SupervisorActivity;
+import com.example.netpulseiot.SupervisorActivity;
 import com.example.netpulseiot.entity.SitioItem;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorVerSitioFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.GeoPoint;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SupervisorSitioAdapter extends RecyclerView.Adapter<SupervisorSitioAdapter.supervisorSitioViewHolder>{
@@ -72,6 +73,8 @@ public class SupervisorSitioAdapter extends RecyclerView.Adapter<SupervisorSitio
                                     GeoPoint geoPoint = sitioItem1.getGeolocalizacion();
                                     args.putDouble("latitud",geoPoint.getLatitude());
                                     args.putDouble("longitud",geoPoint.getLongitude());
+                                    ArrayList<String> equiposList = new ArrayList<>(sitioItem1.getEquipos());
+                                    args.putStringArrayList("equipos",equiposList);
 
                                     supervisorVerSitioFragment.setArguments(args);
 

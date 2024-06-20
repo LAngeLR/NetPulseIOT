@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E8FFFFFF">
+    <!--    si van a copiar  y pegar no se olviden de modificar estos 3 parámetros de arriba-->
+
+    <ImageView
+        android:id="@+id/fotoItem"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginEnd="280dp" />
+
+    <TextView
+        android:id="@+id/modeloItem"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="102dp"
+        android:fontFamily="serif"
+        android:text="Nombre"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tipoEquipoItem"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/modeloItem"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="157dp"
+        android:fontFamily="serif"
+        android:text="Cargo"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+</RelativeLayout>

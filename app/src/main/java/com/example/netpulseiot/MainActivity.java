@@ -1,4 +1,4 @@
-package com.example.netpulseiot.Activity;
+package com.example.netpulseiot;
 
 import static android.Manifest.permission.POST_NOTIFICATIONS;
 
@@ -20,7 +20,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.ActivityMainBinding;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
 import com.google.firebase.firestore.FirebaseFirestore;

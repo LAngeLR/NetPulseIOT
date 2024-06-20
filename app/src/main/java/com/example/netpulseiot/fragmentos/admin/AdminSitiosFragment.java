@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.netpulseiot.Adapter.Admin.AdminSitioAdapter;
-import com.example.netpulseiot.Activity.AdminNuevoSitio;
+import com.example.netpulseiot.AdminNuevoSitio;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminSitiosBinding;
 import com.example.netpulseiot.entity.SitioItem;
