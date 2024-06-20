@@ -19,7 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.Activity.SuperAdminListaUsarios;
+import com.example.netpulseiot.SuperAdminListaUsarios;
 import com.example.netpulseiot.databinding.ActivitySuperadminBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 

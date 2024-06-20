@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.netpulseiot.Activity.AdminActivity;
+import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.databinding.FragmentAdminVerSitioBinding;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;

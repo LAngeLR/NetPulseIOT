@@ -1,6 +1,5 @@
 package com.example.netpulseiot.fragmentos.admin;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,8 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.netpulseiot.Activity.AdminActivity;
-import com.example.netpulseiot.Activity.AdminNUevoUsuario;
+import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.Adapter.Admin.AdminAsignarSupervisorAdapter;
 import com.example.netpulseiot.databinding.FragmentAdminAsignarSupervisorBinding;
 import com.example.netpulseiot.entity.SuperadminUsuarioItem;

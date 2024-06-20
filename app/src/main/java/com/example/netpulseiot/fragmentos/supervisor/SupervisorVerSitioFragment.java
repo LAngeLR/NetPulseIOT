@@ -10,9 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.netpulseiot.Activity.AdminActivity;
-import com.example.netpulseiot.Activity.SupervisorActivity;
-import com.example.netpulseiot.R;
+import com.example.netpulseiot.SupervisorActivity;
 import com.example.netpulseiot.databinding.FragmentAdminVerSitioBinding;
 import com.example.netpulseiot.databinding.FragmentSupervisorVerSitioBinding;
 

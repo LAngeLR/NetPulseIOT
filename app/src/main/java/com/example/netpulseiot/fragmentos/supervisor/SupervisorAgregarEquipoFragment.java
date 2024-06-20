@@ -11,15 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.netpulseiot.Activity.AdminActivity;
-import com.example.netpulseiot.Activity.SupervisorActivity;
-import com.example.netpulseiot.Adapter.Admin.AdminAsignarSupervisorAdapter;
+import com.example.netpulseiot.SupervisorActivity;
 import com.example.netpulseiot.Adapter.Supervisor.SupervisorAgregarEquipoAdapter;
 import com.example.netpulseiot.databinding.FragmentSupervisorAgregarEquipoBinding;
 import com.example.netpulseiot.entity.EquipoItem;
-import com.example.netpulseiot.entity.SuperadminUsuarioItem;
-import com.example.netpulseiot.fragmentos.admin.AdminAsignarSupervisorFragment;
-import com.example.netpulseiot.fragmentos.admin.AdminSitiosFragment;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;

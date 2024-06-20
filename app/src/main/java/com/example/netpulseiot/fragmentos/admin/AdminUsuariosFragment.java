@@ -23,8 +23,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.netpulseiot.Adapter.Admin.AdminUsuarioAdapter;
-import com.example.netpulseiot.Activity.AdminNUevoUsuario;
-import com.example.netpulseiot.Activity.MainActivity;
+import com.example.netpulseiot.AdminNUevoUsuario;
+import com.example.netpulseiot.MainActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminUsuariosBinding;
 import com.example.netpulseiot.entity.UserItem;

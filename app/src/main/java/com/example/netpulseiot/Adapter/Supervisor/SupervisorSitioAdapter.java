@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.Activity.SupervisorActivity;
+import com.example.netpulseiot.SupervisorActivity;
 import com.example.netpulseiot.entity.SitioItem;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorVerSitioFragment;
 import com.google.firebase.firestore.DocumentSnapshot;

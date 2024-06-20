@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.example.netpulseiot.Adapter.Admin.AdminEquipoAdapter;
-import com.example.netpulseiot.Activity.AdminNuevoEquipo;
-import com.example.netpulseiot.Activity.QRActivity;
+import com.example.netpulseiot.AdminNuevoEquipo;
+import com.example.netpulseiot.QRActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminEquiposBinding;
 import com.example.netpulseiot.entity.EquipoItem;

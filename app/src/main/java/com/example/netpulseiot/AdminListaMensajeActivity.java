@@ -1,12 +1,10 @@
-package com.example.netpulseiot.Activity;
+package com.example.netpulseiot;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.netpulseiot.R;
 
 public class AdminListaMensajeActivity extends AppCompatActivity {
 
