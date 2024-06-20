@@ -19,19 +19,18 @@
                 android:id="@+id/floatingActionButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="328dp"
-                android:layout_marginTop="820dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginBottom="252dp"
                 android:clickable="true"
                 android:src="@drawable/ic_edit"
-                app:backgroundTint="#9F3C8981"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:backgroundTint="#3C8981"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
                 android:id="@+id/textView52"
                 android:layout_width="288dp"
                 android:layout_height="70dp"
-                android:layout_marginTop="32dp"
                 android:fontFamily="@font/aclonica"
                 android:text="INFORMACIÓN"
                 android:textAlignment="center"
@@ -49,194 +48,198 @@
                 android:layout_marginEnd="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView52"
-                app:layout_constraintVertical_bias="0.067"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.04"
                 app:srcCompat="@mipmap/ic_foto2_foreground" />
 
-            <LinearLayout
-                android:layout_width="402dp"
-                android:layout_height="470dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+            <ScrollView
+                android:layout_width="408dp"
+                android:layout_height="430dp"
+                android:layout_marginTop="250dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.87">
+                app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.cardview.widget.CardView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="80dp">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="80dp">
 
-                        <TextView
-                            android:id="@+id/textView100"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:text="Nombre(s)"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:translationX="50dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView101"
-                            android:layout_width="215dp"
-                            android:layout_height="wrap_content"
-                            android:text="Rodrigo Luis"
-                            android:textSize="20sp"
-                            android:translationX="60dp"
-                            android:translationY="10dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/textView100"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Nombre(s)"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp">
+                            <TextView
+                                android:id="@+id/textView101"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="Rodrigo Luis"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="80dp">
 
-                        <TextView
-                            android:id="@+id/textView102"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:text="Apellidos"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:translationX="50dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView103"
-                            android:layout_width="215dp"
-                            android:layout_height="wrap_content"
-                            android:text="Rodriguez Torres"
-                            android:textSize="20sp"
-                            android:translationX="60dp"
-                            android:translationY="10dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/textView102"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Apellidos"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp">
+                            <TextView
+                                android:id="@+id/textView103"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="Rodriguez Torres"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="80dp">
 
-                        <TextView
-                            android:id="@+id/textView104"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:text="Rol"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:translationX="50dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView105"
-                            android:layout_width="215dp"
-                            android:layout_height="wrap_content"
-                            android:text="Administrador"
-                            android:textSize="20sp"
-                            android:translationX="60dp"
-                            android:translationY="10dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/textView104"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Rol"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp">
+                            <TextView
+                                android:id="@+id/textView105"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="Administrador"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="80dp">
 
-                        <TextView
-                            android:id="@+id/textView106"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:text="Correo"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:translationX="50dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView107"
-                            android:layout_width="292dp"
-                            android:layout_height="wrap_content"
-                            android:text="administradorrodr@gmail.com"
-                            android:textSize="20sp"
-                            android:translationX="60dp"
-                            android:translationY="10dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/textView106"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Correo"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp">
+                            <TextView
+                                android:id="@+id/textView107"
+                                android:layout_width="292dp"
+                                android:layout_height="wrap_content"
+                                android:text="administradorrodr@gmail.com"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="80dp">
 
-                        <TextView
-                            android:id="@+id/textView108"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:text="Teléfono"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:translationX="50dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView109"
-                            android:layout_width="215dp"
-                            android:layout_height="wrap_content"
-                            android:text="990122890"
-                            android:textSize="20sp"
-                            android:translationX="60dp"
-                            android:translationY="10dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/textView108"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Teléfono"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp">
+                            <TextView
+                                android:id="@+id/telefonoUserAdmin"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="990122890"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="80dp">
 
-                        <TextView
-                            android:id="@+id/textView110"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:text="Domicilio"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            android:translationX="50dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView111"
-                            android:layout_width="215dp"
-                            android:layout_height="wrap_content"
-                            android:text="Av. Universitaria 123"
-                            android:textSize="20sp"
-                            android:translationX="60dp"
-                            android:translationY="10dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+                            <TextView
+                                android:id="@+id/textView110"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Domicilio"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:translationX="50dp" />
+
+                            <TextView
+                                android:id="@+id/textView111"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:text="Av. Universitaria 123"
+                                android:textSize="20sp"
+                                android:translationX="60dp"
+                                android:translationY="10dp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </ScrollView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

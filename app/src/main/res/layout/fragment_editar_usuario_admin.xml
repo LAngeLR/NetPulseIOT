@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragmentos.superadmin.EditarUsuarioSuperadminFragment">
+    tools:context=".fragmentos.admin.EditarUsuarioAdminFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,14 +14,14 @@
 
 
         <TextView
-            android:id="@+id/tituloEditarSuperadmin"
+            android:id="@+id/tituloEditarAdmin"
             android:layout_width="296dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/aclonica"
             android:text="Editar usuario"
             android:textAlignment="center"
-            android:textColor="#1DB8CC"
+            android:textColor="#4CAF50"
             android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tituloEditarSuperadmin"
+            app:layout_constraintTop_toBottomOf="@+id/tituloEditarAdmin"
             app:srcCompat="@mipmap/ic_foto2_foreground" />
 
         <LinearLayout
@@ -48,14 +48,14 @@
             app:layout_constraintTop_toBottomOf="@+id/scrollView3">
 
             <Button
-                android:id="@+id/cancelarEditar"
+                android:id="@+id/cancelarEditarAdmin"
                 android:layout_width="144dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="#BA4444"
                 android:text="Cancelar" />
 
             <Button
-                android:id="@+id/guardarEditar"
+                android:id="@+id/guardarEditarAdmin"
                 android:layout_width="132dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="#2D62B1"
@@ -97,7 +97,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/nombreUser"
+                            android:id="@+id/textView101"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:enabled="true"
@@ -127,7 +127,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/apellidoUser"
+                            android:id="@+id/textView103"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Rodriguez Torres"
@@ -155,7 +155,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/rolUser"
+                            android:id="@+id/textView105"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Administrador"
@@ -183,7 +183,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/correoUser"
+                            android:id="@+id/textView107"
                             android:layout_width="292dp"
                             android:layout_height="wrap_content"
                             android:text="administradorrodr@gmail.com"
@@ -211,7 +211,7 @@
                             android:translationX="50dp" />
 
                         <EditText
-                            android:id="@+id/telefonoUser"
+                            android:id="@+id/telefonoUserAdmin"
                             android:layout_width="296dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -241,7 +241,7 @@
                             android:translationX="50dp" />
 
                         <TextView
-                            android:id="@+id/direccionUser"
+                            android:id="@+id/textView111"
                             android:layout_width="215dp"
                             android:layout_height="wrap_content"
                             android:text="Av. Universitaria 123"

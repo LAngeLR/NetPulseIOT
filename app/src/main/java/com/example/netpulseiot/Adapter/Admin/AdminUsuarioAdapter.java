@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.netpulseiot.Activity.AdminActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.entity.UserItem;
+import com.example.netpulseiot.fragmentos.admin.EditarUsuarioAdminFragment;
 import com.example.netpulseiot.fragmentos.admin.VerUsuarioAdminFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -35,21 +37,22 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
 
     @NonNull
     @Override
-    public AdminUsuarioAdapter.AdminUsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdminUsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_usuarios, parent, false);
-        return new AdminUsuarioAdapter.AdminUsuarioViewHolder(view);
+        return new AdminUsuarioViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdminUsuarioAdapter.AdminUsuarioViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdminUsuarioViewHolder holder, int position) {
         UserItem currentItem = list.get(position);
 
-        String nombreCompleto = currentItem.getNombre() + " " + currentItem.getApellido();
+        String nombreCompleto = list.get(position).getNombre() + " " + list.get(position).getApellido();
         holder.nombreItem.setText(nombreCompleto);
         holder.cargoItem.setText(currentItem.getRol());
 
         holder.itemView.setOnClickListener(v -> {
             Fragment verUsuarioAdminFragment = new VerUsuarioAdminFragment();
+            Fragment editarUsuarioAdminFragment = new EditarUsuarioAdminFragment();
             UserItem usuario = list.get(position);
 
             FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -59,9 +62,9 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
+                            if (((DocumentSnapshot) document).exists()) {
                                 UserItem usuario1 = document.toObject(UserItem.class);
-                                if (usuario1 != null) {
+                                if (usuario != null) {
                                     /**
                                     Log.d("msg-test", "Nombre: " + usuario1.getNombre());
                                     Log.d("msg-test", "Apellido: " + usuario1.getApellido());
@@ -80,6 +83,7 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
                                     args.putString("direccion", usuario1.getDireccion());
 
                                     verUsuarioAdminFragment.setArguments(args);
+                                    editarUsuarioAdminFragment.setArguments(args);
 
                                     if (context instanceof AdminActivity) {
                                         ((AdminActivity) context).replaceFragment(verUsuarioAdminFragment);
@@ -103,7 +107,7 @@ public class AdminUsuarioAdapter extends RecyclerView.Adapter<AdminUsuarioAdapte
 
     public class AdminUsuarioViewHolder extends RecyclerView.ViewHolder {
         TextView nombreItem, cargoItem;
-
+        Switch switchButton;
         public AdminUsuarioViewHolder(@NonNull View itemView) {
             super(itemView);
             nombreItem = itemView.findViewById(R.id.nombreItem);
