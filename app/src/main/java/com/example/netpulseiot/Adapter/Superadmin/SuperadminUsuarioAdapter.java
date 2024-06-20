@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.entity.UserItem;
+import com.example.netpulseiot.fragmentos.superadmin.EditarUsuarioSuperadminFragment;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
 import com.example.netpulseiot.fragmentos.superadmin.VerUsuarioSuperadminFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -65,6 +66,7 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
         holder.itemView.setOnClickListener(v -> {
             /* Llamar al método replaceFragment y pasar el fragmento de destino */
             Fragment verUsuarioSuperadminFragment = new VerUsuarioSuperadminFragment();
+            Fragment editarUsuarioSuperadminFragment = new EditarUsuarioSuperadminFragment();
             UserItem usuario = list.get(position);
 
             /* Acceder a FireStore */
@@ -98,8 +100,10 @@ public class SuperadminUsuarioAdapter extends RecyclerView.Adapter<SuperadminUsu
                                     args.putString("correo", usuario1.getCorreo());
                                     args.putString("telefono", String.valueOf(usuario1.getCelular()));
                                     args.putString("direccion", usuario1.getDireccion());
+                                    args.putString("idUsuario", usuario1.getId());
 
                                     verUsuarioSuperadminFragment.setArguments(args);
+                                    editarUsuarioSuperadminFragment.setArguments(args);
 
                                     // Reemplazar el fragmento
                                     if (context instanceof SuperadminActivity) {

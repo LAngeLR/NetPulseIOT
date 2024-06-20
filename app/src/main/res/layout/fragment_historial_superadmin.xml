@@ -37,17 +37,14 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/superadminLogsRecyclerView"
-            android:layout_width="365dp"
-            android:layout_height="556dp"
+            android:layout_width="366dp"
+            android:layout_height="501dp"
             android:layout_marginTop="1dp"
             android:textAlignment="center"
-            android:translationY="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_bar"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/search_bar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
