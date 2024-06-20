@@ -83,6 +83,7 @@ public class AdminNuevoSitio extends AppCompatActivity {
             GeoPoint geolocalizacion = new GeoPoint(latitud, longitud);
             sitioItem.setGeolocalizacion(geolocalizacion);
             sitioItem.setFoto("no hay foto XD");
+            sitioItem.setSupervisor("Sin asignar");
 
 //            /** Log **/
 //            SuperadminLogsItem logsItem = new SuperadminLogsItem();

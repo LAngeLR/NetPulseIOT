@@ -2,6 +2,8 @@ package com.example.netpulseiot.entity;
 
 import com.google.firebase.firestore.GeoPoint;
 
+import java.util.List;
+
 public class SitioItem {
 
     String id;
@@ -15,11 +17,12 @@ public class SitioItem {
     GeoPoint geolocalizacion;
     String foto;
     String supervisor;
+    List<String> equipos;
 
     public SitioItem() {
     }
 
-    public SitioItem(String id, String nombre, String departamento, String provincia, String distrito, String tipoSitio, String tipoZona, String ubigeo, GeoPoint geolocalizacion, String foto, String supervisor) {
+    public SitioItem(String id, String nombre, String departamento, String provincia, String distrito, String tipoSitio, String tipoZona, String ubigeo, GeoPoint geolocalizacion, String foto, String supervisor, List<String> equipos) {
         this.id = id;
         this.nombre = nombre;
         this.departamento = departamento;
@@ -31,6 +34,7 @@ public class SitioItem {
         this.geolocalizacion = geolocalizacion;
         this.foto = foto;
         this.supervisor = supervisor;
+        this.equipos = equipos;
     }
 
     public String getId() {
@@ -119,5 +123,13 @@ public class SitioItem {
 
     public void setSupervisor(String supervisor) {
         this.supervisor = supervisor;
+    }
+
+    public List<String> getEquipos() {
+        return equipos;
+    }
+
+    public void setEquipos(List<String> equipos) {
+        this.equipos = equipos;
     }
 }

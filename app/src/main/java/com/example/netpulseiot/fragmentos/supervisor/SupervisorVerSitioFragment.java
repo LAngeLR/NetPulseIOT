@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.netpulseiot.Activity.AdminActivity;
+import com.example.netpulseiot.Activity.SupervisorActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminVerSitioBinding;
 import com.example.netpulseiot.databinding.FragmentSupervisorVerSitioBinding;
@@ -23,7 +25,7 @@ public class SupervisorVerSitioFragment extends Fragment {
 
         Bundle args = getArguments();
         if (args!= null) {
-
+            String sitioId = args.getString("id");
             String nombre = args.getString("nombre");
             String departamento = args.getString("departamento");
             String provincia = args.getString("provincia");
@@ -41,7 +43,27 @@ public class SupervisorVerSitioFragment extends Fragment {
             binding.tipoZonaItem.setText(tipoZona != null ? tipoZona : "No definido");
             String geolocalizacion = ("Lat: " + latitud + ", Lon: " + longitud);
             binding.geolocalizacionItem.setText(geolocalizacion);
+
+
+            //mandar a vista de agregar equipo
+            binding.agregarEquipo.setOnClickListener(v -> {
+                Fragment supervisorAgregarEquipoFragment = new SupervisorAgregarEquipoFragment();
+
+                Bundle argsSitio = new Bundle();
+                argsSitio.putString("sitioId", sitioId);
+                supervisorAgregarEquipoFragment.setArguments(argsSitio);
+
+                //si no funciona ver primero acá uu
+                if (getContext() instanceof SupervisorActivity){
+                    ((SupervisorActivity) getContext()).replaceFragment(supervisorAgregarEquipoFragment);
+                }
+            });
+
         }
+
+
+
+
 
         return  binding.getRoot();
     }
