@@ -5,16 +5,32 @@
     android:id="@+id/admin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".AdminActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#11FFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/toolbar"
+        app:title="NetPulse"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:titleTextColor="#4F784F" />
 
     <FrameLayout
         android:id="@+id/fragment_admin"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="410dp"
+        android:layout_height="765dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.934">
 
     </FrameLayout>
 
