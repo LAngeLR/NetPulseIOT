@@ -15,7 +15,7 @@
             android:id="@+id/scannerButtom"
             android:layout_width="46dp"
             android:layout_height="44dp"
-            android:layout_marginTop="115dp"
+            android:layout_marginTop="85dp"
             android:backgroundTint="#E8F0E1"
             android:onClick="leer"
             android:src="@mipmap/ic_scanner_foreground"
@@ -27,7 +27,7 @@
             android:id="@+id/searchView"
             android:layout_width="327dp"
             android:layout_height="33dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="70dp"
             android:background="#F1EBEB"
             android:backgroundTint="#F6F4F4"
@@ -37,12 +37,12 @@
 
         <LinearLayout
             android:id="@+id/linearLayout4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="412dp"
+            android:layout_height="906dp"
             android:orientation="vertical"
             android:translationY="10dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="16dp">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
 
             <TextView
                 android:id="@+id/textView45"
@@ -68,16 +68,13 @@
                 android:textStyle="italic"
                 android:translationY="10dp" />
 
-        </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/adminEquiposRecyclerView"
+                android:layout_width="408dp"
+                android:layout_height="692dp"
+                android:translationY="70dp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/adminEquiposRecyclerView"
-            android:layout_width="413dp"
-            android:layout_height="719dp"
-            android:translationY="70dp"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout4"
-            app:layout_constraintVertical_bias="0.57" />
+        </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabAddUser"
