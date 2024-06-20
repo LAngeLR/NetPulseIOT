@@ -17,24 +17,24 @@
             android:id="@+id/imageView21"
             android:layout_width="235dp"
             android:layout_height="254dp"
-            android:layout_marginTop="68dp"
-            android:layout_marginEnd="196dp"
+            android:layout_marginEnd="188dp"
+            android:layout_marginBottom="8dp"
             android:layout_weight="1"
             android:src="@mipmap/supervisor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/textView10"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/hola"
             android:layout_width="103dp"
             android:layout_height="20dp"
-            android:layout_marginTop="104dp"
+            android:layout_marginTop="40dp"
             android:layout_weight="1"
             android:fontFamily="@font/gothic_a1"
             android:text="Hola,"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.623"
+            app:layout_constraintHorizontal_bias="0.62"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,7 +75,7 @@
             android:id="@+id/textView10"
             android:layout_width="317dp"
             android:layout_height="47dp"
-            android:layout_marginTop="148dp"
+            android:layout_marginTop="84dp"
             android:layout_weight="1"
             android:text="Encontrarás tus funciones a continuación:"
             android:textSize="16sp"
