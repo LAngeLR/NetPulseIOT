@@ -6,19 +6,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.SupervisorActivity;
+import com.example.netpulseiot.Activity.SupervisorActivity;
 import com.example.netpulseiot.entity.AdminSitioItem;
-import com.example.netpulseiot.entity.SupervisorSitioItem;
-import com.example.netpulseiot.fragmentos.admin.AdminVerSitioFragment;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorVerSitioFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;

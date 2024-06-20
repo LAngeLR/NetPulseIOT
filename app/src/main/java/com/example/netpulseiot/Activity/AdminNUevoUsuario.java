@@ -1,22 +1,15 @@
-package com.example.netpulseiot;
+package com.example.netpulseiot.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.netpulseiot.databinding.ActivityAdminNuevoUsuarioBinding;
-import com.example.netpulseiot.databinding.ActivityNuevoUsuarioSuperadminBinding;
 import com.example.netpulseiot.dto.UsuarioDTO;
 import com.example.netpulseiot.entity.SuperadminLogsItem;
-import com.example.netpulseiot.fragmentos.superadmin.NuevoUsuarioSuperadminActivity;
-import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.security.SecureRandom;

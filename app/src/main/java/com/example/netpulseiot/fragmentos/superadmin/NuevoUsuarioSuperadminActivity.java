@@ -1,23 +1,15 @@
 package com.example.netpulseiot.fragmentos.superadmin;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.netpulseiot.AuthActivity;
-import com.example.netpulseiot.MainActivity;
-import com.example.netpulseiot.R;
+import com.example.netpulseiot.Activity.MainActivity;
 import com.example.netpulseiot.databinding.ActivityNuevoUsuarioSuperadminBinding;
-import com.example.netpulseiot.databinding.ActivitySuperadminBinding;
 import com.example.netpulseiot.dto.UsuarioDTO;
 import com.example.netpulseiot.entity.SuperadminLogsItem;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,8 +27,6 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 public class NuevoUsuarioSuperadminActivity extends AppCompatActivity {
 

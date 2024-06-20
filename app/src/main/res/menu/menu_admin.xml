@@ -21,13 +21,13 @@
         android:iconTint="#FFFFFF"
         />
     <item android:title="Sitios"
-        android:icon="@drawable/ic_user"
+        android:icon="@drawable/ic_sitios"
         android:id="@+id/sitiosAdmin"
         android:textColor="#FFFFFF"
         android:iconTint="#FFFFFF"
         />
     <item android:title="Equipos"
-        android:icon="@drawable/ic_user"
+        android:icon="@drawable/ic_equipos"
         android:id="@+id/equiposAdmin"
         android:textColor="#FFFFFF"
         android:iconTint="#FFFFFF"

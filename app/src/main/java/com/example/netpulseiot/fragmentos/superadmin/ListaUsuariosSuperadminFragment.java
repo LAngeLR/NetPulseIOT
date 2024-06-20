@@ -23,10 +23,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.netpulseiot.Adapter.Superadmin.SuperadminUsuarioAdapter;
-import com.example.netpulseiot.MainActivity;
+import com.example.netpulseiot.Activity.MainActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentListaUsuariosSuperadminBinding;
-import com.example.netpulseiot.entity.SuperadminUsuarioItem;
 import com.example.netpulseiot.entity.UserItem;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;

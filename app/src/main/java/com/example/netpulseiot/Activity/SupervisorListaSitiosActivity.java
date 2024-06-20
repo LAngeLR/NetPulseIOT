@@ -1,25 +1,19 @@
-package com.example.netpulseiot;
+package com.example.netpulseiot.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.netpulseiot.Adapter.Supervisor.SupervisorSitioAdapter;
-import com.example.netpulseiot.entity.SupervisorSitioItem;
+import com.example.netpulseiot.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class AdminListaSitiosActivity extends AppCompatActivity {
-
+public class SupervisorListaSitiosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_admin_sitios);
+
+        setContentView(R.layout.fragment_supervisor_equipos);
 
 //        //hardoceo de la lista (se cambiará cuando tengamos BD o API para extraer los dto
 //        List<SupervisorSitioItem> list = new ArrayList<SupervisorSitioItem>();
@@ -27,19 +21,19 @@ public class AdminListaSitiosActivity extends AppCompatActivity {
 //            list.add(new SupervisorSitioItem("Lima","Lima","Surco", "Tipo1", R.drawable.fotoperfil_u));
 //        }
 //        //implementación del RecyclerViewer
-//        RecyclerView recyler = findViewById(R.id.adminSitiosRecyclerView);
+//        RecyclerView recyler = findViewById(R.id.supervisorSitiosRecyclerView);
 //        recyler.setLayoutManager(new LinearLayoutManager(this));
 //        recyler.setAdapter(new SupervisorSitioAdapter(getApplicationContext(),list));
 
     }
 
-    //luego borrar y hacerlo con fragmento
+
     public void listaSitio(View view){
-        Intent intent = new Intent(this, AdminListaSitiosActivity.class);
+        Intent intent = new Intent(this, SupervisorListaSitiosActivity.class);
         startActivity(intent);
     }
     public void listaEquipo(View view){
-        Intent intent = new Intent(this, AdminListaEquiposActivity.class);
+        Intent intent = new Intent(this, SupervisorListaEquiposActivity.class);
         startActivity(intent);
     }
     public void listaMensaje(View view){
@@ -70,5 +64,4 @@ public class AdminListaSitiosActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AdminInfoUsuarioActivity.class);
         startActivity(intent);
     }
-
 }

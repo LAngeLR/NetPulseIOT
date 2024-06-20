@@ -13,14 +13,10 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.example.netpulseiot.Adapter.Admin.AdminEquipoAdapter;
-import com.example.netpulseiot.Adapter.Admin.AdminSitioAdapter;
-import com.example.netpulseiot.Adapter.Supervisor.SupervisorEquipoAdapter;
-import com.example.netpulseiot.AdminNuevoEquipo;
-import com.example.netpulseiot.AdminNuevoSitio;
-import com.example.netpulseiot.QRActivity;
+import com.example.netpulseiot.Activity.AdminNuevoEquipo;
+import com.example.netpulseiot.Activity.QRActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminEquiposBinding;
-import com.example.netpulseiot.entity.AdminSitioItem;
 import com.example.netpulseiot.entity.EquipoItem;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;

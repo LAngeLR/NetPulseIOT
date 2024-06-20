@@ -6,7 +6,7 @@
     android:background="@drawable/brave"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminNuevoSitio">
+    tools:context=".Activity.AdminNuevoSitio">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

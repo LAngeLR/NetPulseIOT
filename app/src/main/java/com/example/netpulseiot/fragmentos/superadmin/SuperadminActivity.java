@@ -2,20 +2,12 @@ package com.example.netpulseiot.fragmentos.superadmin;
 
 //import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
-import com.example.netpulseiot.AuthActivity2;
-import com.firebase.ui.auth.AuthUI;
-
-import java.lang.reflect.Field;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -27,7 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.SuperAdminListaUsarios;
+import com.example.netpulseiot.Activity.SuperAdminListaUsarios;
 import com.example.netpulseiot.databinding.ActivitySuperadminBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 

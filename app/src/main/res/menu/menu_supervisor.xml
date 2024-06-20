@@ -10,11 +10,11 @@
         android:id="@+id/mensajesSupervisor"
         />
     <item android:title="Sitios"
-        android:icon="@drawable/ic_user"
+        android:icon="@drawable/ic_sitios"
         android:id="@+id/sitiosSupervisor"
         />
     <item android:title="Equipos"
-        android:icon="@drawable/ic_user"
+        android:icon="@drawable/ic_equipos"
         android:id="@+id/equiposSupervisor"
         />
 </menu>

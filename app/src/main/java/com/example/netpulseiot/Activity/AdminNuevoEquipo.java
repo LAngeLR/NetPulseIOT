@@ -1,50 +1,35 @@
-package com.example.netpulseiot;
+package com.example.netpulseiot.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.netpulseiot.databinding.ActivityAdminNuevoSitioBinding;
-import com.example.netpulseiot.databinding.ActivityAdminNuevoUsuarioBinding;
-import com.example.netpulseiot.dto.UsuarioDTO;
-import com.example.netpulseiot.entity.AdminSitioItem;
-import com.example.netpulseiot.entity.SuperadminLogsItem;
+import com.example.netpulseiot.databinding.ActivityAdminNuevoEquipo2Binding;
+import com.example.netpulseiot.entity.EquipoItem;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.GeoPoint;
 
 import java.security.SecureRandom;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
-public class AdminNuevoSitio extends AppCompatActivity {
+public class AdminNuevoEquipo extends AppCompatActivity {
 
     /** Para generar un código aleatorio **/
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     private static final int CODE_LENGTH = 20;
     FirebaseFirestore db;
-    ActivityAdminNuevoSitioBinding binding;
+    ActivityAdminNuevoEquipo2Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityAdminNuevoSitioBinding.inflate(getLayoutInflater());
+        binding = ActivityAdminNuevoEquipo2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         //cancelar Guardado
         binding.cancelar.setOnClickListener(view -> {
-            Intent intent = new Intent(AdminNuevoSitio.this, AdminActivity.class);
+            Intent intent = new Intent(AdminNuevoEquipo.this, AdminActivity.class);
             intent.putExtra("fragmentToLoad", "usuariosSuperadmin");
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 //            Toast.makeText(this, "Accion cancelada", Toast.LENGTH_LONG).show();
@@ -66,37 +51,27 @@ public class AdminNuevoSitio extends AppCompatActivity {
 //            DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm:ss");
 
             //Sitio
-            String nombre = binding.nombre.getEditText().getText().toString().trim();
-            String departamento = binding.departamento.getEditText().getText().toString().trim();
-            String provincia = binding.provincia.getEditText().getText().toString().trim();
-            String distrito = binding.distrito.getEditText().getText().toString().trim();
-            String tipoZona = binding.tipoZona.getEditText().getText().toString().trim();
-            String tipoSitio = binding.tipoSitio.getEditText().getText().toString().trim();
-            String ubigeo = binding.ubigeo.getEditText().getText().toString().trim();
-            String latitudStr = binding.latitud.getEditText().getText().toString().trim();
-            String longitudStr = binding.longitud.getEditText().getText().toString().trim();
+            String modelo = binding.modelo.getEditText().getText().toString().trim();
+            String marca = binding.marca.getEditText().getText().toString().trim();
+            String tipoEquipo = binding.tipoEquipo.getEditText().getText().toString().trim();
+            String numSerie = binding.numSerie.getEditText().getText().toString().trim();
+            String sku = binding.sku.getEditText().getText().toString().trim();
+            String descripcion = binding.descripcion.getEditText().getText().toString().trim();
 
             /** CREAR INSTANCIA DE BD FIREBASE **/
             db = FirebaseFirestore.getInstance();
             /** Usuario **/
-            AdminSitioItem sitioItem = new AdminSitioItem();
+            EquipoItem equipoItem = new EquipoItem();
             SecureRandom random = new SecureRandom();
             String randomCode = generateRandomCode(random, CODE_LENGTH);
-            sitioItem.setId(randomCode);
-            sitioItem.setNombre(nombre);
-            sitioItem.setDepartamento(departamento);
-            sitioItem.setProvincia(provincia);
-            sitioItem.setDistrito(distrito);
-            sitioItem.setTipoZona(tipoZona);
-            sitioItem.setTipoSitio(tipoSitio);
-            sitioItem.setUbigeo(ubigeo);
-            // Convertir las cadenas a double
-            double latitud = Double.parseDouble(latitudStr);
-            double longitud = Double.parseDouble(longitudStr);
-            // Crear una instancia de GeoPoint con las coordenadas
-            GeoPoint geolocalizacion = new GeoPoint(latitud, longitud);
-            sitioItem.setGeolocalizacion(geolocalizacion);
-            sitioItem.setFoto("no hay foto XD");
+            equipoItem.setId(randomCode);
+            equipoItem.setModelo(modelo);
+            equipoItem.setMarca(marca);
+            equipoItem.setTipoEquipo(tipoEquipo);
+            equipoItem.setNumSerie(numSerie);
+            equipoItem.setSku(sku);
+            equipoItem.setDescripcion(descripcion);
+            equipoItem.setFoto("no hay foto uu");
 
 //            /** Log **/
 //            SuperadminLogsItem logsItem = new SuperadminLogsItem();
@@ -106,11 +81,11 @@ public class AdminNuevoSitio extends AppCompatActivity {
 //            logsItem.setHora(horaActual.format(formatoHora));
 //            logsItem.setFechaCreacion(fechaHoraActualPeruDate);
 
-            db.collection("sitios")
-                    .document(sitioItem.getId())
-                    .set(sitioItem)
+            db.collection("equipos")
+                    .document(equipoItem.getId())
+                    .set(equipoItem)
                     .addOnSuccessListener( unused -> {
-                        Log.d("msg-test","sitio " + sitioItem.getNombre() + " guardada exitosamente");
+                        Log.d("msg-test","equipos " + equipoItem.getModelo() + " guardado exitosamente");
                     })
                     .addOnFailureListener(e -> e.printStackTrace());
 
@@ -122,10 +97,10 @@ public class AdminNuevoSitio extends AppCompatActivity {
 //                    .addOnFailureListener(e -> e.printStackTrace());
 
             // Luego redirige de vuelta a SuperadminActivity con el fragmento UsuariosSuperadminFragment
-            Intent intent = new Intent(AdminNuevoSitio.this, AdminActivity.class);
+            Intent intent = new Intent(AdminNuevoEquipo.this, AdminActivity.class);
             intent.putExtra("fragmentToLoad", "usuariosSuperadmin");
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            Toast.makeText(this, "Sitio creado exitosamente", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Equipo creado exitosamente", Toast.LENGTH_LONG).show();
             startActivity(intent);
             finish();
         });

@@ -12,11 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.R;
-import com.example.netpulseiot.SupervisorActivity;
+import com.example.netpulseiot.Activity.SupervisorActivity;
 import com.example.netpulseiot.entity.EquipoItem;
-import com.example.netpulseiot.fragmentos.admin.AdminVerEquipoFragment;
 import com.example.netpulseiot.fragmentos.supervisor.SupervisorVerEquipoFragment;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
