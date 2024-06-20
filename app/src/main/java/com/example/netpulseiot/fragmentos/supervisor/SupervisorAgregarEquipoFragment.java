@@ -80,7 +80,7 @@ public class SupervisorAgregarEquipoFragment extends Fragment {
         if (args != null){
             sitioId = args.getString("sitioId");
         }
-        binding.textView.setText(sitioId);
+//        binding.textView.setText(sitioId);
 
         //cancelar Guardado
         binding.cancelar.setOnClickListener(view -> {
