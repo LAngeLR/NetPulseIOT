@@ -41,13 +41,30 @@
                 android:textSize="12sp"
                 android:textStyle="italic" />
 
-            <SearchView
-                android:layout_width="327dp"
-                android:layout_height="33dp"
-                android:background="#F1EBEB"
-                android:backgroundTint="#F6F4F4"
-                android:translationX="40dp"
-                android:translationY="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/scannerButtom"
+                    android:layout_width="46dp"
+                    android:layout_height="44dp"
+                    android:backgroundTint="#E8F0E1"
+                    android:onClick="leer"
+                    android:src="@mipmap/ic_scanner_foreground"
+                    android:translationX="20dp"
+                    android:translationY="20dp" />
+
+                <SearchView
+                    android:layout_width="327dp"
+                    android:layout_height="33dp"
+                    android:background="#F1EBEB"
+                    android:backgroundTint="#F6F4F4"
+                    android:translationX="30dp"
+                    android:translationY="20dp" />
+            </LinearLayout>
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/supervisorEquiposRecyclerView"

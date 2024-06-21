@@ -1,5 +1,6 @@
 package com.example.netpulseiot.fragmentos.supervisor;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,9 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.netpulseiot.Adapter.Admin.AdminEquipoAdapter;
 import com.example.netpulseiot.Adapter.Supervisor.SupervisorEquipoAdapter;
+import com.example.netpulseiot.QRActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentSupervisorEquiposBinding;
 import com.example.netpulseiot.entity.EquipoItem;
@@ -61,6 +64,13 @@ public class SupervisorEquiposFragment extends Fragment {
                         Log.d("msg-test", "Error getting documents: ", task.getException());
                     }
                 });
+
+                ImageButton imageButton = binding.getRoot().findViewById(R.id.scannerButtom);
+                imageButton.setOnClickListener(v -> {
+                            Intent intent = new Intent(getContext(), QRActivity.class);
+                            startActivity(intent);
+                        }
+                );
 
         return binding.getRoot();
     }
