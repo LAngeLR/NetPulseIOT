@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.netpulseiot.Activity.AdminActivity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.fragment.app.Fragment;
 
+import com.example.netpulseiot.AdminActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentAdminVerUsuarioBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class VerUsuarioAdminFragment extends Fragment {
     FragmentAdminVerUsuarioBinding binding;
