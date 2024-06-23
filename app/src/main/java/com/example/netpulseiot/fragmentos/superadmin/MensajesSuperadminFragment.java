@@ -1,97 +1,106 @@
 package com.example.netpulseiot.fragmentos.superadmin;
 
-import static java.util.Locale.filter;
-
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.netpulseiot.Adapter.Superadmin.SuperadminMensajeAdapter;
-import com.example.netpulseiot.R;
 import com.example.netpulseiot.databinding.FragmentMensajesSuperadminBinding;
-import com.example.netpulseiot.entity.MensajeItem;
+import com.example.netpulseiot.entity.ChatItem;
+import com.example.netpulseiot.entity.UserItem;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class MensajesSuperadminFragment extends Fragment {
 
-    FragmentMensajesSuperadminBinding binding;
-
-    /** SE AÑADIO CON CHAT GPT **/
-    private List<MensajeItem> originalList; // Original data list
+    private FragmentMensajesSuperadminBinding binding;
+    private List<ChatItem> chatList;
     private SuperadminMensajeAdapter adapter;
+    private FirebaseFirestore db;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = FragmentMensajesSuperadminBinding.inflate(inflater,container,false);
+        binding = FragmentMensajesSuperadminBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
-        // Initialize the original list
-        originalList = new ArrayList<>();
-        for (int i = 0; i <= 12; i++) {
-            originalList.add(new MensajeItem("Alex Valera", "La reunión será a las 11:00 am", R.drawable.fotoperfil_u2, "1"));
-        }
+        // Inicializar Firestore
+        db = FirebaseFirestore.getInstance();
 
-        // Setup RecyclerView
-        binding.superadminMensajesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new SuperadminMensajeAdapter(getContext(), originalList);
-        binding.superadminMensajesRecyclerView.setAdapter(adapter);
+        // Inicializar RecyclerView
+        RecyclerView recyclerView = binding.superadminMensajesRecyclerView;
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        chatList = new ArrayList<>();
+        adapter = new SuperadminMensajeAdapter(getContext(), chatList);
+        recyclerView.setAdapter(adapter);
 
+        // Cargar datos desde Firestore
+        loadChatData();
 
-        // Find the EditText inside the SearchBar
-        EditText searchEditText = binding.searchBar.findViewById(R.id.search_edit_text);
-
-
-        // Set up search functionality
-        searchEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                filter(charSequence.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {}
-        });
-
-
-
-
-
-
-        // Inflate the layout for this fragment
-        return binding.getRoot();
+        return root;
     }
 
+    private void loadChatData() {
+        // Consultar la colección de chats en Firestore
+        db.collection("chats")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    chatList.clear(); // Limpiar la lista actual
 
-    private void filter(String text) {
-        List<MensajeItem> filteredList = new ArrayList<>();
-        for (MensajeItem item : originalList) {
-            if (item.getMensaje().toLowerCase().contains(text.toLowerCase())) {
-                filteredList.add(item);
-            }
-        }
-        adapter.updateList(filteredList);
+                    // Iterar sobre los documentos de chats
+                    for (ChatItem chatItem : queryDocumentSnapshots.toObjects(ChatItem.class)) {
+                        // Agregar cada chat a la lista
+                        chatList.add(chatItem);
+
+                        // Obtener nombre del segundo participante si existen al menos dos participantes
+                        if (chatItem.getParticipantes().size() > 1) {
+                            String secondParticipantId = chatItem.getParticipantes().get(1); // Segundo participante en el array
+                            loadUserNameForParticipant(chatItem, secondParticipantId);
+                        }
+                    }
+
+                    // Notificar al adaptador que los datos han cambiado
+                    adapter.notifyDataSetChanged();
+                })
+                .addOnFailureListener(e -> {
+                    // Manejar errores de consulta
+                });
     }
+
+    private void loadUserNameForParticipant(ChatItem chatItem, String userId) {
+        // Consultar el usuario correspondiente al userId
+        db.collection("usuarios").document(userId)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        UserItem user = documentSnapshot.toObject(UserItem.class);
+                        if (user != null) {
+                            // Actualizar el nombre del usuario en el chatItem
+                            chatItem.setIdUsuarioUltimo(user.getNombre() + " " + user.getApellido());
+                            // Notificar al adaptador que los datos han cambiado
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Manejar errores si la obtención del usuario falla
+                });
+    }
+
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
-
-
 }

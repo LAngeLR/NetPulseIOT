@@ -6,10 +6,14 @@
     <color name="white_transparent">#80FFFFFF</color>
 
 <!-- COLOR DE LOS THEMES -->
-    <color name="colorPrimary">#FF000000</color> <!-- Ejemplo de color rojo -->
+    <!--<color name="colorPrimary">#FF000000</color> --> <!-- Descomentar si ocurre algun mal cambio -->
     <color name="colorPrimaryVariant">#B71C1C</color> <!-- Variante del color principal -->
     <color name="colorOnPrimary">#FFFFFF</color> <!-- Color del texto en el color principal -->
 
+    <!-- Agregando validar si ocurre algo inesperado -->
+    <color name="colorPrimaryDark">#3eaeae</color>
+    <color name="colorAccent">#226e6e</color>
+    <color name="colorPrimary">#FF4081</color>
 
 <!-- COLOR XDD NAAA NO VALE -->
     <color name="selected_item_color">#FF000000</color>

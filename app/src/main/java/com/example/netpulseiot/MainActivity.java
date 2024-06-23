@@ -1,7 +1,5 @@
 package com.example.netpulseiot;
 
-import static android.Manifest.permission.POST_NOTIFICATIONS;
-
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -11,31 +9,32 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.netpulseiot.databinding.ActivityMainBinding;
 import com.example.netpulseiot.fragmentos.superadmin.SuperadminActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.security.SecureRandom;
 
 public class MainActivity extends AppCompatActivity {
 
-    /** Para generar un código aleatorio **/
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     private static final int CODE_LENGTH = 20;
 
-
-    ActivityMainBinding binding;
-    String canal1 = "importanteDefault";
-    FirebaseFirestore db;
+    private ActivityMainBinding binding;
+    private String canal1 = "importanteDefault";
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +42,68 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Crear canales de notificación al inicio de la actividad
         crearCanalesNotificacion();
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        // Ejemplo: Botón para iniciar sesión (puedes modificar según tu diseño)
+        binding.ingresarCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AuthActivity2.class));
+            }
         });
-
     }
 
-    public void crearCanalesNotificacion() {
+    @Override
+    protected void onStart() {
+        super.onStart();
 
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser != null) {
+            // Hay un usuario autenticado, obtener rol y redirigir según corresponda
+            db = FirebaseFirestore.getInstance();
+            db.collection("usuarios")
+                    .document(firebaseUser.getUid())
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(Task<DocumentSnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot document = task.getResult();
+                                if (document != null && document.exists()) {
+                                    String rol = document.getString("rol");
+                                    if (rol != null) {
+                                        switch (rol) {
+                                            case "Administrador":
+                                                notificarImportanceDefault("Administrador");
+                                                startActivityWithClearTask(AdminActivity.class);
+                                                break;
+                                            case "Supervisor":
+                                                notificarImportanceDefault("Supervisor");
+                                                startActivityWithClearTask(SupervisorActivity.class);
+                                                break;
+                                            case "Superadministrador":
+                                                notificarImportanceDefault("Superadministrador");
+                                                startActivityWithClearTask(SuperadminActivity.class);
+                                                break;
+                                            default:
+                                                Toast.makeText(MainActivity.this, "Rol no reconocido.", Toast.LENGTH_SHORT).show();
+                                                break;
+                                        }
+                                    }
+                                } else {
+                                    Toast.makeText(MainActivity.this, "Documento de usuario no encontrado.", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(MainActivity.this, "Error al obtener el documento del usuario.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }
+    }
+
+    private void crearCanalesNotificacion() {
+        // Crear canal de notificación
         NotificationChannel channel = new NotificationChannel(canal1,
                 "Canal notificaciones default",
                 NotificationManager.IMPORTANCE_DEFAULT);
@@ -64,90 +113,84 @@ public class MainActivity extends AppCompatActivity {
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         notificationManager.createNotificationChannel(channel);
 
+        // Pedir permisos si no están concedidos
         pedirPermisos();
     }
 
-    public void pedirPermisos() {
-        // TIRAMISU = 33
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
-                ActivityCompat.checkSelfPermission(this, POST_NOTIFICATIONS) == PackageManager.PERMISSION_DENIED) {
-
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{POST_NOTIFICATIONS}, 101);
+    private void pedirPermisos() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
+                ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, 101);
         }
     }
 
-    public void notificarImportanceDefault(String valor){
-        //Crear notificación
-        //Agregar información a la notificación que luego sea enviada a la actividad que se abre
+    private void notificarImportanceDefault(String valor) {
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent activityPendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
-        Intent intent = new Intent(this, MainActivity.class); // Declarar intent fuera del switch
-        intent.putExtra("pid","4616");
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
         String mensajeBienvenida = "";
-
-        Intent activityIntent = null;
-
         switch (valor) {
             case "Administrador":
                 mensajeBienvenida = "Bienvenido Administrador";
-                activityIntent = new Intent(this, AdminActivity.class);
                 break;
             case "Superadministrador":
                 mensajeBienvenida = "Bienvenido SuperAdministrador";
-                activityIntent = new Intent(this, SuperadminActivity.class);
                 break;
             case "Supervisor":
                 mensajeBienvenida = "Bienvenido Supervisor";
-                activityIntent = new Intent(this, SupervisorActivity.class);
                 break;
             default:
                 mensajeBienvenida = "Bienvenido";
+                break;
         }
-
-        PendingIntent activityPendingIntent = PendingIntent.getActivity(this, 0, activityIntent, PendingIntent.FLAG_IMMUTABLE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, canal1)
                 .setSmallIcon(R.drawable.baseline_rocket_launch_24)
                 .setContentTitle("Informe de Ingreso")
-                .setContentText(mensajeBienvenida) // Utilizar el mensaje de bienvenida personalizado
+                .setContentText(mensajeBienvenida)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setContentIntent(activityPendingIntent) // Cambiar pendingIntent por activityPendingIntent
+                .setContentIntent(activityPendingIntent)
                 .setAutoCancel(true);
 
         Notification notification = builder.build();
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
-        if (ActivityCompat.checkSelfPermission(this, POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
             notificationManager.notify(1, notification);
         }
     }
 
-    public void admin(View view){
+    private void startActivityWithClearTask(Class<?> cls) {
+        Intent intent = new Intent(MainActivity.this, cls);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish(); // Finaliza la actividad actual para evitar que el usuario vuelva atrás
+    }
+
+    public void admin(View view) {
         notificarImportanceDefault("Administrador");
-        Intent intent = new Intent(this, AdminActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, AdminActivity.class));
     }
 
-    public void superadmin(View view){
+    public void superadmin(View view) {
         notificarImportanceDefault("Superadministrador");
-        Intent intent = new Intent(this, SuperadminActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, SuperadminActivity.class));
     }
 
-    public void supervisor(View view){
+    public void supervisor(View view) {
         notificarImportanceDefault("Supervisor");
-        Intent intent = new Intent(this, SupervisorActivity.class);
-        startActivity(intent);
-    }
-    //QR PROBANDO
-    public void qrleer(View view){
-        Intent intent = new Intent(this, QRActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, SupervisorActivity.class));
     }
 
+    public void qrleer(View view) {
+        startActivity(new Intent(this, QRActivity.class));
+    }
 
-    /** Generar código aleatorio - Se debe usar en crear usuario **/
+    public void mensajeria(View view) {
+        startActivity(new Intent(this, IniciandoActivity.class));
+    }
+
     private static String generateRandomCode(SecureRandom random, int length) {
         StringBuilder code = new StringBuilder(length);
         for (int i = 0; i < length; i++) {
@@ -155,19 +198,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return code.toString();
     }
-
-    /** INICIAR SESIÓN **/
-    public void ingresarCuenta(View view){
-        Intent intent = new Intent(this, AuthActivity2.class);
-        startActivity(intent);
-    }
-
-    /** FORMULARIO DE REGISTRO **/
-    public void registrarCuenta(View view){
-        Intent intent = new Intent(this, AuthActivity.class);
-        startActivity(intent);
-    }
-
-
-
 }

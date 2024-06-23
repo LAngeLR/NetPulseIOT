@@ -17,6 +17,21 @@
         android:theme="@style/Base.Theme.NetPulseIoT"
         tools:targetApi="31">
         <activity
+            android:name=".MessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IniciandoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MensajeriaActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminNuevoEquipo"
             android:exported="false" />
         <activity
@@ -27,8 +42,8 @@
             android:exported="false" />
         <activity
             android:name=".fragmentos.superadmin.NuevoUsuarioSuperadminActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".SuperAdminListaUsarios"
             android:exported="false" />
@@ -75,8 +90,8 @@
             android:exported="false" />
         <activity
             android:name=".fragmentos.superadmin.SuperadminActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false"/>
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".AdminActivity"
             android:exported="false" />
@@ -84,10 +99,9 @@
             android:name=".AuthActivity"
             android:exported="false" />
         <activity
-
             android:name=".AuthActivity2"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -1,38 +1,46 @@
 package com.example.netpulseiot.fragmentos.superadmin;
 
-//import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.netpulseiot.AuthActivity2;
+import com.example.netpulseiot.MainActivity;
 import com.example.netpulseiot.R;
 import com.example.netpulseiot.SuperAdminListaUsarios;
 import com.example.netpulseiot.databinding.ActivitySuperadminBinding;
+import com.example.netpulseiot.fragmentos.UsersFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.time.LocalDate;
+import java.time.Instant;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class SuperadminActivity extends AppCompatActivity {
 
     ActivitySuperadminBinding binding;
+    FirebaseUser firebaseUser;
+    DatabaseReference reference;
 
     FirebaseFirestore db;
-    private android.text.Html Html;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +48,20 @@ public class SuperadminActivity extends AppCompatActivity {
         binding = ActivitySuperadminBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("NetPulse");
+
         /** CREAR INSTANCIA DE BD FIREBASE **/
         db = FirebaseFirestore.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
         /** GUARDAR LOG **/
 
         ZoneId zonaPeru = ZoneId.of("America/Lima");
         ZonedDateTime fechaHoraActualPeru = ZonedDateTime.now(zonaPeru);
 
-        LocalDate fechaActual = fechaHoraActualPeru.toLocalDate();
         LocalTime horaActual = LocalTime.now(zonaPeru);
         Instant instant = fechaHoraActualPeru.toInstant();
         Date fechaHoraActualPeruDate = Date.from(instant);
@@ -56,24 +69,8 @@ public class SuperadminActivity extends AppCompatActivity {
         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-        Log.d("msg-test","Fecha actual: " + fechaActual.format(formatoFecha));
         Log.d("msg-test","Hora actual: " + horaActual.format(formatoHora));
         Log.d("msg-test","Timestamp: " + fechaHoraActualPeruDate);
-/**
-        SuperadminLogsItem logsItem = new SuperadminLogsItem();
-        logsItem.setUsuario("Prueba");
-        logsItem.setAccion("Creacion de LA AITEL");
-        logsItem.setFecha(fechaActual.format(formatoFecha));
-        logsItem.setHora(horaActual.format(formatoHora));
-        logsItem.setFechaCreacion(fechaHoraActualPeruDate);
-
-        db.collection("logs")
-                .add(logsItem)
-                .addOnSuccessListener( unused -> {
-                    Log.d("msg-test","LOG DATA guardada exitosamente");
-                })
-                .addOnFailureListener(e -> e.printStackTrace());
-         **/
 
 
         // Check if an extra is passed to load a specific fragment
@@ -84,18 +81,15 @@ public class SuperadminActivity extends AppCompatActivity {
             replaceFragment(new InicioSuperadminFragment());
         }
 
-
-
-
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
             if (item.getItemId() == R.id.inicioSuperadmin) {
                 replaceFragment(new InicioSuperadminFragment());
             } else if (item.getItemId() == R.id.mensajesSuperadmin) {
-                replaceFragment(new MensajesSuperadminFragment());
+                replaceFragment(new UsersFragment());
             } else if (item.getItemId() == R.id.usuariosSuperadmin) {
                 replaceFragment(new UsuariosSuperadminFragment());
-            }else if (item.getItemId() == R.id.logsSuperadmin) {
+            } else if (item.getItemId() == R.id.logsSuperadmin) {
                 replaceFragment(new HistorialSuperadminFragment());
             }
 
@@ -104,9 +98,8 @@ public class SuperadminActivity extends AppCompatActivity {
 
             return true;
         });
-
-
     }
+
     private void changeSelectedMenuItemTextAppearance(int selectedItemId) {
         Menu menu = binding.bottomNavigationView.getMenu();
         for (int i = 0; i < menu.size(); i++) {
@@ -131,7 +124,6 @@ public class SuperadminActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-
     public void superAdmin(View view){
         Intent intent = new Intent(this, SuperadminActivity.class);
         startActivity(intent);
@@ -142,47 +134,21 @@ public class SuperadminActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//Nuevo usuario
-    public void nuevoUsuario(View view){
-        Intent intent = new Intent(this, NuevoUsuarioSuperadminActivity.class);
-        startActivity(intent);
-    }
-
-
-
-    /* TOOLBAR - CERRAR SESIÓN */
-
-    /**
+    // Toolbar - Cerrar sesión
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar, menu); // Asumiendo que el archivo XML del menú se llama toolbar_menu.xml
+        getMenuInflater().inflate(R.menu.toolbar, menu);
         return true;
     }
-//    @SuppressLint("NonConstantResourceId")
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.tercero : // Este es el ID del ítem "Cerrar sesión"
-                // Aquí es donde colocas el código para cerrar sesión
-                cerrarSesion();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.tercero) { // ID del ítem "Cerrar sesión"
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(SuperadminActivity.this, MainActivity.class));
+            finish();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
-
-    private void cerrarSesion() {
-        AuthUI.getInstance()
-                .signOut(this)
-                .addOnCompleteListener(task -> {
-                    Log.d("infoApp", "logout exitoso");
-                    // Opcional: Redirigir al usuario a la pantalla de inicio de sesión o a otra actividad
-                    Intent intent = new Intent(SuperadminActivity.this, AuthActivity2.class); // Asegúrate de que LoginActivity sea la actividad de inicio de sesión
-                    startActivity(intent);
-                    finish(); // Finaliza la actividad actual para que no puedan volver a ella presionando el botón "Atrás"
-                });
-    }
-
-    **/
-
 }

@@ -54,7 +54,7 @@
             android:translationX="20dp"
             android:translationY="50dp" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="225dp"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
             android:translationX="20dp"
             android:translationY="85dp" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextTextPassword"
             android:layout_width="227dp"
             android:layout_height="wrap_content"
